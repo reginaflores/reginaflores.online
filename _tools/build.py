@@ -8,6 +8,8 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 from PIL import Image
+from bs4 import BeautifulSoup
+from topics import derive, LEGACY
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "_data"
@@ -80,11 +82,15 @@ def cat_url(c):
     return "/blog/category/" + c.replace(" ", "+")
 
 
+def slugify(t):
+    return re.sub(r"[^a-z0-9]+", "-", t.lower().replace("&", "and")).strip("-")
+
+
 def tag_url(t):
-    return "/blog/tag/" + t.replace(" ", "+")
+    return "/tags/" + slugify(t)
 
 
-CSS_V = "8"
+CSS_V = "9"
 
 
 def page(title, body, desc=INTRO, url="/", og_img=None, kind="website"):
@@ -149,8 +155,8 @@ def listing(items, by_year=True):
     return "".join(out)
 
 
-def chips(names, fn, counts=None):
-    return "".join(f'<a class="chip" href="{fn(n)}/">{H.escape(n)}{f" <span>{counts[n]}</span>" if counts else ""}</a>' for n in names)
+def chips(names, fn, counts=None, cls="chip"):
+    return "".join(f'<a class="{cls}" href="{fn(n)}/">{H.escape(n)}{f" <span>{counts[n]}</span>" if counts else ""}</a>' for n in names)
 
 
 def write(path, s):
@@ -159,12 +165,18 @@ def write(path, s):
 
 
 def main():
-    for d in ("blog",):
+    for d in ("blog", "tags"):
         shutil.rmtree(ROOT / d, ignore_errors=True)
     posts = sorted([e for e in entries if e["kind"] == "post"], key=lambda e: e["date"], reverse=True)
     pages = [e for e in entries if e["kind"] == "page" and e["url"] not in SKIP_PAGES and (e["text"] or e["thumb"])]
     for e in entries:
         e["html"] = fix_media(e["html"])
+    # fine-grained tags derived from full post text (+ original Squarespace tags)
+    for p in posts:
+        p["full"] = re.sub(r"\s+", " ", BeautifulSoup(p["html"], "html.parser").get_text(" "))
+    derived, tag_groups, _ = derive([dict(p, text=p["full"]) for p in posts])
+    for p in posts:
+        p["tags"] = derived[p["url"]]
     cats, tags = defaultdict(list), defaultdict(list)
     for p in posts:
         for c in p["categories"]:
@@ -180,7 +192,7 @@ def main():
         older = posts[i + 1] if i + 1 < len(posts) else None
         nav = '<nav class="pn">' + (f'<a class="prev" href="{older["url"]}/"><span>← Older</span>{H.escape(older["title"])}</a>' if older else "<span></span>") + \
               (f'<a class="next" href="{newer["url"]}/"><span>Newer →</span>{H.escape(newer["title"])}</a>' if newer else "<span></span>") + "</nav>"
-        meta = chips(p["categories"], cat_url) + chips(p["tags"], tag_url)
+        meta = chips(p["categories"], cat_url, cls="chip cat") + chips(p["tags"], tag_url)
         body = (f'<article class="post"><p class="crumb"><a href="/">Archive</a> / {p["date"][:4]}</p>'
                 f'<h1>{H.escape(p["title"])}</h1><p class="date">{fmt_date(p["date"])}</p>'
                 f'<div class="chips">{meta}</div><div class="content">{p["html"]}</div></article>{nav}')
@@ -203,10 +215,26 @@ def main():
         body = (f'<section class="head"><p class="crumb"><a href="/">Archive</a> / Topic</p><h1>{H.escape(c)}</h1>'
                 f'<p class="lede">{len(cats[c])} posts</p></section>{listing(cats[c])}')
         write(slug_path(cat_url(c)), page(c, body, f"Posts about {c} from {NAME}'s archive.", cat_url(c)))
+    group_of = {t: g for g, ts in tag_groups.items() for t in ts}
     for t in tag_names:
-        body = (f'<section class="head"><p class="crumb"><a href="/">Archive</a> / Tag</p><h1>#{H.escape(t)}</h1>'
-                f'<p class="lede">{len(tags[t])} posts</p></section>{listing(tags[t])}')
-        write(slug_path(tag_url(t)), page(t, body, f"Posts tagged {t} from {NAME}'s archive.", tag_url(t)))
+        co = defaultdict(int)
+        for p in tags[t]:
+            for o in p["tags"]:
+                if o != t:
+                    co[o] += 1
+        related = sorted(co, key=lambda o: (-co[o], o))[:14]
+        rel = (f'<div class="related"><p class="label">Often appears with</p><div class="chips">'
+               f'{chips(related, tag_url, co)}</div></div>') if related else ""
+        body = (f'<section class="head"><p class="crumb"><a href="/">Archive</a> / {H.escape(group_of.get(t, "Tags"))}</p>'
+                f'<h1>{H.escape(t)}</h1><p class="lede">{len(tags[t])} posts</p>{rel}</section>{listing(tags[t])}')
+        write(slug_path(tag_url(t)), page(t, body, f"Posts about {t} from {NAME}'s archive.", tag_url(t)))
+    # old Squarespace tag URLs point to their new tag pages
+    for old, new in LEGACY.items():
+        if new in tags:
+            dest = tag_url(new) + "/"
+            write(ROOT / "blog/tag" / old / "index.html",
+                  f'<!doctype html><meta charset="utf-8"><title>Moved</title><link rel="canonical" href="{SITE}{dest}">'
+                  f'<meta http-equiv="refresh" content="0; url={dest}"><a href="{dest}">{H.escape(new)}</a>')
 
     # home (also served at /blog/)
     years = sorted({p["date"][:4] for p in posts})
@@ -225,7 +253,8 @@ def main():
 <div id="results">{listing(posts)}</div>
 <section class="topics" id="topics">
   <h2>Topics</h2><div class="chips big">{chips(cat_names, cat_url, {c: len(cats[c]) for c in cat_names})}</div>
-  <h2>Tags</h2><div class="chips">{chips(tag_names, tag_url, {t: len(tags[t]) for t in tag_names})}</div>
+  <h2>Drill down</h2>
+  <div class="taggroups">{"".join(f'<div class="tg"><h3>{H.escape(g)}</h3><div class="chips">{chips(sorted(ts, key=lambda t: -len(tags[t])), tag_url, {t: len(tags[t]) for t in ts})}</div></div>' for g, ts in tag_groups.items() if ts)}</div>
 </section>
 <section class="projects" id="projects">
   <h2>Projects &amp; pages</h2><div class="grid">{proj}</div>

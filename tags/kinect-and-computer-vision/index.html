@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kinect &amp; computer vision — Regina Flores Mir Archive</title>
+<meta name="description" content="Posts about Kinect &amp; computer vision from Regina Flores Mir&#x27;s archive.">
+<link rel="canonical" href="https://reginaflores.online/tags/kinect-and-computer-vision/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kinect &amp; computer vision — Regina Flores Mir Archive">
+<meta property="og:description" content="Posts about Kinect &amp; computer vision from Regina Flores Mir&#x27;s archive.">
+<meta property="og:url" content="https://reginaflores.online/tags/kinect-and-computer-vision">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,300..1000&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=9">
+</head>
+<body>
+<header class="site"><div class="bar">
+  <a class="brand" href="/"><span class="name">Regina Flores Mir</span><span class="sub">Archive</span></a>
+  <nav><a href="/#topics">Topics</a><a href="/#projects">Projects</a><a href="/aboutme/">About</a></nav>
+</div></header>
+<main>
+<section class="head"><p class="crumb"><a href="/">Archive</a> / Code &amp; tools</p><h1>Kinect &amp; computer vision</h1><p class="lede">2 posts</p><div class="related"><p class="label">Often appears with</p><div class="chips"><a class="chip" href="/tags/openframeworks/">openFrameworks <span>2</span></a><a class="chip" href="/tags/film-and-video/">Film &amp; video <span>1</span></a><a class="chip" href="/tags/maps-and-mapping/">Maps &amp; mapping <span>1</span></a><a class="chip" href="/tags/materials/">Materials <span>1</span></a><a class="chip" href="/tags/physics-and-particles/">Physics &amp; particles <span>1</span></a><a class="chip" href="/tags/projection-mapping/">Projection mapping <span>1</span></a></div></div></section><section class="year" data-year="2016"><h2 class="yr">2016 <span>1</span></h2><div class="grid"><a class="card" href="/blog/2016/4/5/experiments-in-computer-vision-opencv-optical-flow/" data-search="experiments in computer vision - opencv optical flow thesis 2 openframeworks kinect &amp; computer vision materials physics &amp; particles film &amp; video i went down a rabbit-hole of using more complicated optical flow techniques. my friend tyler henry on using openframeworks for his project so i consulted with him on an approach: for pre-recorded video use opencv: 1. get ofxcv add-on if you don’t have it. it’s where all the magic happens. note: always include the ofxopencv add-on (comes with of) in your project when you use ofxcv (ofxopencv includes the opencv lib, which ofxcv needs) 2. blob tracking: ofxcv has a nice implementation. check out the example projects: example-contours-color and example-contours-tracking. combining those will work for you to: a) get blobs by color and b) id each blob and track it, so you can keep track of which blob is which - only necessary if you have multiple blobs (i.e. if 2 objects in your video are 35c). 3. optical flow process the video using farneback flow. either try ofxcv’s example-flow project (you need kyle m’s ofxcontrolpanel add-on for it to run). or try my version: optflowtest tyler&#x27;s version adds some processing to get the average flow, he reversed the flow (because ofxcv marks the flow as going towards the previous video frame - his version has flow going forward to the current frame). to do: a. blob detection for your target objects b. farneback optical flow on the whole scene -&gt; spits out a vector&lt;ofvec2f&gt; with magnitude/direction of flow per pixel that vector&lt;ofvec2f&gt; is your flow field c. for loop through the vector&lt;ofvec2f&gt; and compare the pixel position of each flow point t"><div class="thumb"><div class="noimg"></div><span class="pill">Apr 6, 2016</span></div><h3>Experiments in Computer Vision - OpenCV Optical Flow</h3><p class="meta">Thesis 2</p></a></div></section><section class="year" data-year="2014"><h2 class="yr">2014 <span>1</span></h2><div class="grid"><a class="card" href="/blog/2014/11/10/ker8xwaxu1wui827ddz90yjkt63bsc/" data-search="projection mapping: openframeworks &amp; kinect major studio openframeworks kinect &amp; computer vision projection mapping maps &amp; mapping first experiments with openframeworks and projection mapping. mood board: preliminary prototype: experiment with projection using processing code."><div class="thumb"><img src="/media/thumb/1416250515202-7HZL924O9BXJ917G26VW.jpg" alt="" loading="lazy"><span class="pill">Oct 15, 2014</span></div><h3>Projection Mapping: OpenFrameworks &amp; Kinect</h3><p class="meta">Major Studio</p></a></div></section>
+</main>
+<footer class="site">
+  <span>Regina Flores Mir · Archive of work, 2014–2016</span>
+  <a href="https://reginafloresmir.ai">Current work: reginafloresmir.ai →</a>
+  <a href="#top" onclick="window.scrollTo(0,0);return false">Back to top ↑</a>
+</footer>
+</body>
+</html>

@@ -210,3 +210,12 @@ footer.site a { text-decoration: none; }
 footer.site .credit { opacity: .55; font-size: 15px; align-self: center; }
 footer.site .credit a { text-decoration: underline; }
 @media (max-width: 640px) { .doc .pdf { height: 70vh; } }
+
+/* people & places */
+.chip.person::before { content: "●"; font-size: 9px; margin-right: 2px; }
+.chip.place::before { content: "◆"; font-size: 9px; margin-right: 2px; }
+.post > .chips.who { margin-top: -30px; margin-bottom: 44px; }
+.hint { font-size: 17px; color: var(--muted); margin: 10px 6px 0; }
+#suggest { margin: 10px 0 0; }
+#suggest:empty { display: none; }
+#suggest .k { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; opacity: .6; }

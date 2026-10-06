@@ -1,0 +1,2074 @@
+{
+  "press": [
+    {
+      "title": "'Data Selfie' App Shows You Exactly Who Facebook Thinks You Are",
+      "source": "Motherboard (VICE)",
+      "date": "2016-04-08",
+      "url": "https://www.vice.com/en/article/data-selfie-app-shows-you-exactly-who-facebook-thinks-you-are/",
+      "description": "Early coverage of the Data Selfie launch, quoting the creators on making Facebook's data inferences visible to users.",
+      "project": "Data Selfie",
+      "verified": true
+    },
+    {
+      "title": "Data Selfie Wants to Demystify Data Collection for Internet Users",
+      "source": "Adweek (SocialTimes)",
+      "date": "2016-04-15",
+      "url": "https://www.adweek.com/performance-marketing/data-selfie-wants-to-demystify-data-collection-for-internet-users/",
+      "description": "Profiles the plugin and names Hang Do Thi Duc and Regina Flores Mir as its Parsons MFA creators.",
+      "project": "Data Selfie",
+      "verified": true
+    },
+    {
+      "title": "NYC Media Lab Announces Inaugural Cohort for Combine",
+      "source": "NYC Mayor's Office of Media and Entertainment",
+      "date": "2016-01-25",
+      "url": "https://www.nyc.gov/site/mome/news/012516nyc-media-lab-cohort.page",
+      "description": "City press release naming Data Selfie (Do Thi Duc and Flores Mir, Parsons) among nine teams receiving $25,000 in the first Combine cohort.",
+      "project": "Data Selfie",
+      "verified": true
+    },
+    {
+      "title": "DT Alumn Project 'Data Selfie' Making Waves",
+      "source": "Parsons School of Art, Media, and Technology blog",
+      "date": "2017-02-13",
+      "url": "https://amt.parsons.edu/blog/dt-alumn-project-data-selfie-making-waves/",
+      "description": "School news item on the 2017 Chrome release of Data Selfie by two 2016 MFADT graduates.",
+      "project": "Data Selfie",
+      "verified": true
+    },
+    {
+      "title": "This creepy tool reveals how Facebook's AI tracks and studies your activity",
+      "source": "The Next Web",
+      "date": "2017-02-17",
+      "url": "https://thenextweb.com/news/facebook-chrome-track-data-selfie",
+      "description": "Tech-press coverage of the Data Selfie Chrome extension release.",
+      "project": "Data Selfie",
+      "verified": false,
+      "note": "Page loads but does not name her in text; covers the project."
+    },
+    {
+      "title": "Take Your Data Selfie",
+      "source": "Next Nature",
+      "date": "2017-02-24",
+      "url": "https://nextnature.org/story/2017/data-selfie",
+      "description": "Short feature on the extension quantifying users' Facebook footprints, crediting both creators.",
+      "project": "Data Selfie",
+      "verified": true
+    },
+    {
+      "title": "Speculative data selfies",
+      "source": "Internet Policy Review (news & opinion)",
+      "date": "2017-03-01",
+      "url": "https://policyreview.info/articles/news/speculative-data-selfies/449",
+      "description": "Van der Vlist and Helmond analyze Data Selfie and credit it to DATA X (Do Thi Duc and Flores Mir).",
+      "project": "Data Selfie",
+      "verified": true
+    },
+    {
+      "title": "Speculative Data Selfies",
+      "source": "App Studies Initiative",
+      "date": "2017-04-05",
+      "url": "https://appstudies.org/2017/04/05/speculative-data-selfies/",
+      "description": "Repost of the Internet Policy Review piece analysing the Data Selfie extension.",
+      "project": "Data Selfie",
+      "verified": true
+    },
+    {
+      "title": "A Dead Simple Tool To Find Out What Facebook Knows About You",
+      "source": "Fast Company (Co.Design)",
+      "date": "2017-02",
+      "url": "https://www.fastcompany.com/3067874/a-dead-simple-tool-to-find-out-what-facebook-knows-about-you",
+      "description": "Co.Design coverage of the 2017 Data Selfie release, linked from the Parsons AMT post.",
+      "project": "Data Selfie",
+      "verified": false,
+      "note": "Site returned 403 to automated fetch; article exists per search index and Parsons link."
+    },
+    {
+      "title": "Data Selfie: Chrome extension logs what Facebook learns about you",
+      "source": "FlowingData",
+      "date": "2017-02-13",
+      "url": "https://flowingdata.com/2017/02/13/data-selfie-chrome-extension-logs-what-facebook-learns-about-you/",
+      "description": "Nathan Yau's data-viz blog flags the Data Selfie extension.",
+      "project": "Data Selfie",
+      "verified": false,
+      "note": "Site returned 403 (Cloudflare) to automated fetch."
+    },
+    {
+      "title": "Hack Your Own Facebook Data with This Spooky Tool",
+      "source": "Big Think",
+      "date": "2017",
+      "url": "https://bigthink.com/technology-innovation/hack-your-own-facebook-data-with-this-spooky-tool/",
+      "description": "Coverage of Data Selfie as a way to see Facebook's inferences about you.",
+      "project": "Data Selfie",
+      "verified": false,
+      "note": "Site returned 403 (Cloudflare) to automated fetch."
+    },
+    {
+      "title": "Get to Know Your Data Self",
+      "source": "Akademie Schloss Solitude",
+      "date": "2017-04-28",
+      "url": "https://www.akademie-solitude.de/en/get-to-know-your-data-self/",
+      "description": "Solitude & ZKM Web Residencies text on 'Me And My Facebook Data', part of Data Selfie, naming Flores Mir as collaborator.",
+      "project": "Data Selfie",
+      "verified": true
+    },
+    {
+      "title": "Get to Know Your Data Self / Web Residencies by Solitude & ZKM",
+      "source": "Schloss-Post",
+      "date": "2017-04-28",
+      "url": "https://schloss-post.com/get-know-data-self/",
+      "description": "Schloss-Post version of the Web Residencies feature on the Data Selfie offshoot project.",
+      "project": "Data Selfie",
+      "verified": true
+    },
+    {
+      "title": "Prepare to be Creeped Out",
+      "source": "Mozilla Blog",
+      "date": "2018-03-15",
+      "url": "https://blog.mozilla.org/en/mozilla/news/prepare-to-be-creeped-out/",
+      "description": "Guest post by Mozilla Fellow Hang Do Thi Duc introducing the Data Selfie add-on for Firefox and Chrome.",
+      "project": "Data Selfie",
+      "verified": false,
+      "note": "Does not name Regina; documents the project's later Mozilla-supported phase."
+    },
+    {
+      "title": "The Hip Hop Guide to the Metropolitan Museum of Art",
+      "source": "Motherboard (VICE)",
+      "date": "2015-09-29",
+      "url": "https://www.vice.com/en/article/ypwa3v/the-hip-hop-guide-to-the-metropolitan-museum-of-art",
+      "description": "Feature on her Met MediaLab project pairing rap lyrics from Genius with works in The Met's collection.",
+      "project": "Rappers Delight / The HipHop Project",
+      "verified": true
+    },
+    {
+      "title": "The Hip Hop Guide to the Metropolitan Museum of Art by MFA DT's Regina Flores",
+      "source": "Parsons School of Art, Media, and Technology blog",
+      "date": "2015-09-29",
+      "url": "https://amt.parsons.edu/blog/mfa-dt-student-regina-flores-the-hip-hop-project-featured-on-vices-motherboard/",
+      "description": "School news post highlighting the Motherboard feature on The HipHop Project.",
+      "project": "Rappers Delight / The HipHop Project",
+      "verified": true
+    },
+    {
+      "title": "\"Dope\" New Way to Experience the Metropolitan Museum of Art with Your Favorite Rappers",
+      "source": "Untapped New York",
+      "date": "2015-10-02",
+      "url": "https://untappedcities.com/dope-new-way-to-experience-the-metroplitan-museum-of-art-with-your-favorite-rappers",
+      "description": "Describes rappersdelight.nyc and how she chose 13 artists for the lyric-driven tours of The Met.",
+      "project": "Rappers Delight / The HipHop Project",
+      "verified": true
+    },
+    {
+      "title": "Let Kanye, Drake and Kendrick Guide You Through the Met",
+      "source": "Hypebeast",
+      "date": "2015-10-03",
+      "url": "https://hypebeast.com/2015/10/kanye-drake-kendrick-met-museum",
+      "description": "Short culture-news item on the rap-lyric museum tour site.",
+      "project": "Rappers Delight / The HipHop Project",
+      "verified": true
+    },
+    {
+      "title": "There's Now an App That Pairs Art with Rap Lyrics",
+      "source": "Complex",
+      "date": "2015-10-04",
+      "url": "https://www.complex.com/style/a/castroalexis11/met-guided-tour-app",
+      "description": "Complex Style coverage of the project's pairing of lyrics with Met artworks.",
+      "project": "Rappers Delight / The HipHop Project",
+      "verified": true
+    },
+    {
+      "title": "The Hip Hop Project Mashes Up the Met Museum's Collection With Rap Lyrics",
+      "source": "Viewing NYC",
+      "date": "2015-10-07",
+      "url": "https://viewing.nyc/the-hip-hop-project-mashes-up-the-met-museums-collection-with-rap-lyrics",
+      "description": "NYC culture blog post on the project made during her Met MediaLab internship.",
+      "project": "Rappers Delight / The HipHop Project",
+      "verified": true
+    },
+    {
+      "title": "Get a Guided Tour of the Met from Jay Z, Kanye West, and Drake",
+      "source": "Fast Company (Co.Exist)",
+      "date": "2015-10",
+      "url": "https://www.fastcompany.com/3051697/get-a-guided-tour-of-the-met-from-jay-z-kanye-west-and-drake",
+      "description": "Co.Exist article quoting her on surfacing lesser-known works through rap lyrics.",
+      "project": "Rappers Delight / The HipHop Project",
+      "verified": false,
+      "note": "Site returned 403 to automated fetch; linked from her old project page and cited in other coverage."
+    },
+    {
+      "title": "Famous Rappers Take You on a Tour of the Metropolitan Museum of Art",
+      "source": "artnet News",
+      "date": "2015-10",
+      "url": "https://news.artnet.com/art-world/hip-hop-project-metropolitan-museum-336259",
+      "description": "artnet coverage of The HipHop Project.",
+      "project": "Rappers Delight / The HipHop Project",
+      "verified": false,
+      "note": "Site returned 403 (Cloudflare) to automated fetch."
+    },
+    {
+      "title": "ART: Now You Can Take a Virtual Tour of the Metropolitan Museum of Art with Nas & Rakim",
+      "source": "Good Black News",
+      "date": "2016-01-10",
+      "url": "https://goodblacknews.org/2016/01/10/art-now-you-can-take-a-virtual-tour-of-the-metropolitan-museum-of-art-with-nas-rakim/",
+      "description": "Positive-news site item crediting graduate student Regina Flores Mir with the Hip-Hop Project.",
+      "project": "Rappers Delight / The HipHop Project",
+      "verified": true
+    },
+    {
+      "title": "Digital R&D at the Met's MediaLab: An interview with Marco Castro Cosio & Neal Stimler",
+      "source": "Mooshme",
+      "date": "2016-01-07",
+      "url": "https://mooshme.org/2016/01/digital-rd-at-the-mets-medialab-an-interview-with-marco-castro-cosio-neal-stimler",
+      "description": "Interview with Met MediaLab leads that cites her Hip-Hop Project as an example of intern-led R&D.",
+      "project": "Rappers Delight / The HipHop Project",
+      "verified": true
+    },
+    {
+      "title": "Mapping the invisible world of microbes with bees",
+      "source": "Design Indaba",
+      "date": "2016-09-02",
+      "url": "https://www.designindaba.com/articles/creative-work/mapping-invisible-world-microbes-bees",
+      "description": "Feature on the MIT Media Lab bee-sampling project behind Holobiont Urbanism.",
+      "project": "Holobiont Urbanism",
+      "verified": false,
+      "note": "Covers the project; names Kevin Slavin, not Regina."
+    },
+    {
+      "title": "Beehive microbes hold the secrets to our cities' health",
+      "source": "Advanced Science News",
+      "date": "2023-04-13",
+      "url": "https://www.advancedsciencenews.com/beehive-microbes-hold-the-secrets-to-our-cities-health/",
+      "description": "Science-news write-up of the 2023 Holobiont Urbanism paper she co-authored.",
+      "project": "Holobiont Urbanism",
+      "verified": false,
+      "note": "Does not name her in page text; reports on the co-authored paper."
+    },
+    {
+      "title": "Building the Table: Why Representation and Mentorship Matter to NYC Board Member Regina Flores Mir",
+      "source": "Summer Search",
+      "date": "2026-02-16",
+      "url": "https://summersearch.org/2026/02/building-the-table-why-representation-and-mentorship-matter-to-nyc-board-member-regina-flores-mir/",
+      "description": "Interview with her as an NYC board member of Summer Search on mentorship and representation in education.",
+      "project": null,
+      "verified": true,
+      "note": "Interview; review before archiving since it may touch on personal background."
+    }
+  ],
+  "papers": [
+    {
+      "title": "Holobiont Urbanism: sampling urban beehives reveals cities' metagenomes",
+      "source": "Environmental Microbiome 18:23 (Hénaff, Najjar, Perez, Flores, Woebken, Mason, Slavin)",
+      "date": "2023-03",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10060141/",
+      "description": "Peer-reviewed paper she co-authored showing bee hive debris reveals urban metagenomic profiles in Brooklyn, Sydney, Melbourne, Venice and Tokyo.",
+      "project": "Holobiont Urbanism",
+      "verified": true,
+      "doi": "10.1186/s40793-023-00467-z"
+    },
+    {
+      "title": "Holobiont Urbanism: sampling urban beehives reveals cities' metagenomes (preprint)",
+      "source": "bioRxiv",
+      "date": "2020-05-07",
+      "url": "https://www.biorxiv.org/content/10.1101/2020.05.07.075093v1",
+      "description": "Preprint version of the co-authored Holobiont Urbanism paper.",
+      "project": "Holobiont Urbanism",
+      "verified": false,
+      "note": "bioRxiv rate-limited the fetch; authorship confirmed via the published PMC version."
+    },
+    {
+      "title": "Speculative data selfies",
+      "source": "Internet Policy Review / Utrecht University research portal (van der Vlist & Helmond)",
+      "date": "2017-03-01",
+      "url": "https://research-portal.uu.nl/en/publications/speculative-data-selfies/",
+      "description": "Scholarly commentary analysing Data Selfie; the record credits her and Do Thi Duc as the tool's makers.",
+      "project": "Data Selfie",
+      "verified": true
+    },
+    {
+      "title": "Behind the Paper: Holobiont Urbanism",
+      "source": "Hénaff Lab / Springer Nature Research Communities",
+      "date": "2023",
+      "url": "https://henafflab.super.site/outcomes/nature-microbiology-blog-post",
+      "description": "Author blog post on how the project went from the Venice Biennale to peer review.",
+      "project": "Holobiont Urbanism",
+      "verified": false,
+      "note": "Page does not name her; companion to the co-authored paper."
+    },
+    {
+      "title": "xCoAx 2017 Proceedings",
+      "source": "xCoAx 2017 (Lisbon)",
+      "date": "2017",
+      "url": "https://2017.xcoax.org/xCoAx2017.pdf",
+      "description": "Checked the full proceedings PDF for her name and for Data Selfie: neither appears, so the xCoAx 2017 paper could not be confirmed online.",
+      "project": null,
+      "verified": false,
+      "note": "NOT FOUND: full-text search of the proceedings found no 'Flores Mir' or 'Data Selfie'. Check your own records for the actual venue/year."
+    }
+  ],
+  "talks_exhibitions": [
+    {
+      "title": "NYC Media Lab Combine (inaugural cohort), $25K seed grant",
+      "source": "NYC Media Lab / NYCEDC / MOME",
+      "date": "2016",
+      "url": "https://www.nyc.gov/site/mome/news/012516nyc-media-lab-cohort.page",
+      "description": "Data Selfie was one of nine teams picked from about 60 for the first Combine accelerator; demo day was April 8, 2016.",
+      "project": "Data Selfie",
+      "verified": true
+    },
+    {
+      "title": "Holobiont Urbanism at Palazzo Mora, Venice Architecture Biennale (Collateral Events)",
+      "source": "Hénaff Lab outcomes page",
+      "date": "2016-05",
+      "url": "https://henafflab.super.site/outcomes/holobiont-urbanism-palazzo-mora",
+      "description": "Installation with a 'metagenomic beehive' shown at Palazzo Mora during the 2016 Biennale, listing her on the team.",
+      "project": "Holobiont Urbanism",
+      "verified": true
+    },
+    {
+      "title": "Holobiont Urbanism (credits & venues: Palazzo Mora, Innovative Cities Forum)",
+      "source": "Chris Woebken studio site",
+      "date": "2016",
+      "url": "https://chriswoebken.com/Holobiont-Urbanism",
+      "description": "Lead artist's page crediting Regina Flores Mir (Parsons) among the collaborators and listing the venues.",
+      "project": "Holobiont Urbanism",
+      "verified": true
+    },
+    {
+      "title": "Holobiont Urbanism: Revealing the Microbiological World of Cities",
+      "source": "MIT Media Lab, Playful Systems",
+      "date": "2016-01 to 2017-06",
+      "url": "https://www.media.mit.edu/projects/holobiont-urbanism-revealing-the-microbiological-world-of-cities/overview/",
+      "description": "Media Lab project page naming her as a collaborator alongside Berman, Hénaff, Mason, Najjar, Woebken and others.",
+      "project": "Holobiont Urbanism",
+      "verified": true
+    },
+    {
+      "title": "Holobiont Urbanism – Information is Beautiful Awards 2016 (Longlist, Dataviz Project)",
+      "source": "Kantar Information is Beautiful Awards",
+      "date": "2016",
+      "url": "https://informationisbeautifulawards.com/showcase/1206-holobiont-urbanism",
+      "description": "Longlisted entry crediting her for design, world development and data visualization.",
+      "project": "Holobiont Urbanism",
+      "verified": true
+    },
+    {
+      "title": "Data Selfie – Information is Beautiful Awards 2016 (Longlist)",
+      "source": "Kantar Information is Beautiful Awards",
+      "date": "2016",
+      "url": "https://www.informationisbeautifulawards.com/showcase/1660-data-selfie",
+      "description": "Data Selfie was longlisted in the Dataviz Project category.",
+      "project": "Data Selfie",
+      "verified": false,
+      "note": "Entry credits only Hang Do Thi Duc."
+    },
+    {
+      "title": "Between Spaces – Parsons MFA Design & Technology Thesis Show 2016: Holobiont Urbanism",
+      "source": "Parsons MFADT",
+      "date": "2016-05",
+      "url": "https://mfadt.parsons.edu/2016/blog/2016/04/30/holobiont-urbanism/",
+      "description": "Her thesis show entry, with advisors and a project statement on the city as a biological superstructure.",
+      "project": "Holobiont Urbanism / Biological Immaterials",
+      "verified": true
+    },
+    {
+      "title": "Between Spaces – Thesis Show 2016 project page: Holobiont Urbanism",
+      "source": "Parsons MFADT",
+      "date": "2016",
+      "url": "https://mfadt.parsons.edu/2016/?p=106",
+      "description": "Alternate thesis-show page for Holobiont Urbanism.",
+      "project": "Holobiont Urbanism",
+      "verified": true
+    },
+    {
+      "title": "Web Residencies No. 1 by Solitude & ZKM – 'Me And My Facebook Data'",
+      "source": "Akademie Schloss Solitude & ZKM",
+      "date": "2017",
+      "url": "https://www.akademie-solitude.de/en/get-to-know-your-data-self/",
+      "description": "Web residency (curated by Tatiana Bazzichelli) for a Data Selfie spin-off; Do Thi Duc held the residency and Flores Mir is named as collaborator.",
+      "project": "Data Selfie",
+      "verified": true
+    },
+    {
+      "title": "Neotopia: Data and Humanity, Art Center Nabi, Seoul",
+      "source": "Art Center Nabi / ARTJAWS",
+      "date": "2017-11-01 to 2018-01-31",
+      "url": "https://www.artjaws.com/en/data-humanity-exhibition-neotopia-art-center-nabi-in-seoul/",
+      "description": "Group exhibition in Seoul that included Data Selfie (listed on Hang Do Thi Duc's project page).",
+      "project": "Data Selfie",
+      "verified": false,
+      "note": "Exhibition page names Data Selfie but credits only Do Thi Duc."
+    },
+    {
+      "title": "Data Selfie project page (credits, exhibitions, press list)",
+      "source": "22.8miles (Hang Do Thi Duc)",
+      "date": "2016-2017",
+      "url": "https://22-8miles.com/data-selfie/",
+      "description": "Collaborator's page crediting her with business, product and strategy, and listing the Nabi exhibition and press.",
+      "project": "Data Selfie",
+      "verified": true
+    }
+  ],
+  "github": [
+    {
+      "title": "AIConsulting",
+      "source": "GitHub (reginaflores)",
+      "date": "2026-10-06",
+      "url": "https://github.com/reginaflores/AIConsulting",
+      "description": "",
+      "language": "HTML",
+      "project": null,
+      "verified": true,
+      "created": "2026-02-27",
+      "fork": false,
+      "note": "Recent consulting/workshop repo; check for client names before showing publicly."
+    },
+    {
+      "title": "reginaflores.online",
+      "source": "GitHub (reginaflores)",
+      "date": "2026-10-06",
+      "url": "https://github.com/reginaflores/reginaflores.online",
+      "description": "Archive of Regina Flores Mir's design & technology work, 2014–2016",
+      "language": "HTML",
+      "project": null,
+      "verified": true,
+      "created": "2026-10-06",
+      "fork": false
+    },
+    {
+      "title": "Data_As_Material_2026",
+      "source": "GitHub (reginaflores)",
+      "date": "2026-09-25",
+      "url": "https://github.com/reginaflores/Data_As_Material_2026",
+      "description": "",
+      "language": null,
+      "project": "Parsons teaching",
+      "verified": true,
+      "created": "2026-09-25",
+      "fork": false
+    },
+    {
+      "title": "MFADT_Assessment",
+      "source": "GitHub (reginaflores)",
+      "date": "2026-06-20",
+      "url": "https://github.com/reginaflores/MFADT_Assessment",
+      "description": "MFADT Curriculum Assessment 2025-2026 dashboard (Parsons School of Design)",
+      "language": "HTML",
+      "project": "Parsons teaching",
+      "verified": true,
+      "created": "2026-05-26",
+      "fork": false
+    },
+    {
+      "title": "AI_Workshop_June_3",
+      "source": "GitHub (reginaflores)",
+      "date": "2026-06-03",
+      "url": "https://github.com/reginaflores/AI_Workshop_June_3",
+      "description": "",
+      "language": "HTML",
+      "project": null,
+      "verified": true,
+      "created": "2026-06-03",
+      "fork": false,
+      "note": "Recent consulting/workshop repo; check for client names before showing publicly."
+    },
+    {
+      "title": "Decoded",
+      "source": "GitHub (reginaflores)",
+      "date": "2026-06-01",
+      "url": "https://github.com/reginaflores/Decoded",
+      "description": "",
+      "language": "HTML",
+      "project": null,
+      "verified": true,
+      "created": "2026-05-26",
+      "fork": false,
+      "note": "Recent consulting/workshop repo; check for client names before showing publicly."
+    },
+    {
+      "title": "ai-integration-twopager",
+      "source": "GitHub (reginaflores)",
+      "date": "2026-05-05",
+      "url": "https://github.com/reginaflores/ai-integration-twopager",
+      "description": "",
+      "language": "HTML",
+      "project": null,
+      "verified": true,
+      "created": "2026-05-05",
+      "fork": false,
+      "note": "Recent consulting/workshop repo; check for client names before showing publicly."
+    },
+    {
+      "title": "ai-workshop-slides",
+      "source": "GitHub (reginaflores)",
+      "date": "2026-05-05",
+      "url": "https://github.com/reginaflores/ai-workshop-slides",
+      "description": "",
+      "language": "HTML",
+      "project": null,
+      "verified": true,
+      "created": "2026-05-05",
+      "fork": false,
+      "note": "Recent consulting/workshop repo; check for client names before showing publicly."
+    },
+    {
+      "title": "research-analyst",
+      "source": "GitHub (reginaflores)",
+      "date": "2026-04-28",
+      "url": "https://github.com/reginaflores/research-analyst",
+      "description": "",
+      "language": "HTML",
+      "project": null,
+      "verified": true,
+      "created": "2026-04-28",
+      "fork": false,
+      "note": "Recent consulting/workshop repo; check for client names before showing publicly."
+    },
+    {
+      "title": "AI_Workshop",
+      "source": "GitHub (reginaflores)",
+      "date": "2026-04-17",
+      "url": "https://github.com/reginaflores/AI_Workshop",
+      "description": "",
+      "language": "HTML",
+      "project": null,
+      "verified": true,
+      "created": "2026-03-09",
+      "fork": false,
+      "note": "Recent consulting/workshop repo; check for client names before showing publicly."
+    },
+    {
+      "title": "AI-workshops-Enterprise",
+      "source": "GitHub (reginaflores)",
+      "date": "2026-04-15",
+      "url": "https://github.com/reginaflores/AI-workshops-Enterprise",
+      "description": "AI Workshops Enterprise Edition — Spanish version reference guides",
+      "language": "HTML",
+      "project": null,
+      "verified": true,
+      "created": "2026-04-14",
+      "fork": false,
+      "note": "Recent consulting/workshop repo; check for client names before showing publicly."
+    },
+    {
+      "title": "AI_Workshop_Buckley",
+      "source": "GitHub (reginaflores)",
+      "date": "2026-04-10",
+      "url": "https://github.com/reginaflores/AI_Workshop_Buckley",
+      "description": "",
+      "language": "HTML",
+      "project": null,
+      "verified": true,
+      "created": "2026-04-08",
+      "fork": false,
+      "note": "Recent consulting/workshop repo; check for client names before showing publicly."
+    },
+    {
+      "title": "test-slides",
+      "source": "GitHub (reginaflores)",
+      "date": "2026-04-10",
+      "url": "https://github.com/reginaflores/test-slides",
+      "description": "",
+      "language": "HTML",
+      "project": null,
+      "verified": true,
+      "created": "2026-04-08",
+      "fork": false,
+      "note": "Recent consulting/workshop repo; check for client names before showing publicly."
+    },
+    {
+      "title": "MetForMoms",
+      "source": "GitHub (reginaflores)",
+      "date": "2026-03-15",
+      "url": "https://github.com/reginaflores/MetForMoms",
+      "description": "iOS app that helps moms introduce art to kids using the Met Museum API",
+      "language": "Swift",
+      "project": "The Met API",
+      "verified": true,
+      "created": "2026-03-15",
+      "fork": false
+    },
+    {
+      "title": "Advanced_Critical_Computation_2024",
+      "source": "GitHub (reginaflores)",
+      "date": "2024-04-18",
+      "url": "https://github.com/reginaflores/Advanced_Critical_Computation_2024",
+      "description": "",
+      "language": "JavaScript",
+      "project": "Parsons teaching",
+      "verified": true,
+      "created": "2024-01-22",
+      "fork": false
+    },
+    {
+      "title": "Critical_Computation_Lab_2023",
+      "source": "GitHub (reginaflores)",
+      "date": "2023-11-27",
+      "url": "https://github.com/reginaflores/Critical_Computation_Lab_2023",
+      "description": "",
+      "language": "JavaScript",
+      "project": "Parsons teaching",
+      "verified": true,
+      "created": "2023-08-26",
+      "fork": false
+    },
+    {
+      "title": "Advanced_Critical_Computation_2023",
+      "source": "GitHub (reginaflores)",
+      "date": "2023-05-01",
+      "url": "https://github.com/reginaflores/Advanced_Critical_Computation_2023",
+      "description": "",
+      "language": "JavaScript",
+      "project": "Parsons teaching",
+      "verified": true,
+      "created": "2023-01-26",
+      "fork": false
+    },
+    {
+      "title": "SpotifyAPI",
+      "source": "GitHub (reginaflores)",
+      "date": "2023-04-28",
+      "url": "https://github.com/reginaflores/SpotifyAPI",
+      "description": "",
+      "language": null,
+      "project": null,
+      "verified": true,
+      "created": "2023-04-29",
+      "fork": true,
+      "note": "Fork of another repo."
+    },
+    {
+      "title": "HolobiontUrbanismLive",
+      "source": "GitHub (reginaflores)",
+      "date": "2023-03-23",
+      "url": "https://github.com/reginaflores/HolobiontUrbanismLive",
+      "description": "",
+      "language": "JavaScript",
+      "project": "Holobiont Urbanism",
+      "verified": true,
+      "created": "2023-03-03",
+      "fork": false
+    },
+    {
+      "title": "HipHopProjectLive",
+      "source": "GitHub (reginaflores)",
+      "date": "2023-03-03",
+      "url": "https://github.com/reginaflores/HipHopProjectLive",
+      "description": "",
+      "language": "JavaScript",
+      "project": "Rappers Delight / The HipHop Project",
+      "verified": true,
+      "created": "2023-03-03",
+      "fork": false
+    },
+    {
+      "title": "Critical_Computation_Lab_2022",
+      "source": "GitHub (reginaflores)",
+      "date": "2023-01-26",
+      "url": "https://github.com/reginaflores/Critical_Computation_Lab_2022",
+      "description": "",
+      "language": "JavaScript",
+      "project": "Parsons teaching",
+      "verified": true,
+      "created": "2022-09-01",
+      "fork": false
+    },
+    {
+      "title": "microbiomeNYC",
+      "source": "GitHub (reginaflores)",
+      "date": "2016-12-19",
+      "url": "https://github.com/reginaflores/microbiomeNYC",
+      "description": "",
+      "language": "JavaScript",
+      "project": "Holobiont Urbanism",
+      "verified": true,
+      "created": "2016-12-19",
+      "fork": false
+    },
+    {
+      "title": "AlgoSims2016",
+      "source": "GitHub (reginaflores)",
+      "date": "2016-12-16",
+      "url": "https://github.com/reginaflores/AlgoSims2016",
+      "description": "Parsons D+T Class Repo: Creative Coding with OpenFrameworks ",
+      "language": "C",
+      "project": "Parsons teaching",
+      "verified": true,
+      "created": "2016-09-01",
+      "fork": false
+    },
+    {
+      "title": "AlgoSims2016__students",
+      "source": "GitHub (reginaflores)",
+      "date": "2016-12-16",
+      "url": "https://github.com/reginaflores/AlgoSims2016__students",
+      "description": "Student repository for the MFA D+T OpenFrameworks AlgoSims course",
+      "language": null,
+      "project": "Parsons teaching",
+      "verified": true,
+      "created": "2016-09-19",
+      "fork": false
+    },
+    {
+      "title": "data-selfie",
+      "source": "GitHub (reginaflores)",
+      "date": "2016-12-16",
+      "url": "https://github.com/reginaflores/data-selfie",
+      "description": "",
+      "language": null,
+      "project": "Data Selfie",
+      "verified": true,
+      "created": "2016-12-19",
+      "fork": true,
+      "note": "Fork of another repo."
+    },
+    {
+      "title": "node_apply-magic-sauce",
+      "source": "GitHub (reginaflores)",
+      "date": "2016-12-14",
+      "url": "https://github.com/reginaflores/node_apply-magic-sauce",
+      "description": "",
+      "language": "JavaScript",
+      "project": "Data Selfie",
+      "verified": true,
+      "created": "2016-12-19",
+      "fork": true,
+      "note": "Fork of another repo."
+    },
+    {
+      "title": "webgl-mandelbulb",
+      "source": "GitHub (reginaflores)",
+      "date": "2016-03-23",
+      "url": "https://github.com/reginaflores/webgl-mandelbulb",
+      "description": "Automatically exported from code.google.com/p/webgl-mandelbulb",
+      "language": "HTML",
+      "project": null,
+      "verified": true,
+      "created": "2016-03-23",
+      "fork": false
+    },
+    {
+      "title": "florr422_ss2015",
+      "source": "GitHub (reginaflores)",
+      "date": "2015-12-18",
+      "url": "https://github.com/reginaflores/florr422_ss2015",
+      "description": "GitHub Repo for Shader Studio",
+      "language": "JavaScript",
+      "project": null,
+      "verified": true,
+      "created": "2015-09-02",
+      "fork": false
+    },
+    {
+      "title": "microbiomeNYC_firstPhase",
+      "source": "GitHub (reginaflores)",
+      "date": "2015-12-14",
+      "url": "https://github.com/reginaflores/microbiomeNYC_firstPhase",
+      "description": "",
+      "language": "JavaScript",
+      "project": "Holobiont Urbanism",
+      "verified": true,
+      "created": "2015-12-14",
+      "fork": false
+    },
+    {
+      "title": "spirulina_io",
+      "source": "GitHub (reginaflores)",
+      "date": "2015-08-19",
+      "url": "https://github.com/reginaflores/spirulina_io",
+      "description": "Public repo for the spirulina.io project",
+      "language": "HTML",
+      "project": "Smart Spirulina System",
+      "verified": true,
+      "created": "2015-08-19",
+      "fork": false
+    },
+    {
+      "title": "p5js_Dorkshop",
+      "source": "GitHub (reginaflores)",
+      "date": "2015-08-16",
+      "url": "https://github.com/reginaflores/p5js_Dorkshop",
+      "description": "Introduction to p5.js for MFADT Bootcamp at Parsons",
+      "language": "JavaScript",
+      "project": "Parsons teaching",
+      "verified": true,
+      "created": "2015-08-16",
+      "fork": false
+    },
+    {
+      "title": "oF_Dorkshop",
+      "source": "GitHub (reginaflores)",
+      "date": "2015-08-15",
+      "url": "https://github.com/reginaflores/oF_Dorkshop",
+      "description": "An intro to OpenFrameworks for the MFADT incoming class of 2017",
+      "language": null,
+      "project": "Parsons teaching",
+      "verified": true,
+      "created": "2015-08-14",
+      "fork": false
+    },
+    {
+      "title": "MFADT_Bootcamp_InClass",
+      "source": "GitHub (reginaflores)",
+      "date": "2015-08-14",
+      "url": "https://github.com/reginaflores/MFADT_Bootcamp_InClass",
+      "description": "A repo to store the in-class code for Code Section A of MFADT 2015 bootcamp",
+      "language": "Processing",
+      "project": "Parsons teaching",
+      "verified": true,
+      "created": "2015-08-03",
+      "fork": false
+    },
+    {
+      "title": "MFADT_bootcamp_2015",
+      "source": "GitHub (reginaflores)",
+      "date": "2015-08-06",
+      "url": "https://github.com/reginaflores/MFADT_bootcamp_2015",
+      "description": "Master code repo for the teachers of 2015 code section of MFADT bootcamp",
+      "language": "Processing",
+      "project": "Parsons teaching",
+      "verified": true,
+      "created": "2015-07-29",
+      "fork": false
+    },
+    {
+      "title": "MFADT_Bootcamp_Student_Homework",
+      "source": "GitHub (reginaflores)",
+      "date": "2015-08-05",
+      "url": "https://github.com/reginaflores/MFADT_Bootcamp_Student_Homework",
+      "description": "A repo to store student homework for Code Section A of MFADT 2015 bootcamp",
+      "language": null,
+      "project": "Parsons teaching",
+      "verified": true,
+      "created": "2015-08-03",
+      "fork": false
+    },
+    {
+      "title": "metaMethods",
+      "source": "GitHub (reginaflores)",
+      "date": "2015-07-07",
+      "url": "https://github.com/reginaflores/metaMethods",
+      "description": "<META>Methods is a research endeavor in algorithmic art using mathematical modeling of data in the programming language C++ in OpenFrameworks",
+      "language": "C++",
+      "project": "<META>Methods",
+      "verified": true,
+      "created": "2015-07-07",
+      "fork": false
+    },
+    {
+      "title": "HipHopProject",
+      "source": "GitHub (reginaflores)",
+      "date": "2015-06-22",
+      "url": "https://github.com/reginaflores/HipHopProject",
+      "description": "Using the words from rap lyrics as key-word searches through the Met's digital archive of over 200,000 works of art, users can experience a curated \"tour\" of the work at the Metropolitan Museum of Art.",
+      "language": "JavaScript",
+      "project": "Rappers Delight / The HipHop Project",
+      "verified": true,
+      "created": "2015-06-22",
+      "fork": false
+    },
+    {
+      "title": "ofxMetAPI",
+      "source": "GitHub (reginaflores)",
+      "date": "2015-04-14",
+      "url": "https://github.com/reginaflores/ofxMetAPI",
+      "description": "Access the Metropolitan Museum of Art's API.",
+      "language": "C",
+      "project": "The Met MediaLab",
+      "verified": true,
+      "created": "2015-04-14",
+      "fork": false
+    },
+    {
+      "title": "MetInstagram",
+      "source": "GitHub (reginaflores)",
+      "date": "2015-04-03",
+      "url": "https://github.com/reginaflores/MetInstagram",
+      "description": "A repo for the Met's in-house displays to showcase MetMuseum instagram",
+      "language": "JavaScript",
+      "project": "The Met MediaLab",
+      "verified": true,
+      "created": "2015-04-03",
+      "fork": false
+    },
+    {
+      "title": "interactiveSpaces",
+      "source": "GitHub (reginaflores)",
+      "date": "2015-03-20",
+      "url": "https://github.com/reginaflores/interactiveSpaces",
+      "description": "Rapid prototyping for Parsons D&T course",
+      "language": "C",
+      "project": null,
+      "verified": true,
+      "created": "2015-03-20",
+      "fork": false
+    },
+    {
+      "title": "ExperimentsInColor",
+      "source": "GitHub (reginaflores)",
+      "date": "2015-02-12",
+      "url": "https://github.com/reginaflores/ExperimentsInColor",
+      "description": "Brief experiments in statistical analysis on pixel data.",
+      "language": "C",
+      "project": null,
+      "verified": true,
+      "created": "2015-02-12",
+      "fork": false
+    },
+    {
+      "title": "ccLab_OF",
+      "source": "GitHub (reginaflores)",
+      "date": "2014-12-10",
+      "url": "https://github.com/reginaflores/ccLab_OF",
+      "description": "Brief OF project for CC Lab",
+      "language": "C",
+      "project": null,
+      "verified": true,
+      "created": "2014-12-05",
+      "fork": false
+    },
+    {
+      "title": "majorstudio1_2014",
+      "source": "GitHub (reginaflores)",
+      "date": "2014-12-10",
+      "url": "https://github.com/reginaflores/majorstudio1_2014",
+      "description": "",
+      "language": "C",
+      "project": "Synergy",
+      "verified": true,
+      "created": "2014-12-10",
+      "fork": false
+    },
+    {
+      "title": "florr422_sims2014",
+      "source": "GitHub (reginaflores)",
+      "date": "2014-12-03",
+      "url": "https://github.com/reginaflores/florr422_sims2014",
+      "description": "Work completed in the Parsons D&T Simulations Course ",
+      "language": "JavaScript",
+      "project": "microMACRO",
+      "verified": true,
+      "created": "2014-10-08",
+      "fork": false
+    },
+    {
+      "title": "ccLab",
+      "source": "GitHub (reginaflores)",
+      "date": "2014-10-29",
+      "url": "https://github.com/reginaflores/ccLab",
+      "description": "Silly Arduino project for Parsons D&T course ",
+      "language": "Arduino",
+      "project": null,
+      "verified": true,
+      "created": "2014-10-28",
+      "fork": false
+    }
+  ],
+  "videos": [
+    {
+      "title": "Vimeo channel: Regina Flores (97 uploads)",
+      "source": "Vimeo",
+      "date": "2014-09-17",
+      "url": "https://vimeo.com/user32396663",
+      "description": "Her Vimeo account, created September 2014; the public API lists 97 uploads (83 itemized here) and 2 showcases.",
+      "project": null,
+      "verified": true
+    },
+    {
+      "title": "Prototype for Projection Mapping Project",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2014-09-17",
+      "url": "https://vimeo.com/106413913",
+      "description": "Her Vimeo upload (18s).",
+      "project": null,
+      "verified": true,
+      "duration_s": "18"
+    },
+    {
+      "title": "OF_ProjectionMapping",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2014-09-30",
+      "url": "https://vimeo.com/107658175",
+      "description": "Her Vimeo upload (87s).",
+      "project": null,
+      "verified": true,
+      "duration_s": "87"
+    },
+    {
+      "title": "boxWorking",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2014-10-28",
+      "url": "https://vimeo.com/110314569",
+      "description": "Her Vimeo upload (41s).",
+      "project": null,
+      "verified": true,
+      "duration_s": "41"
+    },
+    {
+      "title": "Presentation",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2014-10-28",
+      "url": "https://vimeo.com/110315429",
+      "description": "Her Vimeo upload (140s).",
+      "project": null,
+      "verified": true,
+      "duration_s": "140"
+    },
+    {
+      "title": "Additional Details about Code",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2014-10-28",
+      "url": "https://vimeo.com/110316498",
+      "description": "Her Vimeo upload (95s).",
+      "project": null,
+      "verified": true,
+      "duration_s": "95"
+    },
+    {
+      "title": "faceprojectnyc",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2014-11-05",
+      "url": "https://vimeo.com/111042975",
+      "description": "Her Vimeo upload (187s).",
+      "project": null,
+      "verified": true,
+      "duration_s": "187"
+    },
+    {
+      "title": "Ganesha",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2014-11-10",
+      "url": "https://vimeo.com/111433718",
+      "description": "Her Vimeo upload (70s).",
+      "project": null,
+      "verified": true,
+      "duration_s": "70"
+    },
+    {
+      "title": "OpenFrameworks Experiment",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2014-11-10",
+      "url": "https://vimeo.com/111440613",
+      "description": "Her Vimeo upload (21s).",
+      "project": null,
+      "verified": true,
+      "duration_s": "21"
+    },
+    {
+      "title": "Flocking",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2014-11-10",
+      "url": "https://vimeo.com/111442839",
+      "description": "Her Vimeo upload (37s).",
+      "project": null,
+      "verified": true,
+      "duration_s": "37"
+    },
+    {
+      "title": "Bio Gen 1.0",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2014-11-13",
+      "url": "https://vimeo.com/111797655",
+      "description": "Her Vimeo upload (20s).",
+      "project": null,
+      "verified": true,
+      "duration_s": "20"
+    },
+    {
+      "title": "microMACRO: Creative Coding Short",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2014-12-02",
+      "url": "https://vimeo.com/113435706",
+      "description": "Her Vimeo upload (100s).",
+      "project": "microMACRO",
+      "verified": true,
+      "duration_s": "100"
+    },
+    {
+      "title": "SYNERGY",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2014-12-11",
+      "url": "https://vimeo.com/114256406",
+      "description": "Her Vimeo upload (176s).",
+      "project": "Synergy",
+      "verified": true,
+      "duration_s": "176"
+    },
+    {
+      "title": "Behind The Scenes of Synergy",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2014-12-11",
+      "url": "https://vimeo.com/114282098",
+      "description": "Her Vimeo upload (37s).",
+      "project": "Synergy",
+      "verified": true,
+      "duration_s": "37"
+    },
+    {
+      "title": "The Second Body",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2015-02-09",
+      "url": "https://vimeo.com/119126835",
+      "description": "Her Vimeo upload (116s).",
+      "project": null,
+      "verified": true,
+      "duration_s": "116"
+    },
+    {
+      "title": "Digital Bodies small",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2015-03-03",
+      "url": "https://vimeo.com/121135314",
+      "description": "Her Vimeo upload (66s).",
+      "project": null,
+      "verified": true,
+      "duration_s": "66"
+    },
+    {
+      "title": "process",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2015-04-09",
+      "url": "https://vimeo.com/124545809",
+      "description": "Her Vimeo upload (15s).",
+      "project": null,
+      "verified": true,
+      "duration_s": "15"
+    },
+    {
+      "title": "The Synergy Collective Presents SYNERGY",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2015-04-11",
+      "url": "https://vimeo.com/124725477",
+      "description": "Her Vimeo upload (112s).",
+      "project": "Synergy",
+      "verified": true,
+      "duration_s": "112"
+    },
+    {
+      "title": "Hidden Met Prototype",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2015-04-12",
+      "url": "https://vimeo.com/124750085",
+      "description": "Her Vimeo upload (32s).",
+      "project": "The Met MediaLab",
+      "verified": true,
+      "duration_s": "32"
+    },
+    {
+      "title": "RITUAL",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2015-04-27",
+      "url": "https://vimeo.com/126200672",
+      "description": "Her Vimeo upload (22s).",
+      "project": null,
+      "verified": true,
+      "duration_s": "22"
+    },
+    {
+      "title": "Meta Methode Prototype 2",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2015-04-28",
+      "url": "https://vimeo.com/126279527",
+      "description": "Her Vimeo upload (27s).",
+      "project": "<META>Methods",
+      "verified": true,
+      "duration_s": "27"
+    },
+    {
+      "title": "<Meta> Methods",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2015-05-18",
+      "url": "https://vimeo.com/128160003",
+      "description": "Her Vimeo upload (28s).",
+      "project": "<META>Methods",
+      "verified": true,
+      "duration_s": "28"
+    },
+    {
+      "title": "Terreform One: Plug-In Ecology",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2015-06-18",
+      "url": "https://vimeo.com/131131475",
+      "description": "Her Vimeo upload (768s).",
+      "project": "Smart Spirulina System / Terreform ONE",
+      "verified": true,
+      "duration_s": "768"
+    },
+    {
+      "title": "Street Art NYC",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2015-09-13",
+      "url": "https://vimeo.com/139130315",
+      "description": "Her Vimeo upload (15s).",
+      "project": null,
+      "verified": true,
+      "duration_s": "15"
+    },
+    {
+      "title": "KevinSlavin",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2015-11-10",
+      "url": "https://vimeo.com/145346698",
+      "description": "Her Vimeo upload (363s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 363
+    },
+    {
+      "title": "bio city",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2015-12-14",
+      "url": "https://vimeo.com/148918322",
+      "description": "This video is about graffitti",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 23
+    },
+    {
+      "title": "contour_shao",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-01-22",
+      "url": "https://vimeo.com/152741486",
+      "description": "Her Vimeo upload (679s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 679
+    },
+    {
+      "title": "City Zooming",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-02-29",
+      "url": "https://vimeo.com/157236414",
+      "description": "Her Vimeo upload (26s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 26
+    },
+    {
+      "title": "Perception 2",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-02-29",
+      "url": "https://vimeo.com/157235833",
+      "description": "Her Vimeo upload (44s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 44
+    },
+    {
+      "title": "Perception 1",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-02-29",
+      "url": "https://vimeo.com/157235710",
+      "description": "Her Vimeo upload (41s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 41
+    },
+    {
+      "title": "Street View Test",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-01",
+      "url": "https://vimeo.com/157287931",
+      "description": "Her Vimeo upload (74s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 74
+    },
+    {
+      "title": "Three.js Test w. Effect Composer",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-04",
+      "url": "https://vimeo.com/157750596",
+      "description": "Her Vimeo upload (60s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 60
+    },
+    {
+      "title": "Three.js Tests w. Particles",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-04",
+      "url": "https://vimeo.com/157749903",
+      "description": "Her Vimeo upload (13s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 13
+    },
+    {
+      "title": "Blur-Edge & Blur-Edge & Mesh",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-07",
+      "url": "https://vimeo.com/158071474",
+      "description": "Her Vimeo upload (24s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 24
+    },
+    {
+      "title": "Blur - Frontview",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-07",
+      "url": "https://vimeo.com/158068733",
+      "description": "Her Vimeo upload (52s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 52
+    },
+    {
+      "title": "Blur-Edge-Blur",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-07",
+      "url": "https://vimeo.com/158068638",
+      "description": "Her Vimeo upload (55s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 55
+    },
+    {
+      "title": "Blur - side view",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-07",
+      "url": "https://vimeo.com/158066206",
+      "description": "Her Vimeo upload (41s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 41
+    },
+    {
+      "title": "Hyperlapse View",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-07",
+      "url": "https://vimeo.com/158045805",
+      "description": "Her Vimeo upload (17s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 17
+    },
+    {
+      "title": "Hyperlapse.js with Three.js",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-07",
+      "url": "https://vimeo.com/158029663",
+      "description": "Her Vimeo upload (34s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 34
+    },
+    {
+      "title": "Flow Field in Three.js",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-10",
+      "url": "https://vimeo.com/158530135",
+      "description": "Her Vimeo upload (33s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 33
+    },
+    {
+      "title": "Flow field video mesh",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-13",
+      "url": "https://vimeo.com/158821153",
+      "description": "Her Vimeo upload (86s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 86
+    },
+    {
+      "title": "RGB Tracking Thermal Video",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-15",
+      "url": "https://vimeo.com/159152621",
+      "description": "Using a thermal video as the data input and tracking.js to read in RGB inputs. Mapping the movement of the particles by the RGB data coming from video",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 97
+    },
+    {
+      "title": "Tracking.js Demo",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-15",
+      "url": "https://vimeo.com/159109859",
+      "description": "Her Vimeo upload (19s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 19
+    },
+    {
+      "title": "Thermal Video Test",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-16",
+      "url": "https://vimeo.com/159221735",
+      "description": "Her Vimeo upload (17s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 17
+    },
+    {
+      "title": "Magnolia_Plant_20x",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159452368",
+      "description": "Her Vimeo upload (291s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 291
+    },
+    {
+      "title": "Local_Sample_Slide_5x_100x_50x",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159452322",
+      "description": "Her Vimeo upload (280s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 280
+    },
+    {
+      "title": "Pollen_100x",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159450784",
+      "description": "Her Vimeo upload (27s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 27
+    },
+    {
+      "title": "Mossy_Bark_Color_5x_20x",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159450780",
+      "description": "Her Vimeo upload (314s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 314
+    },
+    {
+      "title": "Melbourne_Debris_100x",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159450774",
+      "description": "Her Vimeo upload (253s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 253
+    },
+    {
+      "title": "Melbourne_Debris_100x_Color",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159450768",
+      "description": "Her Vimeo upload (85s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 85
+    },
+    {
+      "title": "Magnolia_Plant_20x",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159450763",
+      "description": "Her Vimeo upload (291s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 291
+    },
+    {
+      "title": "Local_Sample_Swab_5x_20x",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159450757",
+      "description": "Her Vimeo upload (114s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 114
+    },
+    {
+      "title": "Local_Sample_5x",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159450752",
+      "description": "Her Vimeo upload (122s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 122
+    },
+    {
+      "title": "flower",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159450745",
+      "description": "Her Vimeo upload (43s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 43
+    },
+    {
+      "title": "Flower_100x_50 nanometer pixels",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159449319",
+      "description": "Her Vimeo upload (64s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 64
+    },
+    {
+      "title": "Cherry_wood",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159449080",
+      "description": "Her Vimeo upload (51s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 51
+    },
+    {
+      "title": "Brick_small_piece",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159449067",
+      "description": "Her Vimeo upload (48s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 48
+    },
+    {
+      "title": "Brick",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159449033",
+      "description": "Her Vimeo upload (30s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 30
+    },
+    {
+      "title": "Asphalt",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159449013",
+      "description": "Her Vimeo upload (40s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 40
+    },
+    {
+      "title": "Steel",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-17",
+      "url": "https://vimeo.com/159447154",
+      "description": "Her Vimeo upload (37s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 37
+    },
+    {
+      "title": "Sydney_Environmental_Sample",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-18",
+      "url": "https://vimeo.com/159455543",
+      "description": "Her Vimeo upload (34s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 34
+    },
+    {
+      "title": "Blob detection from Thermal Image",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-19",
+      "url": "https://vimeo.com/159649204",
+      "description": "Her Vimeo upload (34s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 34
+    },
+    {
+      "title": "Thermal Radiation Camera + Visual Light Camera",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-19",
+      "url": "https://vimeo.com/159619872",
+      "description": "Her Vimeo upload (153s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 153
+    },
+    {
+      "title": "Thermal Video w. Seek Camera",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-19",
+      "url": "https://vimeo.com/159614943",
+      "description": "Her Vimeo upload (189s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 189
+    },
+    {
+      "title": "Thermal Imaging - mapping particles using oflow",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-21",
+      "url": "https://vimeo.com/159803789",
+      "description": "Her Vimeo upload (32s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 32
+    },
+    {
+      "title": "Thermal Video Input",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-03-23",
+      "url": "https://vimeo.com/160099791",
+      "description": "Her Vimeo upload (57s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 57
+    },
+    {
+      "title": "Opticl Flow Tool Video II",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-04-01",
+      "url": "https://vimeo.com/161186503",
+      "description": "Her Vimeo upload (28s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 28
+    },
+    {
+      "title": "Optical Flow Tool Video",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-04-01",
+      "url": "https://vimeo.com/161184747",
+      "description": "Her Vimeo upload (28s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 28
+    },
+    {
+      "title": "Temp_Bin_Blob_Detection",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-04-01",
+      "url": "https://vimeo.com/161181675",
+      "description": "Her Vimeo upload (40s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 40
+    },
+    {
+      "title": "Prototype I - optical flow",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-04-03",
+      "url": "https://vimeo.com/161407779",
+      "description": "Her Vimeo upload (35s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 35
+    },
+    {
+      "title": "Prototype II - Optical Flow (world development progress)",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-04-03",
+      "url": "https://vimeo.com/161387819",
+      "description": "Her Vimeo upload (63s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 63
+    },
+    {
+      "title": "Farneback Flow",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-04-03",
+      "url": "https://vimeo.com/161387033",
+      "description": "Her Vimeo upload (46s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 46
+    },
+    {
+      "title": "OpenCV Experiments - KeyPoints (LukasKanade)",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-04-05",
+      "url": "https://vimeo.com/161643147",
+      "description": "Her Vimeo upload (30s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 30
+    },
+    {
+      "title": "Prototype Update - April 5",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-04-05",
+      "url": "https://vimeo.com/161642041",
+      "description": "Her Vimeo upload (138s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 138
+    },
+    {
+      "title": "Data Selfie",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-04-08",
+      "url": "https://vimeo.com/162077219",
+      "description": "Her Vimeo upload (143s).",
+      "project": "Data Selfie",
+      "verified": true,
+      "duration_s": 143
+    },
+    {
+      "title": "slavin3",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-04-10",
+      "url": "https://vimeo.com/162309099",
+      "description": "Her Vimeo upload (33s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 33
+    },
+    {
+      "title": "slavin_test2",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-04-10",
+      "url": "https://vimeo.com/162308967",
+      "description": "Her Vimeo upload (107s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 107
+    },
+    {
+      "title": "Microbial Cloud",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-04-12",
+      "url": "https://vimeo.com/162529075",
+      "description": "Her Vimeo upload (45s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 45
+    },
+    {
+      "title": "Hive Animation by Miguel Perez",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-04-15",
+      "url": "https://vimeo.com/163044744",
+      "description": "Hive Animation by Miguel Perez: http://miguelperez.cc/",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 17
+    },
+    {
+      "title": "Data Map",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-04-25",
+      "url": "https://vimeo.com/164119384",
+      "description": "Her Vimeo upload (35s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 35
+    },
+    {
+      "title": "Prototype Update May 5 w GUI",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-05-05",
+      "url": "https://vimeo.com/165513932",
+      "description": "Her Vimeo upload (96s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 96
+    },
+    {
+      "title": "Prototype Update May 5",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-05-05",
+      "url": "https://vimeo.com/165513892",
+      "description": "Her Vimeo upload (29s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 29
+    },
+    {
+      "title": "Wagner Effects",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-05-05",
+      "url": "https://vimeo.com/165501741",
+      "description": "Her Vimeo upload (49s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 49
+    },
+    {
+      "title": "BetweenSpacesExhibition",
+      "source": "Vimeo (user32396663, 'Regina Flores')",
+      "date": "2016-05-17",
+      "url": "https://vimeo.com/166958453",
+      "description": "Her Vimeo upload (670s).",
+      "project": "Holobiont Urbanism / Biological Immaterials (thesis)",
+      "verified": true,
+      "duration_s": 670
+    },
+    {
+      "title": "Showcase: Biological Immaterials (22 videos)",
+      "source": "Vimeo",
+      "date": "2016",
+      "url": "https://vimeo.com/showcase/3882578",
+      "description": "Vimeo showcase gathering her thesis process videos.",
+      "project": "Biological Immaterials / Holobiont Urbanism",
+      "verified": true
+    },
+    {
+      "title": "Showcase: Thesis Show 2016: Between Spaces",
+      "source": "Vimeo",
+      "date": "2016",
+      "url": "https://vimeo.com/showcase/3950245",
+      "description": "Vimeo showcase for the 2016 MFADT thesis show (API reports 0 public videos).",
+      "project": "Holobiont Urbanism",
+      "verified": true
+    },
+    {
+      "title": "The Second Body",
+      "source": "Vimeo (Kristin Binney McCambridge)",
+      "date": "2015-02-09",
+      "url": "https://vimeo.com/119156947",
+      "description": "A collaborator's upload that Vimeo lists her as appearing in.",
+      "project": null,
+      "verified": true
+    },
+    {
+      "title": "Interactive Spaces : Faceless Fashion",
+      "source": "Vimeo (Jaskirat Randhawa)",
+      "date": "2015-04-13",
+      "url": "https://vimeo.com/124802641",
+      "description": "Classmate's Interactive Spaces video (Margiela fashion show project) that Vimeo lists her as appearing in.",
+      "project": null,
+      "verified": true
+    }
+  ],
+  "projects_elsewhere": [
+    {
+      "title": "Data Selfie (project site)",
+      "source": "dataselfie.it",
+      "date": "2016-2017",
+      "url": "https://dataselfie.it/",
+      "description": "The live project site, credited to DATA X with a link to its GitHub organization.",
+      "project": "Data Selfie",
+      "verified": false,
+      "note": "Site is live but names only 'DATA X' and does not mention her by name."
+    },
+    {
+      "title": "DATA X GitHub organization",
+      "source": "GitHub (d4t4x)",
+      "date": "2016-2020",
+      "url": "https://github.com/d4t4x",
+      "description": "Code organization for DATA X, the studio she co-founded with Hang Do Thi Duc.",
+      "project": "Data Selfie",
+      "verified": false,
+      "note": "Org page does not list her name publicly."
+    },
+    {
+      "title": "Creating individual relationships with data (AI-enabled browser extension)",
+      "source": "University of Cambridge Psychometrics Centre",
+      "date": "2017",
+      "url": "https://www.psychometrics.cam.ac.uk/client-showcase/creating-individual-relationships-data-ai-enabled-browser-extension",
+      "description": "Client-showcase page on the Psychometrics Centre's prediction API powering Data Selfie, naming both artists.",
+      "project": "Data Selfie",
+      "verified": true
+    },
+    {
+      "title": "Recent work for project DataSelfie",
+      "source": "Leon Eckert (blog)",
+      "date": "2017-12-01",
+      "url": "https://leoneckert.com/2017/12/01/data-selfie.html",
+      "description": "Collaborator's post about adding image-analysis features to Data Selfie, crediting the original creators.",
+      "project": "Data Selfie",
+      "verified": true
+    },
+    {
+      "title": "Smart Spirulina System",
+      "source": "Terreform ONE",
+      "date": "2015",
+      "url": "https://www.terreform.org/smart-spirulina-system",
+      "description": "Terreform ONE project page listing Regina Flores Mir with Jimmy Tang and others on an IoT spirulina-growing system for the Urban Farm Pod.",
+      "project": "Smart Spirulina System",
+      "verified": true
+    },
+    {
+      "title": "Smart Spirulina System",
+      "source": "Archinode (Mitchell Joachim)",
+      "date": "2015",
+      "url": "https://archinode.com/smart-spirulina-system",
+      "description": "Mitchell Joachim's studio site version of the Smart Spirulina System page, with team credits.",
+      "project": "Smart Spirulina System",
+      "verified": true
+    },
+    {
+      "title": "spirulina.io",
+      "source": "spirulina.io",
+      "date": "2015",
+      "url": "http://spirulina.io",
+      "description": "Original monitoring web app for Smart Spirulina System.",
+      "project": "Smart Spirulina System",
+      "verified": false,
+      "note": "DEAD: domain now redirects to a parked landing page; the code survives at github.com/reginaflores/spirulina_io."
+    },
+    {
+      "title": "The HipHop Project (rappersdelight.nyc)",
+      "source": "rappersdelight.nyc",
+      "date": "2015",
+      "url": "https://www.rappersdelight.nyc/about.html",
+      "description": "Original project site pairing rap lyrics with The Met's collection.",
+      "project": "Rappers Delight / The HipHop Project",
+      "verified": false,
+      "note": "DEAD: domain does not resolve; code survives in the HipHopProject and HipHopProjectLive repos."
+    },
+    {
+      "title": "NEW INC archive: 'New Data Selfie Extension Lets You Monitor What Facebook Is Tracking'",
+      "source": "NEW INC (New Museum)",
+      "date": "2017",
+      "url": "https://newinc.newmuseum.org/archive/data-x-launches-data-selfie-sjsxm",
+      "description": "NEW INC member-news post on the DATA X launch of Data Selfie, which documents her NEW INC tie.",
+      "project": "Data Selfie",
+      "verified": false,
+      "note": "DEAD: the URL now shows an expired-Squarespace page; it was found through search. Try the Wayback Machine."
+    },
+    {
+      "title": "Regina Flores Mir – Part-time faculty profile",
+      "source": "Parsons School of Design / The New School",
+      "date": "2016-present",
+      "url": "https://www.newschool.edu/parsons/faculty/regina-flores/",
+      "description": "Faculty profile with her bio and past courses (search snippets show Advanced Critical Computation, PUDT 2112, Spring 2024).",
+      "project": "Parsons teaching",
+      "verified": false,
+      "note": "Now returns 404 in a browser; content known only from search-engine snippets."
+    }
+  ],
+  "teaching": [
+    {
+      "title": "Part-time Faculty, MFA Design & Technology",
+      "source": "Parsons School of Design",
+      "date": "2016-present",
+      "url": "https://www.newschool.edu/parsons/faculty/regina-flores/",
+      "description": "Search snippets of her faculty page say she teaches creative coding in openFrameworks to MFADT students.",
+      "project": "Parsons teaching",
+      "verified": false,
+      "note": "Faculty page currently 404."
+    },
+    {
+      "title": "Data as Material – 2026",
+      "source": "Parsons MFADT (GitHub course repo)",
+      "date": "2026",
+      "url": "https://github.com/reginaflores/Data_As_Material_2026",
+      "description": "Course code repository for her Parsons class.",
+      "project": "Parsons teaching",
+      "verified": true
+    },
+    {
+      "title": "MFADT Curriculum Assessment 2025–2026 dashboard",
+      "source": "Parsons MFADT (GitHub course repo)",
+      "date": "2026",
+      "url": "https://github.com/reginaflores/MFADT_Assessment",
+      "description": "MFADT Curriculum Assessment 2025-2026 dashboard (Parsons School of Design)",
+      "project": "Parsons teaching",
+      "verified": true
+    },
+    {
+      "title": "Advanced Critical Computation (PUDT 2112) – Spring 2024",
+      "source": "Parsons MFADT (GitHub course repo)",
+      "date": "2024",
+      "url": "https://github.com/reginaflores/Advanced_Critical_Computation_2024",
+      "description": "Course code repository for her Parsons class.",
+      "project": "Parsons teaching",
+      "verified": true
+    },
+    {
+      "title": "Critical Computation Lab – 2023",
+      "source": "Parsons MFADT (GitHub course repo)",
+      "date": "2023",
+      "url": "https://github.com/reginaflores/Critical_Computation_Lab_2023",
+      "description": "Course code repository for her Parsons class.",
+      "project": "Parsons teaching",
+      "verified": true
+    },
+    {
+      "title": "Advanced Critical Computation – Spring 2023",
+      "source": "Parsons MFADT (GitHub course repo)",
+      "date": "2023",
+      "url": "https://github.com/reginaflores/Advanced_Critical_Computation_2023",
+      "description": "Course code repository for her Parsons class.",
+      "project": "Parsons teaching",
+      "verified": true
+    },
+    {
+      "title": "Critical Computation Lab – 2022",
+      "source": "Parsons MFADT (GitHub course repo)",
+      "date": "2022",
+      "url": "https://github.com/reginaflores/Critical_Computation_Lab_2022",
+      "description": "Course code repository for her Parsons class.",
+      "project": "Parsons teaching",
+      "verified": true
+    },
+    {
+      "title": "Algorithmic Simulations (openFrameworks) – Fall 2016",
+      "source": "Parsons MFADT (GitHub course repo)",
+      "date": "2016",
+      "url": "https://github.com/reginaflores/AlgoSims2016",
+      "description": "Parsons D+T Class Repo: Creative Coding with OpenFrameworks ",
+      "project": "Parsons teaching",
+      "verified": true
+    },
+    {
+      "title": "Algorithmic Simulations – student repo, Fall 2016",
+      "source": "Parsons MFADT (GitHub course repo)",
+      "date": "2016",
+      "url": "https://github.com/reginaflores/AlgoSims2016__students",
+      "description": "Student repository for the MFA D+T OpenFrameworks AlgoSims course",
+      "project": "Parsons teaching",
+      "verified": true
+    },
+    {
+      "title": "p5.js Dorkshop for MFADT Bootcamp",
+      "source": "Parsons MFADT (GitHub course repo)",
+      "date": "2015",
+      "url": "https://github.com/reginaflores/p5js_Dorkshop",
+      "description": "Introduction to p5.js for MFADT Bootcamp at Parsons",
+      "project": "Parsons teaching",
+      "verified": true
+    },
+    {
+      "title": "openFrameworks Dorkshop for incoming MFADT class",
+      "source": "Parsons MFADT (GitHub course repo)",
+      "date": "2015",
+      "url": "https://github.com/reginaflores/oF_Dorkshop",
+      "description": "An intro to OpenFrameworks for the MFADT incoming class of 2017",
+      "project": "Parsons teaching",
+      "verified": true
+    },
+    {
+      "title": "MFADT Bootcamp 2015 – Code Section A in-class code",
+      "source": "Parsons MFADT (GitHub course repo)",
+      "date": "2015",
+      "url": "https://github.com/reginaflores/MFADT_Bootcamp_InClass",
+      "description": "A repo to store the in-class code for Code Section A of MFADT 2015 bootcamp",
+      "project": "Parsons teaching",
+      "verified": true
+    },
+    {
+      "title": "MFADT Bootcamp 2015 – code section (teacher repo)",
+      "source": "Parsons MFADT (GitHub course repo)",
+      "date": "2015",
+      "url": "https://github.com/reginaflores/MFADT_bootcamp_2015",
+      "description": "Master code repo for the teachers of 2015 code section of MFADT bootcamp",
+      "project": "Parsons teaching",
+      "verified": true
+    },
+    {
+      "title": "MFADT Bootcamp 2015 – Code Section A student homework",
+      "source": "Parsons MFADT (GitHub course repo)",
+      "date": "2015",
+      "url": "https://github.com/reginaflores/MFADT_Bootcamp_Student_Homework",
+      "description": "A repo to store student homework for Code Section A of MFADT 2015 bootcamp",
+      "project": "Parsons teaching",
+      "verified": true
+    }
+  ],
+  "_meta": {
+    "generated": "2026-10-06",
+    "notes": "verified=true means the URL was opened and names Regina Flores Mir (GitHub/Vimeo are her own accounts). verified=false items carry a note. Excluded from github: personal/non-work repos (Collegiate_Calendar, ai-oval-table, interschool-grief-group, resumeEditor, thurman-archive-site)."
+  }
+}

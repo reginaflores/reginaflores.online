@@ -10,6 +10,7 @@ from pathlib import Path
 from PIL import Image
 from bs4 import BeautifulSoup
 from topics import derive, LEGACY
+from entities import find, PEOPLE, INSTITUTIONS
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "_data"
@@ -92,7 +93,15 @@ def tag_url(t):
     return "/tags/" + slugify(t)
 
 
-CSS_V = "10"
+def person_url(n):
+    return "/people/" + slugify(n)
+
+
+def inst_url(n):
+    return "/places/" + slugify(n)
+
+
+CSS_V = "11"
 
 
 def page(title, body, desc=INTRO, url="/", og_img=None, kind="website"):
@@ -144,7 +153,7 @@ def card(e):
         when = " · ".join(x for x in (e["doc_type"], e["year"]) if x)
     pill = f'<span class="pill">{when}</span>' if when else ""
     meta = ", ".join(e.get("categories") or []) or e.get("context", "")
-    return (f'<a class="card" href="{e["url"]}/" data-search="{H.escape((e["title"] + " " + " ".join(e["categories"] + e["tags"]) + " " + e["text"][:1500]).lower())}">'
+    return (f'<a class="card" href="{e["url"]}/" data-key="{e["url"]}">'
             f'<div class="thumb">{img}{pill}</div><h3>{H.escape(e["title"])}</h3>' + (f'<p class="meta">{H.escape(meta)}</p>' if meta else "") + "</a>")
 
 
@@ -174,7 +183,7 @@ def write(path, s):
 
 
 def main():
-    for d in ("blog", "tags"):
+    for d in ("blog", "tags", "people", "places"):
         shutil.rmtree(ROOT / d, ignore_errors=True)
     posts = sorted([e for e in entries if e["kind"] == "post"], key=lambda e: e["date"], reverse=True)
     pages = [e for e in entries if e["kind"] in ("page", "project") and e["url"] not in SKIP_PAGES and (e["text"] or e["thumb"])]
@@ -192,6 +201,16 @@ def main():
     derived, tag_groups, _ = derive([dict(p, text=p["full"]) for p in tagged])
     for p in tagged:
         p["tags"] = derived[p["url"]]
+    ents = [dict(p, text=p["full"]) for p in tagged]
+    ppl_hits, ppl_counts = find(ents, PEOPLE)
+    inst_hits, inst_counts = find(ents, INSTITUTIONS)
+    people, insts = defaultdict(list), defaultdict(list)
+    for p in tagged:
+        p["people"], p["insts"] = ppl_hits[p["url"]], inst_hits[p["url"]]
+        for n in p["people"]:
+            people[n].append(p)
+        for n in p["insts"]:
+            insts[n].append(p)
     cats, tags = defaultdict(list), defaultdict(list)
     for p in posts:
         for c in p["categories"]:
@@ -211,7 +230,7 @@ def main():
         meta = chips(p["categories"], cat_url, cls="chip cat") + chips(p["tags"], tag_url)
         body = (f'<article class="post"><p class="crumb"><a href="/">Archive</a> / {p["date"][:4]}</p>'
                 f'<h1>{H.escape(p["title"])}</h1><p class="date">{fmt_date(p["date"])}</p>'
-                f'<div class="chips">{meta}</div><div class="content">{p["html"]}</div></article>{nav}')
+                f'<div class="chips">{meta}</div>' + (f'<div class="chips who">{chips(p["people"], person_url, cls="chip person")}{chips(p["insts"], inst_url, cls="chip place")}</div>' if p["people"] or p["insts"] else "") + f'<div class="content">{p["html"]}</div></article>{nav}')
         og = media_path(p["thumb"]) if p["thumb"] else None
         write(slug_path(p["url"]), page(p["title"], body, p["text"][:200] or INTRO, p["url"], og, "article"))
 
@@ -224,7 +243,7 @@ def main():
             continue
         chipline = f'<div class="chips">{chips(pg.get("tags") or [], tag_url)}</div>' if pg.get("tags") else ""
         body = (f'<article class="post"><p class="crumb"><a href="/">Archive</a> / Projects</p>'
-                f'<h1>{H.escape(pg["title"])}</h1>{chipline}<div class="content">{pg["html"]}</div></article>')
+                f'<h1>{H.escape(pg["title"])}</h1>{chipline}' + (f'<div class="chips who">{chips(pg["people"], person_url, cls="chip person")}{chips(pg["insts"], inst_url, cls="chip place")}</div>' if pg["people"] or pg["insts"] else "") + f'<div class="content">{pg["html"]}</div></article>')
         write(slug_path(pg["url"]), page(pg["title"], body, pg["text"][:200] or INTRO, pg["url"]))
 
     # papers & presentations
@@ -234,7 +253,7 @@ def main():
         withp = f'<p class="date">With {H.escape(d["collaborators"])}</p>' if d["collaborators"] else ""
         chipline = f'<div class="chips">{chips(d["tags"], tag_url)}</div>' if d["tags"] else ""
         body = (f'<article class="post doc"><p class="crumb"><a href="/">Archive</a> / <a href="/papers/">Papers</a></p>'
-                f'<h1>{H.escape(d["title"])}</h1><p class="date">{meta}</p>{withp}{chipline}'
+                f'<h1>{H.escape(d["title"])}</h1><p class="date">{meta}</p>{withp}{chipline}' + (f'<div class="chips who">{chips(d["people"], person_url, cls="chip person")}{chips(d["insts"], inst_url, cls="chip place")}</div>' if d["people"] or d["insts"] else "") +
                 f'<p><a class="current small" href="{d["pdf"]}"><span class="label">Open PDF</span><span class="url">{d["pages"]} pages · {d["mb"]} MB</span><span class="arrow">↗</span></a></p>'
                 f'<object class="pdf" data="{d["pdf"]}#view=FitH" type="application/pdf"><a href="{d["pdf"]}"><img src="{d["cover"]}" alt=""></a></object></article>')
         write(slug_path(d["url"]), page(d["title"], body, f'{d["doc_type"]} by {NAME}: {d["title"]}. {d["context"]}.', d["url"], d["cover"], "article"))
@@ -242,6 +261,31 @@ def main():
           f'<section class="head"><p class="crumb"><a href="/">Archive</a> / Papers</p><h1>Papers &amp; presentations</h1>'
           f'<p class="lede">{len(docs)} papers, decks and lab reports, from physics and statistics to the Parsons MFA.</p></section>'
           f'<div class="grid">{"".join(card(d) for d in docs)}</div>', url="/papers"))
+
+    # people & institutions
+    for table, url_fn, label, coll in ((people, person_url, "People", "people"), (insts, inst_url, "Institutions &amp; places", "insts")):
+        for n, items in table.items():
+            co = defaultdict(int)
+            for p in items:
+                for o in p[coll]:
+                    if o != n:
+                        co[o] += 1
+            related = sorted(co, key=lambda o: (-co[o], o))[:14]
+            rel = (f'<div class="related"><p class="label">Appears alongside</p><div class="chips">{chips(related, url_fn, co)}</div></div>') if related else ""
+            body = (f'<section class="head"><p class="crumb"><a href="/">Archive</a> / {label}</p><h1>{H.escape(n)}</h1>'
+                    f'<p class="lede">Mentioned in {len(items)} {"entry" if len(items) == 1 else "entries"}</p>{rel}</section>{listing(items)}')
+            write(slug_path(url_fn(n)), page(n, body, f"{n} in {NAME}'s archive of work.", url_fn(n)))
+    ppl_names = sorted(people, key=lambda n: (-len(people[n]), n))
+    inst_names = sorted(insts, key=lambda n: (-len(insts[n]), n))
+
+    # search index: full text of everything, loaded on demand
+    facets = ([{"n": c, "u": cat_url(c) + "/", "k": "Topic", "c": len(cats[c])} for c in cat_names] +
+              [{"n": t, "u": tag_url(t) + "/", "k": "Tag", "c": len(tags[t])} for t in tag_names] +
+              [{"n": n, "u": person_url(n) + "/", "k": "Person", "c": len(people[n])} for n in ppl_names] +
+              [{"n": n, "u": inst_url(n) + "/", "k": "Place", "c": len(insts[n])} for n in inst_names])
+    index = [{"u": p["url"], "t": (p["title"] + " " + " ".join((p.get("categories") or []) + p["tags"] + p["people"] + p["insts"]) + " " + p.get("context", "") + " " + p["full"][:12000]).lower()}
+             for p in tagged]
+    write(ROOT / "search.json", json.dumps({"facets": facets, "index": index}, ensure_ascii=False, separators=(",", ":")))
 
     # category & tag pages
     for c in cat_names:
@@ -282,6 +326,8 @@ def main():
   <label class="search"><span class="sr">Search the archive</span>
     <input id="q" type="search" placeholder="Search everything — try “bioplastic”, “openFrameworks”, “Terreform”" autocomplete="off">
   </label>
+  <p class="hint">Searches the full text of every post, project and paper. Add words to narrow it down: <em>bees astoria</em>. Matching people, places and tags appear as shortcuts.</p>
+  <div id="suggest" class="chips"></div>
   <p id="count" class="meta" aria-live="polite"></p>
 </section>
 <div id="results">{listing(posts)}
@@ -291,22 +337,31 @@ def main():
 </div>
 <section class="topics" id="topics">
   <h2>Topics</h2><div class="chips big">{chips(cat_names, cat_url, {c: len(cats[c]) for c in cat_names})}</div>
-  <h2>Drill down</h2>
+  <h2>People</h2><div class="chips">{chips(ppl_names, person_url, {n: len(people[n]) for n in ppl_names}, cls="chip person")}</div>
+  <h2>Institutions &amp; places</h2><div class="chips">{chips(inst_names, inst_url, {n: len(insts[n]) for n in inst_names}, cls="chip place")}</div>
+  <h2>Tags</h2>
   <div class="taggroups">{"".join(f'<div class="tg"><h3>{H.escape(g)}</h3><div class="chips">{chips(sorted(ts, key=lambda t: -len(tags[t])), tag_url, {t: len(tags[t]) for t in ts})}</div></div>' for g, ts in tag_groups.items() if ts)}</div>
 </section>
 <script>
 (() => {{
-  const q = document.getElementById('q'), count = document.getElementById('count');
+  const q = document.getElementById('q'), count = document.getElementById('count'), sug = document.getElementById('suggest');
   const cards = [...document.querySelectorAll('#results .card')];
-  const run = () => {{
-    const terms = q.value.toLowerCase().trim().split(/\\s+/).filter(Boolean);
-    let n = 0;
-    cards.forEach(c => {{ const hit = terms.every(t => c.dataset.search.includes(t)); c.hidden = !hit; if (hit) n++; }});
+  let data = null, loading = null;
+  const load = () => loading ||= fetch('/search.json').then(r => r.json()).then(d => (data = d, d));
+  const esc = s => s.replace(/[&<>"]/g, c => ({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c]));
+  const run = async () => {{
+    const raw = q.value.trim(), terms = raw.toLowerCase().split(/\\s+/).filter(Boolean);
+    const u = new URL(location); raw ? u.searchParams.set('q', raw) : u.searchParams.delete('q'); history.replaceState(null, '', u);
+    if (!terms.length) {{ cards.forEach(c => c.hidden = false); document.querySelectorAll('#results .year').forEach(s => s.hidden = false); count.textContent = ''; sug.innerHTML = ''; return; }}
+    await load();
+    const hit = new Set(data.index.filter(e => terms.every(t => e.t.includes(t))).map(e => e.u));
+    let n = 0; cards.forEach(c => {{ const h = hit.has(c.dataset.key); c.hidden = !h; if (h) n++; }});
     document.querySelectorAll('#results .year').forEach(s => s.hidden = !s.querySelector('.card:not([hidden])'));
-    count.textContent = terms.length ? `${{n}} match${{n === 1 ? '' : 'es'}}` : '';
-    const u = new URL(location); terms.length ? u.searchParams.set('q', q.value) : u.searchParams.delete('q');
-    history.replaceState(null, '', u);
+    count.textContent = `${{n}} match${{n === 1 ? '' : 'es'}}`;
+    const f = data.facets.filter(x => terms.every(t => x.n.toLowerCase().includes(t))).slice(0, 10);
+    sug.innerHTML = f.map(x => `<a class="chip ${{x.k === 'Person' ? 'person' : x.k === 'Place' ? 'place' : ''}}" href="${{x.u}}"><span class="k">${{x.k}}</span> ${{esc(x.n)}} <span>${{x.c}}</span></a>`).join('');
   }};
+  q.addEventListener('focus', load, {{ once: true }});
   q.addEventListener('input', run);
   const init = new URLSearchParams(location.search).get('q'); if (init) {{ q.value = init; run(); }}
 }})();
@@ -316,7 +371,7 @@ def main():
 
     # 404, sitemap, robots
     write(ROOT / "404.html", page("Not found", '<section class="head"><h1>Not found</h1><p class="lede">That page isn’t in the archive. <a href="/">Browse all posts</a> or search from the home page.</p></section>'))
-    urls = ["/"] + [p["url"] + "/" for p in posts] + [pg["url"] + "/" for pg in pages] + [cat_url(c) + "/" for c in cat_names] + [tag_url(t) + "/" for t in tag_names] + ["/papers/"] + [d["url"] + "/" for d in docs]
+    urls = ["/"] + [p["url"] + "/" for p in posts] + [pg["url"] + "/" for pg in pages] + [cat_url(c) + "/" for c in cat_names] + [tag_url(t) + "/" for t in tag_names] + ["/papers/"] + [d["url"] + "/" for d in docs] + [person_url(n) + "/" for n in ppl_names] + [inst_url(n) + "/" for n in inst_names]
     write(ROOT / "sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
           "".join(f"  <url><loc>{SITE}{u}</loc></url>\n" for u in urls) + "</urlset>\n")
     write(ROOT / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")

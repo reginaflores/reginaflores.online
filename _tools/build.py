@@ -16,7 +16,24 @@ NAME = "Regina Flores Mir"
 INTRO = ("A working notebook of design and technology projects, 2014–2016: "
          "Parsons MFA studio work, research, prototypes and experiments in creative code, "
          "bio design, data and physical computing, plus earlier projects from science and finance.")
-SKIP_PAGES = {"/projects", "/about"}  # empty index page; duplicate of /aboutme
+SKIP_PAGES = {"/projects", "/about"}  # empty index page; /about is rebuilt below at /aboutme
+CURRENT = "https://reginafloresmir.ai"
+ABOUT = """
+<section class="about">
+  <p class="crumb"><a href="/">Archive</a> / About</p>
+  <h1 class="quote"><span>I love science.</span> <span>I love data.</span> <span>I love coding.</span></h1>
+  <p class="quote-sub">I live at the intersection of design and technology.</p>
+  <div class="about-body">
+    <figure class="portrait"><img src="{photo}" alt="Regina Flores Mir"></figure>
+    <div class="content">
+      <p>This archive collects the work I made and documented between 2014 and 2016, most of it during my MFA in Design and Technology at Parsons: studio projects, research, prototypes and experiments in creative code, bio design, data and physical computing.</p>
+      <p>I began my career as a research analyst in astrophysics. At NASA Ames Research Center I worked on SOFIA, an airborne infrared observatory aboard a Boeing 747. I also studied the Cosmic Microwave Background at the National Radio Astronomy Observatory, and star formation in extragalactic molecular clouds at the National Astronomy and Ionosphere Center.</p>
+      <p>I then spent more than five years on Wall Street bridging quants and sales, first at Goldman Sachs in Equity Prime Brokerage and later at JP Morgan on the Foreign Exchange, Rates and Commodities desk. In 2012 I joined the Cue Group, a consultancy and insight lab, as Director of Analytics.</p>
+      <p>I hold a B.A. in Physics from Barnard College of Columbia University, an M.A. in Statistics from Columbia University, and an MFA in Design and Technology from Parsons.</p>
+    </div>
+  </div>
+  <a class="current" href="{current}"><span class="label">Current work</span><span class="url">reginafloresmir.ai</span><span class="arrow">→</span></a>
+</section>"""
 
 files = json.loads((DATA / "media_files.json").read_text())
 entries = json.loads((DATA / "clean.json").read_text())
@@ -67,7 +84,7 @@ def tag_url(t):
     return "/blog/tag/" + t.replace(" ", "+")
 
 
-CSS_V = "7"
+CSS_V = "8"
 
 
 def page(title, body, desc=INTRO, url="/", og_img=None, kind="website"):
@@ -102,6 +119,7 @@ def page(title, body, desc=INTRO, url="/", og_img=None, kind="website"):
 </main>
 <footer class="site">
   <span>{NAME} · Archive of work, 2014–2016</span>
+  <a href="{CURRENT}">Current work: reginafloresmir.ai →</a>
   <a href="#top" onclick="window.scrollTo(0,0);return false">Back to top ↑</a>
 </footer>
 </body>
@@ -171,6 +189,12 @@ def main():
 
     # project / other pages
     for pg in pages:
+        if pg["url"] == "/aboutme":
+            about_src = next(e for e in entries if e["url"] == "/about")
+            photo = re.search(r'src="(/media/[^"]+)"', about_src["html"]).group(1)
+            write(slug_path(pg["url"]), page("About", ABOUT.format(photo=photo, current=CURRENT),
+                  "I love science. I love data. I love coding. I live at the intersection of design and technology.", pg["url"]))
+            continue
         body = (f'<article class="post"><p class="crumb"><a href="/">Archive</a> / Projects</p>'
                 f'<h1>{H.escape(pg["title"])}</h1><div class="content">{pg["html"]}</div></article>')
         write(slug_path(pg["url"]), page(pg["title"], body, pg["text"][:200] or INTRO, pg["url"]))
@@ -187,12 +211,12 @@ def main():
 
     # home (also served at /blog/)
     years = sorted({p["date"][:4] for p in posts})
-    proj = "".join(card(dict(pg, date="", categories=[])) for pg in pages)
+    proj = "".join(card(dict(pg, date="", categories=[])) for pg in pages if pg["url"] != "/aboutme")
     home = f"""
 <section class="hero">
   <h1>Archive</h1>
   <p class="lede">{INTRO}</p>
-  <p class="stats"><span>{len(posts)} posts</span><span>{len(cat_names)} topics</span><span>{len(pages)} projects</span><span>{years[0]}–{years[-1]}</span></p>
+  <p class="stats"><span>{len(posts)} posts</span><span>{len(cat_names)} topics</span><span>{len(pages) - 1} projects</span><span>{years[0]}–{years[-1]}</span></p>
 </section>
 <section class="tools" id="posts">
   <label class="search"><span class="sr">Search the archive</span>

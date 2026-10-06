@@ -215,7 +215,6 @@ def main():
 <section class="hero">
   <h1>Archive</h1>
   <p class="lede">{INTRO}</p>
-  <p class="stats"><span>{len(posts)} posts</span><span>{len(cat_names)} topics</span><span>{len(pages) - 1} projects</span><span>{years[0]}–{years[-1]}</span></p>
 </section>
 <section class="tools" id="posts">
   <label class="search"><span class="sr">Search the archive</span>

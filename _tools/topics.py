@@ -74,6 +74,7 @@ TAXONOMY = {
         "User research & testing": [r"\buser test\w*", r"\binterviews?\b", r"\bsurveys?\b", r"\busers?\b", r"\bplaytest\w*"],
         "Presentations": [r"\bpresentations?\b", r"\bslides?\b", r"\bcritique\b"],
         "Research": [r"\bresearch\b", r"\bprecedents?\b", r"\bcase stud\w*"],
+        "Teaching": [r"\bteach\w*", r"\bbootcamp\b", r"\bdorkshop\b", r"\bsyllabus\b", r"\bworkshops?\b", r"\bfaculty\b"],
     },
 }
 

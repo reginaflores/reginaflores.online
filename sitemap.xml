@@ -250,6 +250,7 @@
   <url><loc>https://reginaflores.online/tags/planet-and-earth/</loc></url>
   <url><loc>https://reginaflores.online/tags/plants/</loc></url>
   <url><loc>https://reginaflores.online/tags/presentations/</loc></url>
+  <url><loc>https://reginaflores.online/tags/processing-and-p5-js/</loc></url>
   <url><loc>https://reginaflores.online/tags/projection-mapping/</loc></url>
   <url><loc>https://reginaflores.online/tags/prototypes/</loc></url>
   <url><loc>https://reginaflores.online/tags/research/</loc></url>
@@ -257,6 +258,7 @@
   <url><loc>https://reginaflores.online/tags/shaders/</loc></url>
   <url><loc>https://reginaflores.online/tags/sound-and-music/</loc></url>
   <url><loc>https://reginaflores.online/tags/statistics-and-finance/</loc></url>
+  <url><loc>https://reginaflores.online/tags/teaching/</loc></url>
   <url><loc>https://reginaflores.online/tags/theory-and-reading/</loc></url>
   <url><loc>https://reginaflores.online/tags/three-js-and-webgl/</loc></url>
   <url><loc>https://reginaflores.online/tags/user-research-and-testing/</loc></url>
@@ -288,54 +290,242 @@
   <url><loc>https://reginaflores.online/papers/anthropocene-thesis-concept/</loc></url>
   <url><loc>https://reginaflores.online/papers/us-swaps-time-series/</loc></url>
   <url><loc>https://reginaflores.online/papers/lab-radio-receivers/</loc></url>
-  <url><loc>https://reginaflores.online/people/buckminster-fuller/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/holobiont-urbanism-sampling-urban-beehives-reveals-cities-me/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/behind-the-paper-holobiont-urbanism/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/holobiont-urbanism-sampling-urban-beehives-reveals-cities-me-2/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/speculative-data-selfies-3/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/neotopia-data-and-humanity-art-center-nabi-seoul/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/web-residencies-no-1-by-solitude-zkm-me-and-my-facebook-data/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/data-selfie-project-page-credits-exhibitions-press-list/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/holobiont-urbanism-at-palazzo-mora-venice-architecture-bienn/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/between-spaces-parsons-mfa-design-technology-thesis-show-201/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/holobiont-urbanism-revealing-the-microbiological-world-of-ci/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/nyc-media-lab-combine-inaugural-cohort-25k-seed-grant/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/holobiont-urbanism-credits-venues-palazzo-mora-innovative-ci/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/holobiont-urbanism-information-is-beautiful-awards-2016-long/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/data-selfie-information-is-beautiful-awards-2016-longlist/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/between-spaces-thesis-show-2016-project-page-holobiont-urban/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/beehive-microbes-hold-the-secrets-to-our-cities-health/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/prepare-to-be-creeped-out/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/get-to-know-your-data-self/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/get-to-know-your-data-self-web-residencies-by-solitude-zkm/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/speculative-data-selfies-2/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/speculative-data-selfies/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/take-your-data-selfie/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/this-creepy-tool-reveals-how-facebook-s-ai-tracks-and-studie/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/dt-alumn-project-data-selfie-making-waves/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/data-selfie-chrome-extension-logs-what-facebook-learns-about/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/a-dead-simple-tool-to-find-out-what-facebook-knows-about-you/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/hack-your-own-facebook-data-with-this-spooky-tool/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/mapping-the-invisible-world-of-microbes-with-bees/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/data-selfie-wants-to-demystify-data-collection-for-internet-/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/data-selfie-app-shows-you-exactly-who-facebook-thinks-you-ar/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/nyc-media-lab-announces-inaugural-cohort-for-combine/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/art-now-you-can-take-a-virtual-tour-of-the-metropolitan-muse/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/digital-r-d-at-the-met-s-medialab-an-interview-with-marco-ca/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/the-hip-hop-project-mashes-up-the-met-museum-s-collection-wi/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/there-s-now-an-app-that-pairs-art-with-rap-lyrics/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/let-kanye-drake-and-kendrick-guide-you-through-the-met/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/dope-new-way-to-experience-the-metropolitan-museum-of-art-wi/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/get-a-guided-tour-of-the-met-from-jay-z-kanye-west-and-drake/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/famous-rappers-take-you-on-a-tour-of-the-metropolitan-museum/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/the-hip-hop-guide-to-the-metropolitan-museum-of-art/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/the-hip-hop-guide-to-the-metropolitan-museum-of-art-by-mfa-d/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/betweenspacesexhibition/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/prototype-update-may-5-w-gui/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/prototype-update-may-5/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/wagner-effects/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/data-map/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/hive-animation-by-miguel-perez/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/microbial-cloud/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/slavin3/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/slavin-test2/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/data-selfie/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/opencv-experiments-keypoints-lukaskanade/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/prototype-update-april-5/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/prototype-i-optical-flow/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/prototype-ii-optical-flow-world-development-progress/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/farneback-flow/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/opticl-flow-tool-video-ii/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/optical-flow-tool-video/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/temp-bin-blob-detection/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/thermal-video-input/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/thermal-imaging-mapping-particles-using-oflow/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/blob-detection-from-thermal-image/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/thermal-radiation-camera-visual-light-camera/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/thermal-video-w-seek-camera/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/sydney-environmental-sample/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/magnolia-plant-20x/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/local-sample-slide-5x-100x-50x/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/pollen-100x/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/mossy-bark-color-5x-20x/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/melbourne-debris-100x/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/melbourne-debris-100x-color/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/magnolia-plant-20x-2/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/local-sample-swab-5x-20x/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/local-sample-5x/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/flower/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/flower-100x-50-nanometer-pixels/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/cherry-wood/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/brick-small-piece/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/brick/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/asphalt/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/steel/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/thermal-video-test/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/rgb-tracking-thermal-video/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/tracking-js-demo/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/flow-field-video-mesh/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/flow-field-in-three-js/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/blur-edge-blur-edge-mesh/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/blur-frontview/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/blur-edge-blur/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/blur-side-view/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/hyperlapse-view/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/hyperlapse-js-with-three-js/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/three-js-test-w-effect-composer/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/three-js-tests-w-particles/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/street-view-test/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/city-zooming/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/perception-2/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/perception-1/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/contour-shao/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/showcase-biological-immaterials-22-videos/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/showcase-thesis-show-2016-between-spaces/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/bio-city/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/kevinslavin/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/street-art-nyc/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/terreform-one-plug-in-ecology/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/meta-methods/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/meta-methode-prototype-2/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/ritual/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/interactive-spaces-faceless-fashion/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/hidden-met-prototype/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/the-synergy-collective-presents-synergy/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/process/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/digital-bodies-small/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/the-second-body/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/the-second-body-2/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/synergy/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/behind-the-scenes-of-synergy/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/micromacro-creative-coding-short/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/bio-gen-1-0/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/ganesha/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/openframeworks-experiment/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/flocking/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/faceprojectnyc/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/boxworking/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/presentation/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/additional-details-about-code/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/of-projectionmapping/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/prototype-for-projection-mapping-project/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/data-as-material-2026/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/advanced-critical-computation-2024/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/critical-computation-lab-2023/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/advanced-critical-computation-2023/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/holobionturbanismlive/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/hiphopprojectlive/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/critical-computation-lab-2022/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/microbiomenyc/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/algosims2016/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/algosims2016-students/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/data-selfie-2/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/node-apply-magic-sauce/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/webgl-mandelbulb/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/florr422-ss2015/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/microbiomenyc-firstphase/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/spirulina-io-2/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/p5js-dorkshop/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/of-dorkshop/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/mfadt-bootcamp-inclass/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/mfadt-bootcamp-2015/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/mfadt-bootcamp-student-homework/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/metamethods/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/hiphopproject/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/ofxmetapi/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/metinstagram/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/interactivespaces/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/experimentsincolor/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/cclab-of/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/majorstudio1-2014/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/florr422-sims2014/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/cclab/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/data-as-material-2026-2/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/advanced-critical-computation-pudt-2112-spring-2024/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/critical-computation-lab-2023-2/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/advanced-critical-computation-spring-2023/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/critical-computation-lab-2022-2/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/part-time-faculty-mfa-design-technology/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/algorithmic-simulations-openframeworks-fall-2016/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/algorithmic-simulations-student-repo-fall-2016/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/p5-js-dorkshop-for-mfadt-bootcamp/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/openframeworks-dorkshop-for-incoming-mfadt-class/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/mfadt-bootcamp-2015-code-section-a-in-class-code/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/mfadt-bootcamp-2015-code-section-teacher-repo/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/mfadt-bootcamp-2015-code-section-a-student-homework/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/recent-work-for-project-dataselfie/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/creating-individual-relationships-with-data-ai-enabled-brows/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/new-inc-archive-new-data-selfie-extension-lets-you-monitor-w/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/regina-flores-mir-part-time-faculty-profile/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/data-x-github-organization/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/data-selfie-project-site/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/smart-spirulina-system/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/smart-spirulina-system-2/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/spirulina-io/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/the-hiphop-project-rappersdelight-nyc/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/what-is-biodesign-william-myers/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/william-myers-publications/</loc></url>
+  <url><loc>https://reginaflores.online/elsewhere/biodesign-a-symbiotic-future-william-myers/</loc></url>
+  <url><loc>https://reginaflores.online/people/hang-do-thi-duc/</loc></url>
+  <url><loc>https://reginaflores.online/people/kevin-slavin/</loc></url>
+  <url><loc>https://reginaflores.online/people/chris-woebken/</loc></url>
+  <url><loc>https://reginaflores.online/people/christopher-mason/</loc></url>
+  <url><loc>https://reginaflores.online/people/ben-berman/</loc></url>
   <url><loc>https://reginaflores.online/people/jimmy-tang/</loc></url>
+  <url><loc>https://reginaflores.online/people/buckminster-fuller/</loc></url>
+  <url><loc>https://reginaflores.online/people/jaskirat-randhawa/</loc></url>
+  <url><loc>https://reginaflores.online/people/mitchell-joachim/</loc></url>
   <url><loc>https://reginaflores.online/people/sol-lewitt/</loc></url>
   <url><loc>https://reginaflores.online/people/tyler-henry/</loc></url>
   <url><loc>https://reginaflores.online/people/alisa-andrasek/</loc></url>
   <url><loc>https://reginaflores.online/people/fran-ois-roche/</loc></url>
-  <url><loc>https://reginaflores.online/people/jaskirat-randhawa/</loc></url>
   <url><loc>https://reginaflores.online/people/clive-dilnot/</loc></url>
   <url><loc>https://reginaflores.online/people/ed-keller/</loc></url>
-  <url><loc>https://reginaflores.online/people/kevin-slavin/</loc></url>
   <url><loc>https://reginaflores.online/people/anthony-dunne-and-fiona-raby/</loc></url>
   <url><loc>https://reginaflores.online/people/benjamin-bratton/</loc></url>
   <url><loc>https://reginaflores.online/people/david-benjamin/</loc></url>
   <url><loc>https://reginaflores.online/people/lev-manovich/</loc></url>
   <url><loc>https://reginaflores.online/people/neri-oxman/</loc></url>
   <url><loc>https://reginaflores.online/people/richard-feynman/</loc></url>
+  <url><loc>https://reginaflores.online/people/william-myers/</loc></url>
   <url><loc>https://reginaflores.online/people/bret-victor/</loc></url>
   <url><loc>https://reginaflores.online/people/charles-and-ray-eames/</loc></url>
-  <url><loc>https://reginaflores.online/people/chris-woebken/</loc></url>
   <url><loc>https://reginaflores.online/people/golan-levin/</loc></url>
   <url><loc>https://reginaflores.online/people/jaron-lanier/</loc></url>
   <url><loc>https://reginaflores.online/people/jeremy-rifkin/</loc></url>
   <url><loc>https://reginaflores.online/people/kim-stanley-robinson/</loc></url>
   <url><loc>https://reginaflores.online/people/marcos-cruz/</loc></url>
-  <url><loc>https://reginaflores.online/people/mitchell-joachim/</loc></url>
   <url><loc>https://reginaflores.online/people/oliver-medvedik/</loc></url>
   <url><loc>https://reginaflores.online/people/spike-jonze/</loc></url>
   <url><loc>https://reginaflores.online/people/yayoi-kusama/</loc></url>
   <url><loc>https://reginaflores.online/people/casey-reas/</loc></url>
   <url><loc>https://reginaflores.online/people/christopher-baker/</loc></url>
-  <url><loc>https://reginaflores.online/people/christopher-mason/</loc></url>
   <url><loc>https://reginaflores.online/people/elon-musk/</loc></url>
   <url><loc>https://reginaflores.online/people/ernst-haeckel/</loc></url>
   <url><loc>https://reginaflores.online/people/fernanda-vi-gas/</loc></url>
   <url><loc>https://reginaflores.online/people/guerrilla-girls/</loc></url>
-  <url><loc>https://reginaflores.online/people/hang-do-thi-duc/</loc></url>
   <url><loc>https://reginaflores.online/people/jenna-demchuk/</loc></url>
   <url><loc>https://reginaflores.online/people/karsten-schmidt/</loc></url>
   <url><loc>https://reginaflores.online/people/martin-margiela/</loc></url>
   <url><loc>https://reginaflores.online/people/michel-foucault/</loc></url>
   <url><loc>https://reginaflores.online/people/suzanne-lee/</loc></url>
-  <url><loc>https://reginaflores.online/places/the-met/</loc></url>
   <url><loc>https://reginaflores.online/places/mit-media-lab/</loc></url>
-  <url><loc>https://reginaflores.online/places/terreform-one/</loc></url>
   <url><loc>https://reginaflores.online/places/parsons/</loc></url>
+  <url><loc>https://reginaflores.online/places/the-met/</loc></url>
+  <url><loc>https://reginaflores.online/places/terreform-one/</loc></url>
+  <url><loc>https://reginaflores.online/places/the-new-school/</loc></url>
   <url><loc>https://reginaflores.online/places/columbia-university/</loc></url>
   <url><loc>https://reginaflores.online/places/ecovative/</loc></url>
-  <url><loc>https://reginaflores.online/places/the-new-school/</loc></url>
   <url><loc>https://reginaflores.online/places/genspace/</loc></url>
   <url><loc>https://reginaflores.online/places/tesla/</loc></url>
   <url><loc>https://reginaflores.online/places/the-high-line/</loc></url>
@@ -348,10 +538,12 @@
   <url><loc>https://reginaflores.online/places/cue-group/</loc></url>
   <url><loc>https://reginaflores.online/places/goldman-sachs/</loc></url>
   <url><loc>https://reginaflores.online/places/nrao/</loc></url>
+  <url><loc>https://reginaflores.online/places/venice-biennale/</loc></url>
   <url><loc>https://reginaflores.online/places/arecibo-naic/</loc></url>
   <url><loc>https://reginaflores.online/places/biofabricate/</loc></url>
   <url><loc>https://reginaflores.online/places/cooper-hewitt/</loc></url>
   <url><loc>https://reginaflores.online/places/mori-building/</loc></url>
   <url><loc>https://reginaflores.online/places/museum-of-mathematics/</loc></url>
+  <url><loc>https://reginaflores.online/places/new-inc/</loc></url>
   <url><loc>https://reginaflores.online/places/sxsw/</loc></url>
 </urlset>

@@ -219,3 +219,7 @@ footer.site .credit a { text-decoration: underline; }
 #suggest { margin: 10px 0 0; }
 #suggest:empty { display: none; }
 #suggest .k { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; opacity: .6; }
+
+/* link cards without images */
+.card .textcard { height: 100%; display: flex; align-items: flex-end; padding: 18px; background: var(--ink); color: var(--bg); }
+.card .textcard span { font-size: 25px; line-height: 1; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; font-variation-settings: "wdth" 35, "opsz" 144; font-weight: 860; }

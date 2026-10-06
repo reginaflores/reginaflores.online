@@ -16,9 +16,9 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "_data"
 SITE = "https://reginaflores.online"
 NAME = "Regina Flores Mir"
-INTRO = ("A working notebook of design and technology projects, 2014–2016: "
-         "Parsons MFA studio work, research, prototypes and experiments in creative code, "
-         "bio design, data and physical computing, plus earlier projects from science and finance.")
+INTRO = ("Everything I have made, written and shared, in one place: from astrophysics and Wall Street "
+         "to the Parsons MFA notebook, Holobiont Urbanism, Data Selfie and teaching. "
+         "Projects, papers, press, videos and code, searchable by topic, person and place.")
 SKIP_PAGES = {"/projects", "/about"}  # empty index page; /about is rebuilt below at /aboutme
 CURRENT = "https://reginafloresmir.ai"
 ABOUT = """
@@ -29,7 +29,7 @@ ABOUT = """
   <div class="about-body">
     <figure class="portrait"><img src="{photo}" alt="Regina Flores Mir"></figure>
     <div class="content">
-      <p>This archive collects the work I made and documented between 2014 and 2016, most of it during my MFA in Design and Technology at Parsons: studio projects, research, prototypes and experiments in creative code, bio design, data and physical computing.</p>
+      <p>This archive collects my work in one place. At its core is the notebook I kept during my MFA in Design and Technology at Parsons (2014–2016): studio projects, research, prototypes and experiments in creative code, bio design, data and physical computing. Around it are my earlier research papers, my projects, and the work out in the world since: publications, exhibitions, press, videos, code and teaching.</p>
       <p>I began my career as a research analyst in astrophysics. At NASA Ames Research Center I worked on SOFIA, an airborne infrared observatory aboard a Boeing 747. I also studied the Cosmic Microwave Background at the National Radio Astronomy Observatory, and star formation in extragalactic molecular clouds at the National Astronomy and Ionosphere Center.</p>
       <p>I then spent more than five years on Wall Street bridging quants and sales, first at Goldman Sachs in Equity Prime Brokerage and later at JP Morgan on the Foreign Exchange, Rates and Commodities desk. In 2012 I joined the Cue Group, a consultancy and insight lab, as Director of Analytics.</p>
       <p>I hold a B.A. in Physics from Barnard College of Columbia University, an M.A. in Statistics from Columbia University, and an MFA in Design and Technology from Parsons.</p>
@@ -57,7 +57,7 @@ def fix_media(html_s):
 
 def thumb(p):
     """600px thumbnail for listing cards."""
-    if p and p.startswith("/media/covers/"):
+    if p and p.startswith(("/media/covers/", "/media/vimeo/")):
         return p
     src = media_path(p) if p else None
     if not src:
@@ -101,7 +101,7 @@ def inst_url(n):
     return "/places/" + slugify(n)
 
 
-CSS_V = "11"
+CSS_V = "13"
 
 
 def page(title, body, desc=INTRO, url="/", og_img=None, kind="website"):
@@ -129,13 +129,13 @@ def page(title, body, desc=INTRO, url="/", og_img=None, kind="website"):
 <body>
 <header class="site"><div class="bar">
   <a class="brand" href="/"><span class="name">{NAME}</span><span class="sub">Archive</span></a>
-  <nav><a href="/#topics">Topics</a><a href="/#projects">Projects</a><a href="/papers/">Papers</a><a href="/aboutme/">About</a></nav>
+  <nav><a href="/#topics">Topics</a><a href="/#projects">Projects</a><a href="/papers/">Papers</a><a href="/elsewhere/">Elsewhere</a><a href="/aboutme/">About</a></nav>
 </div></header>
 <main>
 {body}
 </main>
 <footer class="site">
-  <span>{NAME} · Archive of work, 2014–2016</span>
+  <span>{NAME} · Archive of work</span>
   <a href="{CURRENT}">Current work: reginafloresmir.ai →</a>
   <span class="credit">Design inspired by <a href="https://www.theshed.org">The Shed</a></span>
   <a href="#top" onclick="window.scrollTo(0,0);return false">Back to top ↑</a>
@@ -145,12 +145,20 @@ def page(title, body, desc=INTRO, url="/", og_img=None, kind="website"):
 """
 
 
+LINK_ORDER = ["Publications", "Exhibitions & awards", "Press", "Videos", "Code", "Teaching", "Project sites", "Influences & references"]
+
+
 def card(e):
     th = thumb(e["thumb"])
     img = f'<img src="{th}" alt="" loading="lazy">' if th else '<div class="noimg"></div>'
     when = datetime.strptime(e["date"], "%Y-%m-%d").strftime("%b %-d, %Y") if e.get("date") else ""
     if e.get("kind") == "doc":
         when = " · ".join(x for x in (e["doc_type"], e["year"]) if x)
+    if e.get("kind") == "link":
+        when = " · ".join(x for x in (e["section"].rstrip("s") if e["section"] in ("Videos",) else "", e["year"]) if x)
+        if not th:
+            img = f'<div class="textcard"><span>{H.escape(e["source"] or e["section"])}</span></div>'
+        e = dict(e, context=e["source"])
     pill = f'<span class="pill">{when}</span>' if when else ""
     meta = ", ".join(e.get("categories") or []) or e.get("context", "")
     return (f'<a class="card" href="{e["url"]}/" data-key="{e["url"]}">'
@@ -162,12 +170,12 @@ def listing(items, by_year=True):
         return '<div class="grid">' + "".join(card(e) for e in items) + "</div>"
     groups = defaultdict(list)
     for e in items:
-        key = e["date"][:4] if e.get("kind") == "post" else ("Papers" if e.get("kind") == "doc" else "Projects")
+        key = e["date"][:4] if e.get("kind") == "post" else ("Papers" if e.get("kind") == "doc" else e["section"] if e.get("kind") == "link" else "Projects")
         groups[key].append(e)
-    order = sorted((k for k in groups if k.isdigit()), reverse=True) + [k for k in ("Projects", "Papers") if k in groups]
+    order = sorted((k for k in groups if k.isdigit()), reverse=True) + [k for k in ["Projects", "Papers"] + LINK_ORDER if k in groups]
     out = []
     for k in order:
-        label = "Papers &amp; presentations" if k == "Papers" else k
+        label = "Papers &amp; presentations" if k == "Papers" else H.escape(k)
         out.append(f'<section class="year" data-group="{k}"><h2 class="yr">{label} <span>{len(groups[k])}</span></h2>'
                    f'<div class="grid">{"".join(card(e) for e in groups[k])}</div></section>')
     return "".join(out)
@@ -183,7 +191,7 @@ def write(path, s):
 
 
 def main():
-    for d in ("blog", "tags", "people", "places"):
+    for d in ("blog", "tags", "people", "places", "elsewhere"):
         shutil.rmtree(ROOT / d, ignore_errors=True)
     posts = sorted([e for e in entries if e["kind"] == "post"], key=lambda e: e["date"], reverse=True)
     pages = [e for e in entries if e["kind"] in ("page", "project") and e["url"] not in SKIP_PAGES and (e["text"] or e["thumb"])]
@@ -195,9 +203,14 @@ def main():
     docs = sorted(json.loads((DATA / "papers.json").read_text()), key=lambda d: (d["year"] or "0000"), reverse=True)
     for d in docs:
         d.update(date="", categories=[], thumb=d["cover"], html="")
-    tagged = posts + projects + others + docs
+    links = json.loads((DATA / "elsewhere.json").read_text())
+    links.sort(key=lambda l: l["sortdate"], reverse=True)
+    links.sort(key=lambda l: LINK_ORDER.index(l["section"]))
+    for l in links:
+        l.update(categories=[], html="", thumb=l.get("thumb"))
+    tagged = posts + projects + others + docs + links
     for p in tagged:
-        p["full"] = p["text"] if p.get("kind") == "doc" else re.sub(r"\s+", " ", BeautifulSoup(p["html"], "html.parser").get_text(" "))
+        p["full"] = p["text"] if p.get("kind") in ("doc", "link") else re.sub(r"\s+", " ", BeautifulSoup(p["html"], "html.parser").get_text(" "))
     derived, tag_groups, _ = derive([dict(p, text=p["full"]) for p in tagged])
     for p in tagged:
         p["tags"] = derived[p["url"]]
@@ -252,7 +265,7 @@ def main():
         meta = " · ".join(H.escape(b) for b in bits if b)
         withp = f'<p class="date">With {H.escape(d["collaborators"])}</p>' if d["collaborators"] else ""
         chipline = f'<div class="chips">{chips(d["tags"], tag_url)}</div>' if d["tags"] else ""
-        body = (f'<article class="post doc"><p class="crumb"><a href="/">Archive</a> / <a href="/papers/">Papers</a></p>'
+        body = (f'<article class="post doc"><p class="crumb"><a href="/">Archive</a> / <a href="/papers/">Papers</a><a href="/elsewhere/">Elsewhere</a></p>'
                 f'<h1>{H.escape(d["title"])}</h1><p class="date">{meta}</p>{withp}{chipline}' + (f'<div class="chips who">{chips(d["people"], person_url, cls="chip person")}{chips(d["insts"], inst_url, cls="chip place")}</div>' if d["people"] or d["insts"] else "") +
                 f'<p><a class="current small" href="{d["pdf"]}"><span class="label">Open PDF</span><span class="url">{d["pages"]} pages · {d["mb"]} MB</span><span class="arrow">↗</span></a></p>'
                 f'<object class="pdf" data="{d["pdf"]}#view=FitH" type="application/pdf"><a href="{d["pdf"]}"><img src="{d["cover"]}" alt=""></a></object></article>')
@@ -261,6 +274,23 @@ def main():
           f'<section class="head"><p class="crumb"><a href="/">Archive</a> / Papers</p><h1>Papers &amp; presentations</h1>'
           f'<p class="lede">{len(docs)} papers, decks and lab reports, from physics and statistics to the Parsons MFA.</p></section>'
           f'<div class="grid">{"".join(card(d) for d in docs)}</div>', url="/papers"))
+
+    # elsewhere: press, publications, exhibitions, videos, code, teaching
+    for l in links:
+        chipline = f'<div class="chips">{chips(l["tags"], tag_url)}</div>' if l["tags"] else ""
+        wholine = (f'<div class="chips who">{chips(l["people"], person_url, cls="chip person")}{chips(l["insts"], inst_url, cls="chip place")}</div>' if l["people"] or l["insts"] else "")
+        meta = " · ".join(H.escape(x) for x in (l["section"], l["source"], l["sortdate"]) if x)
+        player = (f'<div class="video"><iframe src="https://player.vimeo.com/video/{l["vimeo_id"]}" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div>') if l.get("vimeo_id") else ""
+        note = '<p class="date">This page is no longer online; the link opens an archived copy.</p>' if l.get("dead") else ""
+        go = "Watch on Vimeo" if l.get("vimeo_id") else "View on GitHub" if "github.com" in l["href"] else "Open"
+        body = (f'<article class="post"><p class="crumb"><a href="/">Archive</a> / <a href="/elsewhere/">Elsewhere</a></p>'
+                f'<h1>{H.escape(l["title"])}</h1><p class="date">{meta}</p>{chipline}{wholine}'
+                f'<div class="content"><p>{H.escape(l["description"])}</p>{note}{player}</div>'
+                f'<p><a class="current small" href="{H.escape(l["href"])}" rel="noopener"><span class="label">{go}</span><span class="url">{H.escape(l["source"] or "Link")}</span><span class="arrow">↗</span></a></p></article>')
+        write(slug_path(l["url"]), page(l["title"], body, l["description"] or l["title"], l["url"], l.get("thumb")))
+    write(ROOT / "elsewhere/index.html", page("Elsewhere",
+          f'<section class="head"><p class="crumb"><a href="/">Archive</a> / Elsewhere</p><h1>Elsewhere</h1>'
+          f'<p class="lede">The work out in the world: publications, exhibitions, press, videos, code and teaching.</p></section>{listing(links)}', url="/elsewhere"))
 
     # people & institutions
     for table, url_fn, label, coll in ((people, person_url, "People", "people"), (insts, inst_url, "Institutions &amp; places", "insts")):
@@ -334,6 +364,7 @@ def main():
 <section class="year" id="projects" data-group="Projects"><h2 class="yr">Projects <span>{len(projects)}</span></h2><div class="grid">{proj}</div></section>
 <section class="year" id="papers" data-group="Papers"><h2 class="yr">Papers &amp; presentations <span>{len(docs)}</span></h2><div class="grid">{"".join(card(d) for d in docs)}</div></section>
 <section class="year" data-group="Earlier"><h2 class="yr">Earlier work <span>{len(others)}</span></h2><div class="grid">{more}</div></section>
+<div id="elsewhere">{listing(links)}</div>
 </div>
 <section class="topics" id="topics">
   <h2>Topics</h2><div class="chips big">{chips(cat_names, cat_url, {c: len(cats[c]) for c in cat_names})}</div>
@@ -371,7 +402,7 @@ def main():
 
     # 404, sitemap, robots
     write(ROOT / "404.html", page("Not found", '<section class="head"><h1>Not found</h1><p class="lede">That page isn’t in the archive. <a href="/">Browse all posts</a> or search from the home page.</p></section>'))
-    urls = ["/"] + [p["url"] + "/" for p in posts] + [pg["url"] + "/" for pg in pages] + [cat_url(c) + "/" for c in cat_names] + [tag_url(t) + "/" for t in tag_names] + ["/papers/"] + [d["url"] + "/" for d in docs] + [person_url(n) + "/" for n in ppl_names] + [inst_url(n) + "/" for n in inst_names]
+    urls = ["/"] + [p["url"] + "/" for p in posts] + [pg["url"] + "/" for pg in pages] + [cat_url(c) + "/" for c in cat_names] + [tag_url(t) + "/" for t in tag_names] + ["/papers/"] + [d["url"] + "/" for d in docs] + ["/elsewhere/"] + [l["url"] + "/" for l in links] + [person_url(n) + "/" for n in ppl_names] + [inst_url(n) + "/" for n in inst_names]
     write(ROOT / "sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
           "".join(f"  <url><loc>{SITE}{u}</loc></url>\n" for u in urls) + "</urlset>\n")
     write(ROOT / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")

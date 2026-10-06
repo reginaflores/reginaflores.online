@@ -190,8 +190,7 @@ def main():
     # project / other pages
     for pg in pages:
         if pg["url"] == "/aboutme":
-            about_src = next(e for e in entries if e["url"] == "/about")
-            photo = re.search(r'src="(/media/[^"]+)"', about_src["html"]).group(1)
+            photo = "/assets/headshot.jpg"  # same headshot as reginafloresmir.ai
             write(slug_path(pg["url"]), page("About", ABOUT.format(photo=photo, current=CURRENT),
                   "I love science. I love data. I love coding. I live at the intersection of design and technology.", pg["url"]))
             continue

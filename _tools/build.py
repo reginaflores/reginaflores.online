@@ -16,9 +16,9 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "_data"
 SITE = "https://reginaflores.online"
 NAME = "Regina Flores Mir"
-INTRO = ("Everything I have made, written and shared, in one place: from astrophysics and Wall Street "
-         "to the Parsons MFA notebook, Holobiont Urbanism, Data Selfie and teaching. "
-         "Projects, papers, press, videos and code, searchable by topic, person and place.")
+INTRO = ("This is a comprehensive archive. Everything I have made, written and shared, in one place: "
+         "from astrophysics and Wall Street to the Parsons MFA, Holobiont Urbanism, Data Selfie and teaching. "
+         "Projects, papers, press, videos and code, searchable by topic, person and place. Current work and ideas.")
 SKIP_PAGES = {"/projects", "/about"}  # empty index page; /about is rebuilt below at /aboutme
 CURRENT = "https://reginafloresmir.ai"
 ABOUT = """

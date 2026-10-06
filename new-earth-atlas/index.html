@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>New Earth Atlas — Regina Flores Mir</title>
+<meta name="description" content="An interactive atlas of the working mind map for Design Manifesto for a New Earth: clusters across four parts, eight themes, their overlaps, open tensions and sources.">
+<link rel="canonical" href="https://reginaflores.online/new-earth-atlas/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="New Earth Atlas — Regina Flores Mir">
+<meta property="og:description" content="An interactive atlas of the working mind map for Design Manifesto for a New Earth: clusters across four parts, eight themes, their overlaps, open tensions and sources.">
+<meta property="og:url" content="https://reginaflores.online/new-earth-atlas/">
+<meta property="og:image" content="https://reginaflores.online/media/covers/new-earth-atlas.jpg">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: arts-venue program. Black marquee header with an outlined headline, then white program sections,
+   each opened by a huge condensed all-caps title over a heavy rule. Electric green is the only accent:
+   selection, pressed pills, live dots. The dial sits in a rounded black-bordered card. */
+:root{
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#000000; --muted:#5C5C5C; --line:#000000; --faint:#E6E6E6; --soft:#F3F3F3;
+  --accent:#00FF00; --on-accent:#000000; --edge-on:#000000; --marquee:#000000; --marquee-ink:#FFFFFF;
+  --t-A:#FF3B00; --t-B:#0033FF; --t-C:#D9A300; --t-D:#00A63E; --t-E:#00A0B8; --t-F:#000000; --t-G:#8A2BE2; --t-H:#FF2E93;
+  --s-read:#00A63E; --s-partial:#D98A00; --s-unread:#FF2A00; --s-provided:#0033FF; --s-ref:#6B6B6B; --s-own:#8A2BE2;
+  --font-display:"Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --font-body:"Barlow Semi Condensed", "Arial Narrow", "Roboto Condensed", system-ui, sans-serif;
+  --font-mono:"Barlow Condensed", "Arial Narrow", sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#000000; --surface:#0B0B0B; --ink:#FFFFFF; --muted:#A6A6A6; --line:#FFFFFF; --faint:#262626; --soft:#151515;
+  --accent:#00FF00; --on-accent:#000000; --edge-on:#00FF00; --marquee:#000000; --marquee-ink:#FFFFFF;
+  --t-A:#FF5A26; --t-B:#5C7CFF; --t-C:#FFD12E; --t-D:#2EE66B; --t-E:#2ED8F0; --t-F:#FFFFFF; --t-G:#B57BFF; --t-H:#FF5CAB;
+  --s-read:#2EE66B; --s-partial:#FFB020; --s-unread:#FF5A26; --s-provided:#5C7CFF; --s-ref:#A6A6A6; --s-own:#B57BFF;
+  color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#000000; --surface:#0B0B0B; --ink:#FFFFFF; --muted:#A6A6A6; --line:#FFFFFF; --faint:#262626; --soft:#151515;
+  --accent:#00FF00; --on-accent:#000000; --edge-on:#00FF00; --marquee:#000000; --marquee-ink:#FFFFFF;
+  --t-A:#FF5A26; --t-B:#5C7CFF; --t-C:#FFD12E; --t-D:#2EE66B; --t-E:#2ED8F0; --t-F:#FFFFFF; --t-G:#B57BFF; --t-H:#FF5CAB;
+  --s-read:#2EE66B; --s-partial:#FFB020; --s-unread:#FF5A26; --s-provided:#5C7CFF; --s-ref:#A6A6A6; --s-own:#B57BFF;
+  color-scheme:dark }
+
+*{box-sizing:border-box}
+html,body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+a.toppill{text-decoration:none}
+a.toppill:hover{background:var(--accent); color:var(--on-accent); border-color:var(--accent)}
+body{background:var(--bg); color:var(--ink); font-family:var(--font-body); font-size:17px; line-height:1.45}
+.page{max-width:1380px; margin:0 auto; padding-inline:20px; padding-block:0 72px; display:flex; flex-direction:column; gap:64px}
+a{color:inherit; text-underline-offset:3px; text-decoration-thickness:1.5px}
+a:hover{text-decoration-color:var(--accent)}
+button{font:inherit; color:inherit}
+:focus-visible{outline:3px solid var(--accent); outline-offset:2px; border-radius:6px}
+.mono{font-family:var(--font-display); font-weight:600; font-size:14px; letter-spacing:.04em; text-transform:uppercase}
+.eyebrow{display:inline-flex; align-items:center; gap:8px; font-family:var(--font-display); font-weight:700; font-size:15px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink)}
+.eyebrow::before{content:""; width:12px; height:12px; border-radius:50%; background:var(--accent); flex:none; box-shadow:0 0 0 1.5px var(--ink) inset}
+h1,h2,h3{font-family:var(--font-display); text-wrap:balance; margin:0; line-height:.9; text-transform:uppercase}
+h1{font-weight:800; font-size:clamp(64px,11vw,168px); letter-spacing:-.01em}
+h2{font-weight:800; font-size:clamp(40px,6vw,84px); letter-spacing:-.005em; padding-bottom:10px; border-bottom:4px solid var(--ink)}
+h3{font-weight:800; font-size:28px}
+p{margin:0}
+.lede{color:var(--ink); max-width:62ch; font-size:19px}
+.muted{color:var(--muted)}
+
+/* marquee header */
+.marquee{background:var(--marquee); color:var(--marquee-ink); margin-inline:-20px; padding:22px 20px 34px; display:flex; flex-direction:column; gap:28px}
+.topbar{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; border-bottom:2px solid var(--marquee-ink); padding-bottom:14px}
+.wordmark{font-family:var(--font-display); font-weight:800; font-size:30px; letter-spacing:.02em; text-transform:uppercase; color:transparent; -webkit-text-stroke:1.6px var(--marquee-ink); line-height:1}
+.toppill{border:2px solid var(--marquee-ink); border-radius:999px; padding:6px 16px; font-family:var(--font-display); font-weight:600; font-size:17px; white-space:nowrap}
+.marquee h1{color:var(--marquee-ink)}
+.marquee h1 .outline{color:transparent; -webkit-text-stroke:2px var(--marquee-ink)}
+.marquee h1 .ring{display:inline-block; color:var(--accent); border:3px solid var(--accent); border-radius:999px; padding:0 .18em; line-height:.95}
+.marquee .lede{color:var(--marquee-ink); opacity:.92}
+.marquee .eyebrow{color:var(--marquee-ink)}
+.marquee .eyebrow::before{box-shadow:none}
+header{display:grid; grid-template-columns:minmax(0,1fr); gap:26px}
+.head-copy{display:flex; flex-direction:column; gap:18px}
+.stats{display:flex; flex-wrap:wrap; gap:10px}
+.stat{border:2px solid var(--marquee-ink); border-radius:999px; padding:8px 20px 8px 8px; display:inline-flex; align-items:center; gap:12px; min-width:0}
+.stat b{font-family:var(--font-display); font-weight:800; font-size:26px; line-height:1; background:var(--accent); color:var(--on-accent); border-radius:999px; padding:6px 12px; font-variant-numeric:tabular-nums}
+.stat span{font-family:var(--font-display); font-weight:600; font-size:17px; text-transform:uppercase; letter-spacing:.03em}
+
+/* arc strip */
+.section-head{display:flex; flex-direction:column; gap:14px; margin-bottom:24px}
+.strip{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px}
+@media(max-width:1000px){ .strip{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media(max-width:560px){ .strip{grid-template-columns:minmax(0,1fr)} }
+.part-card{background:var(--surface); border:2px solid var(--line); border-radius:20px; padding:16px 18px 18px; display:flex; flex-direction:column; gap:12px; text-align:left; cursor:pointer; min-width:0; transition:background .15s}
+.part-card:hover{background:var(--soft)}
+.part-card[aria-pressed="true"]{background:var(--accent); color:var(--on-accent)}
+.part-card[aria-pressed="true"] .words,.part-card[aria-pressed="true"] .muted{color:var(--on-accent)}
+.part-card .row{display:flex; justify-content:space-between; align-items:center; gap:8px}
+.part-card .eyebrow{color:inherit}
+.part-card h3{font-size:30px; line-height:.95}
+.compbar{display:flex; height:12px; border-radius:999px; overflow:hidden; background:var(--faint); border:1.5px solid currentColor}
+.compbar i{display:block; height:100%}
+.words{font-size:15px; color:var(--muted)}
+.arrow-note{font-size:15px; color:var(--muted); margin-top:14px}
+
+/* chips */
+.chips{display:flex; flex-wrap:wrap; gap:8px}
+.chip{display:inline-flex; align-items:center; gap:8px; border:2px solid var(--ink); background:var(--surface); color:var(--ink); border-radius:999px; padding:6px 15px 6px 9px; font-family:var(--font-display); font-weight:600; font-size:17px; cursor:pointer; line-height:1.15; text-transform:uppercase; letter-spacing:.02em}
+.chip:hover{background:var(--soft)}
+.chip .dot{width:13px; height:13px; border-radius:50%; flex:none; box-shadow:0 0 0 1.5px var(--ink) inset}
+.chip[aria-pressed="true"]{background:var(--accent); color:var(--on-accent); border-color:var(--ink)}
+.chip[aria-pressed="true"] .muted{color:var(--on-accent)}
+.chip.static{cursor:default}
+.chip.static:hover{background:var(--surface)}
+.chip.small{font-size:14.5px; padding:3px 11px 3px 8px; border-width:1.5px}
+.chip.small .dot{width:10px; height:10px}
+.chip.clear{background:var(--ink); color:var(--bg)}
+
+/* observatory */
+.observatory{display:grid; grid-template-columns:minmax(0,1fr); gap:20px; align-items:start}
+@media(min-width:1180px){ .observatory{grid-template-columns:minmax(0,1fr) 380px} }
+.dial{background:var(--surface); border:2px solid var(--line); border-radius:24px; padding:12px; min-width:0}
+.dial-scroll{overflow-x:auto}
+.dial svg{display:block; width:100%; min-width:720px; height:auto}
+.dial-foot{display:flex; flex-wrap:wrap; gap:6px 18px; padding:8px 10px 4px; font-size:14.5px; color:var(--muted)}
+.detail{background:var(--surface); border:2px solid var(--line); border-radius:24px; padding:22px; display:flex; flex-direction:column; gap:18px; min-width:0}
+@media(min-width:1180px){ .detail{position:sticky; top:calc(16px + env(safe-area-inset-top,0px)); max-height:calc(100vh - 32px); overflow:auto} }
+.detail h3{font-size:44px; line-height:.92; padding-bottom:8px; border-bottom:3px solid var(--ink)}
+.kw{display:flex; flex-wrap:wrap; gap:6px}
+.kw span{font-size:15px; border:1.5px solid var(--ink); border-radius:999px; padding:2px 10px}
+.list{display:flex; flex-direction:column; gap:10px; margin:0; padding:0; list-style:none}
+.conn{display:flex; flex-direction:column; gap:1px; text-align:left; background:none; border:0; border-left:4px solid var(--ink); padding:2px 0 2px 12px; cursor:pointer}
+.conn:hover{border-left-color:var(--accent)}
+.conn b{font-family:var(--font-display); font-weight:700; font-size:20px; text-transform:uppercase; line-height:1.05}
+.conn span{font-size:15px; color:var(--muted)}
+.src{display:flex; flex-direction:column; gap:4px; font-size:15.5px}
+.pill{display:inline-flex; align-items:center; gap:7px; font-family:var(--font-display); font-weight:700; font-size:14px; letter-spacing:.05em; text-transform:uppercase; white-space:nowrap}
+.pill::before{content:""; width:10px; height:10px; border-radius:50%; background:currentColor}
+.st-read{color:var(--s-read)} .st-partial{color:var(--s-partial)} .st-unread{color:var(--s-unread)}
+.st-provided{color:var(--s-provided)} .st-ref{color:var(--s-ref)} .st-own{color:var(--s-own)}
+.subhead{font-family:var(--font-display); font-weight:700; font-size:15px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); margin-bottom:10px; padding-bottom:4px; border-bottom:1.5px solid var(--ink)}
+
+/* svg graph */
+.ring{fill:none; stroke:var(--faint); stroke-width:1.2}
+.guide{stroke:var(--faint); stroke-width:1.2}
+.partarc{fill:none; stroke:var(--ink); stroke-width:3}
+.numeral{font-family:var(--font-display); font-weight:800; font-size:30px; fill:var(--ink)}
+.edge{fill:none; stroke:var(--ink); stroke-width:1.2; opacity:.28; transition:opacity .15s, stroke .15s}
+.edge.on{stroke:var(--edge-on); opacity:1; stroke-width:3.4}
+.edge.soft{opacity:.75; stroke-width:2}
+.edge.dim{opacity:.05}
+.node{cursor:pointer}
+.node text{font-family:var(--font-body); font-weight:500; font-size:19px; fill:var(--ink); transition:opacity .15s}
+.node .dotc{fill:var(--surface); stroke:var(--ink); stroke-width:2.5}
+.node.sel .dotc{fill:var(--accent); stroke:var(--ink); stroke-width:3}
+.node.sel text{font-family:var(--font-display); font-weight:800; text-transform:uppercase; font-size:22px}
+.node.dim text{opacity:.18}
+.node.dim .dotc{opacity:.25}
+.node:focus{outline:none}
+.node:focus-visible .dotc{stroke:var(--accent); stroke-width:5}
+.mark{fill:none; stroke-width:6.5; transition:opacity .15s}
+.mark.dim{opacity:.1}
+
+/* matrix */
+.split{display:grid; grid-template-columns:minmax(0,1fr); gap:24px}
+@media(min-width:1000px){ .split{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)} }
+.panel{background:var(--surface); border:2px solid var(--line); border-radius:24px; padding:20px; min-width:0; display:flex; flex-direction:column; gap:16px}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse; font-variant-numeric:tabular-nums}
+.matrix th{font-family:var(--font-display); font-weight:600; font-size:15px; text-transform:uppercase; color:var(--ink); padding:4px 8px; text-align:right; white-space:nowrap}
+.matrix thead th{text-align:center; vertical-align:bottom; height:130px; padding:0 0 8px}
+.matrix thead th div{writing-mode:vertical-rl; transform:rotate(180deg); display:inline-block; text-align:left}
+.matrix td{padding:2px}
+.cell{width:46px; height:40px; border:1.5px solid var(--faint); border-radius:10px; font-family:var(--font-display); font-weight:700; font-size:18px; cursor:pointer; display:block}
+.cell.diag{border:1.5px dashed var(--ink)}
+.cell[aria-pressed="true"]{border:3px solid var(--ink)}
+.cell.zero{cursor:default; color:var(--muted)}
+.tdot{display:inline-block; width:11px; height:11px; border-radius:50%; margin-right:7px; vertical-align:baseline; box-shadow:0 0 0 1.5px var(--ink) inset}
+.tp th{font-family:var(--font-display); font-weight:600; font-size:15px; text-transform:uppercase; color:var(--ink); padding:6px 8px; text-align:left; white-space:nowrap}
+.tp td{padding:7px 8px; border-top:1.5px solid var(--faint); min-width:86px}
+.dots{display:flex; flex-wrap:wrap; gap:4px; max-width:120px}
+.dots i{width:11px; height:11px; border-radius:50%; display:block}
+.intersect{display:flex; flex-direction:column; gap:10px; border-top:2px solid var(--ink); padding-top:16px}
+.intersect .title{font-family:var(--font-display); font-weight:800; font-size:26px; text-transform:uppercase; line-height:1}
+
+/* tensions */
+.tensions{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr)); gap:14px}
+.tension{background:var(--surface); border:2px solid var(--line); border-radius:24px; padding:18px; display:flex; flex-direction:column; gap:12px; text-align:left; cursor:pointer; min-width:0}
+.tension:hover{background:var(--soft)}
+.tension[aria-pressed="true"]{background:var(--accent); color:var(--on-accent)}
+.tension[aria-pressed="true"] .chip{background:transparent; color:var(--on-accent); border-color:var(--on-accent)}
+.tension h3{font-size:32px; line-height:.92}
+.vs{display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); gap:10px; align-items:start; font-size:15.5px}
+.vs em{font-family:var(--font-display); font-weight:800; font-style:normal; font-size:20px; text-transform:uppercase; border:2px solid currentColor; border-radius:999px; padding:0 8px}
+
+/* archive */
+.archive-bar{display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between}
+.tabs{display:flex; flex-wrap:wrap; gap:8px}
+.tab{border:2px solid var(--ink); background:var(--surface); padding:7px 18px; border-radius:999px; cursor:pointer; font-family:var(--font-display); font-weight:700; font-size:18px; text-transform:uppercase; letter-spacing:.02em}
+.tab[aria-selected="true"]{background:var(--ink); color:var(--bg)}
+.search{flex:1 1 260px; max-width:440px; border:2px solid var(--ink); background:var(--surface); border-radius:999px; padding:10px 18px; font:inherit; color:var(--ink)}
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr)); gap:12px}
+.card{background:var(--surface); border:2px solid var(--line); border-radius:20px; padding:15px 16px; display:flex; flex-direction:column; gap:8px; cursor:pointer; text-align:left; min-width:0}
+.card:hover{background:var(--accent); color:var(--on-accent)}
+.card:hover .kwline,.card:hover .muted{color:var(--on-accent)}
+.card b{font-family:var(--font-display); font-weight:800; font-size:24px; text-transform:uppercase; line-height:.95}
+.card .kwline{font-size:14.5px; color:var(--muted)}
+.card .themes{display:flex; gap:5px}
+.card .themes i{width:12px; height:12px; border-radius:50%; display:block; box-shadow:0 0 0 1.5px var(--ink) inset}
+.partgroup{display:flex; flex-direction:column; gap:12px}
+.partgroup + .partgroup{margin-top:28px}
+.srctable{width:100%; border-collapse:collapse; font-size:15.5px}
+.srctable th{font-family:var(--font-display); font-weight:700; font-size:15px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); text-align:left; padding:8px 10px; border-bottom:3px solid var(--ink)}
+.srctable td{padding:10px; border-bottom:1.5px solid var(--faint); vertical-align:top}
+.srctable td:first-child{min-width:240px}
+.citedby{display:flex; flex-wrap:wrap; gap:5px}
+.citedby button{border:1.5px solid var(--ink); background:none; border-radius:999px; padding:1px 10px; font-size:14px; cursor:pointer}
+.citedby button:hover{background:var(--accent); color:var(--on-accent)}
+.legend-status{display:flex; flex-wrap:wrap; gap:6px 20px}
+.files{display:grid; grid-template-columns:minmax(0,1fr); gap:20px}
+@media(min-width:900px){ .files{grid-template-columns:minmax(0,1fr) minmax(0,1fr)} }
+.filelist li{display:grid; grid-template-columns:minmax(0,1fr); gap:2px; padding:10px 0; border-bottom:1.5px solid var(--faint)}
+.filelist code{font-family:var(--font-display); font-weight:700; font-size:17px}
+.filelist span{font-size:15px; color:var(--muted)}
+.empty{color:var(--muted); font-size:16px; padding:10px 0}
+footer{font-size:14.5px; color:var(--muted); border-top:3px solid var(--ink); padding-top:16px; max-width:90ch}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="marquee">
+    <div class="topbar"><span class="wordmark">New Earth</span><a class="toppill" href="/">← Regina Flores Mir · Archive</a></div>
+    <header>
+      <div class="head-copy">
+        <span class="eyebrow">Design Manifesto for a New Earth · October 2026</span>
+        <h1><span class="outline">New</span> <span class="ring">Earth</span> Atlas</h1>
+        <p class="lede">Every cluster in the mind map, laid out along the cosmic descent and sorted into eight cross-cutting themes, so you can see where the threads overlap.</p>
+      </div>
+    </header>
+  </div>
+
+
+  <section aria-labelledby="arc-h">
+    <div class="section-head">
+      <span class="eyebrow">The arc</span>
+      <h2 id="arc-h">Cosmos → Planet → TechnoSphere → Design</h2>
+    </div>
+    <div class="strip" id="strip"></div>
+    <p class="arrow-note">Bars show each part's mix of themes. Select a part to light up its clusters on the dial. Intro and Conclusion are still to be written.</p>
+  </section>
+
+  <section aria-labelledby="dial-h">
+    <div class="section-head">
+      <span class="eyebrow">Constellation</span>
+      <h2 id="dial-h">Clusters, themes and the lines between them</h2>
+      <p class="lede">Each dot is a cluster from the map, placed clockwise from the top through Parts I–IV. The eight rings are the themes: a colored mark means the cluster belongs to that theme. Lines are cross-links drawn from the July source notes.</p>
+    </div>
+    <div class="chips" id="themechips" style="margin-bottom:14px"></div>
+    <div class="observatory">
+      <div class="dial">
+        <div class="dial-scroll"><svg id="dial" viewBox="0 0 1400 1400" role="img" aria-label="Radial map of manifesto clusters grouped by part, with theme rings and cross-links"></svg></div>
+        <div class="dial-foot">
+          <span class="key">Rings, outer to inner: Sovereignty · Cosmos · Land · Ecology · Planetary AI · Governance · Consciousness · Flourishing</span>
+          <span class="key">Dot size = number of cross-links</span>
+        </div>
+      </div>
+      <aside class="detail" id="detail" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <section aria-labelledby="ov-h">
+    <div class="section-head">
+      <span class="eyebrow">Overlap</span>
+      <h2 id="ov-h">Where the themes share ground</h2>
+      <p class="lede">Each cell counts the clusters that carry both themes. The diagonal is the theme's total. Select a cell to list the clusters in that overlap.</p>
+    </div>
+    <div class="split">
+      <div class="panel">
+        <div class="subhead">Theme × theme</div>
+        <div class="tablewrap"><table class="matrix" id="matrix"></table></div>
+        <div class="intersect" id="intersect"></div>
+      </div>
+      <div class="panel">
+        <div class="subhead">How each theme travels through the arc</div>
+        <div class="tablewrap"><table class="tp" id="tp"></table></div>
+        <p class="muted" style="font-size:13px">One dot per cluster. Sovereignty and Consciousness run through all four parts; Land and Governance concentrate in the TechnoSphere.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-h">
+    <div class="section-head">
+      <span class="eyebrow">Live tensions</span>
+      <h2 id="t-h">Disagreements the map holds open</h2>
+      <p class="lede">Tensions the map keeps open rather than resolves. Select one to light up the clusters involved.</p>
+    </div>
+    <div class="tensions" id="tensions"></div>
+  </section>
+
+  <section aria-labelledby="a-h">
+    <div class="section-head">
+      <span class="eyebrow">Archive</span>
+      <h2 id="a-h">Clusters and sources</h2>
+    </div>
+    <div class="archive-bar" style="margin-bottom:16px">
+      <div class="tabs" role="tablist" id="tabs">
+        <button class="tab" role="tab" id="tab-clusters" aria-selected="true" data-tab="clusters">Clusters</button>
+        <button class="tab" role="tab" id="tab-sources" aria-selected="false" data-tab="sources">Sources</button>
+      </div>
+      <input class="search" id="search" type="search" placeholder="Search clusters and sources" aria-label="Search clusters and sources">
+    </div>
+    <div id="pane-clusters"></div>
+    <div id="pane-sources" hidden></div>
+  </section>
+
+  <footer>Themes and cross-links are groupings for navigation, drawn from the working mind map and its source notes. Read status marks what has been read in full, in part, or not yet. This is a working map: the manifesto itself is still being written. Read the <a href="/blog/2014/11/10/paper-2-write-a-design-manifesto/">2014 original</a> or return to the <a href="/">archive</a>.</footer>
+</div>
+
+<script>
+const THEMES=[
+ {id:"A",name:"Sovereignty & distribution",short:"Sovereignty",def:"Own vs. rent, open vs. closed, lateral power vs. concentration. The July notes called this the spine."},
+ {id:"B",name:"Cosmos & sky",short:"Cosmos",def:"Stars, the night sky as a commons, the astrophysics lens."},
+ {id:"C",name:"Land & place",short:"Land",def:"Where and how to settle: tenets, siting, regenerative places."},
+ {id:"D",name:"Climate & ecology",short:"Ecology",def:"Living systems, climate signals, adaptation, energy."},
+ {id:"E",name:"Planetary intelligence",short:"Planetary AI",def:"AI that senses and models the Earth, and what it costs the Earth."},
+ {id:"F",name:"AI risk & governance",short:"Governance",def:"Do no harm: concentration, surveillance, transparency, red lines."},
+ {id:"G",name:"Consciousness & the sacred",short:"Consciousness",def:"Mind, emptiness, Buddhist and feminine lineages."},
+ {id:"H",name:"Flourishing, beauty & design",short:"Flourishing",def:"The human scale: health, self, relation, beauty, craft."}
+];
+const PARTS=[
+ {n:1,num:"I",name:"Astrophysics Values and Aesthetics",short:"Cosmos",words:"astrophysics · values · aesthetics"},
+ {n:2,num:"II",name:"Planet Earth: Ecological Ontology and Intelligence",short:"Planet",words:"ecology · planet · motherhood · plant medicine · Whole Earth Catalog · plant intelligence · mycelium network · Buckminster Fuller · plasma"},
+ {n:3,num:"III",name:"The TechnoSphere",short:"TechnoSphere",words:"technosphere · solar punk · do no harm · dystopia · non-maleficence · red lines"},
+ {n:4,num:"IV",name:"Designing a New Earth",short:"Design",words:"inspire · beauty · harmony"}
+];
+// [id, part, label, keywords, themes, sources]
+const RAW=[
+ ["cosmos",1,"cosmos","stars · plasma · spectra · deep time · cosmic scale · sun · fourth state of matter · planet","B",[]],
+ ["skycommons",1,"sky as commons","oldest scientific instrument · protect and improve life on Earth (NASA) · Janna Levin","BA",["levin"]],
+ ["darksky",1,"Dark Sky as a Service","Kosmos Stargazing Resort · Bortle Class 2 · dark sky certified · off-grid · hempcrete · darkness as amenity","BC",["kosmos","darksky"]],
+ ["cern",1,"CERN","LHC shutdown · High-Luminosity LHC upgrade","B",["cern"]],
+ ["career",1,"career","NASA · NRAO · radio telescopes","B",[]],
+ ["aesthetic",1,"aesthetic","awe · the sublime · wonder · beauty of infrastructure","BH",[]],
+ ["mind",1,"mind","Planck · mind as the matrix of matter · consciousness","BG",[]],
+ ["emptiness",1,"emptiness","śūnya / zero · openness ≠ nothingness · no fixed location · spinning galaxy · mirror correction · materialism as death cult · relative is absolute","BG",["thurman-talk"]],
+ ["legibility",1,"legibility","interpretability · grown not built · understanding what we build · truth","F",["amodei-interp"]],
+
+ ["motherhood",2,"motherhood","Prajnaparamita · Tara · Womb · Mother of the Buddhas · Divine Mother","G",["thurman-mother","thurman-tara"]],
+ ["plantmed",2,"plant medicine","psychedelic research · QRI","GD",["qri"]],
+ ["plantint",2,"plant intelligence","mind in nature · living intelligence of the natural world · interdependence · non-dualism · mycelium · rhizome · wood wide web","DG",[]],
+ ["planetint",2,"planetary intelligence","Large Earth Models · AlphaEarth (DeepMind) · Tessera / GeoTessera (Cambridge, open-source) · Planet Labs · satellites as sensory nervous system · proprioception for the planet · grounding AI in the physical world","EDA",["alphaearth","tessera","planet","wef","time","pritchard"]],
+ ["fuller",2,"Buckminster Fuller","synergetics · Spaceship Earth · whole systems · geodesic · tensegrity","DHC",["bfi"]],
+ ["wec",2,"Whole Earth Catalog","Stewart Brand · access to tools","DAH",[]],
+ ["climate",2,"climate","Climate Reality","D",["climatereality"]],
+ ["keystone",2,"keystone species + heirloom seeds","bees · seeds · coral reef · open-pollinated · saveable + replantable · seed-saving sovereignty · Safe Seed Pledge","DAC",["myhealth","safeseed"]],
+ ["ancestral",2,"ancestral intelligence","Ancestral Intelligence Network · Jazsalyn (EY × NEW INC)","G",["jazsalyn"]],
+
+ ["adapt",3,"climate adaptation","adaptation as design, not restraint · Super El Niño 2026–27 · variance not just averages · protect biodiverse sinks (Amazon) · mitigation as floor, adaptation as focus · adaptation as siting criterion · climate × AI","DC",["noaa","wmo","weatherwest"]],
+ ["footprint",3,"AI's planetary footprint","netting benefit against cost · ~945 TWh by 2030 · water 4.2–6.6 bn m³ by 2027 · inference = 80–90% of compute · closed models hide their footprint · siting a datacenter = siting a farm · the future of AI is a political decision","EDFA",["lse","mit","hf"]],
+ ["dystopia",3,"do no harm","non-maleficence · red lines · surveillance · propaganda · autonomous weapons","F",["amodei-adol"]],
+ ["autocracy",3,"autocracy","totalitarianism · concentration of power","FA",["amodei-adol","amodei-pol","amodei-ds"]],
+ ["unhealthy",3,"unhealthy AI","psychosis · addiction · puppeting · Lanier · Songdo","FH",["amodei-adol"]],
+ ["skyclaimed",3,"sky as claimed commons","Janna Levin · orbital data centers · machine gods · night sky washed out · consciousness ≠ humanity","BFA",["levin"]],
+ ["relational",3,"relational tech","non-addictive by design · consent-first · presence over engagement","HF",["relational"]],
+ ["innernet",3,"Inner Net","coined by Angela Del Sol · inner net ≠ internet · mind / body / heart / soul · inner alignment · coherent node in the ecosystem","GH",[]],
+ ["doula",3,"tech doula","birthing tech initiatives into existence","H",[]],
+ ["afl",3,"Ancient Future Lab","the fracture · extraction economy of attention · data sovereignty (mEinstein) · sovereign infrastructure / off-grid · ancestral wisdom LLM · beauty is infrastructure · seven generations","AGHC",["afl"]],
+ ["tenets",3,"land tenets","dark sky · regenerative farming + heirloom seeds · eco construction · climate adaptation as siting criterion · conservation ratio · off-grid energy, water + connectivity sovereignty · keystone stewardship · watershed","CADB",[]],
+ ["landsel",3,"land selection framework","Animate Intelligence · roots for 50–100 years · climate trajectory 2041–2060 · water stress 2050 · no composite score · user does the weighing · cosmolocal data governance","CDE",["animate"]],
+ ["regenesis",3,"Story of Place (Regenesis)","place as a living system · Story of Place · Integrative Design Process · nested wholes · inner + outer development held together","CHG",["regenesis"]],
+ ["experiments",3,"land + community experiments","Arcosanti (arcology = architecture + ecology) · ACTS (off-grid family compounds) · Casa Damara (family unit as foundation)","CHA",["arcosanti","acts","casadamara","shift"]],
+ ["rebel",3,"Rebel Alliance (USV)","agentic stack · unbundling vs Fat Models · agents as distributed infrastructure · bees to flowers · open interfaces → composability → specialization · lateral power","A",["usv"]],
+ ["expo",3,"Exponential / Infinity","holdco of holdcos · modern keiretsu · decentralized operating companies · services markets are local · prime brokerage for AI-native businesses · climate × AI white space","A",["expo","pedraza"]],
+ ["ai2040",3,"AI 2040 / Plan A","delay superintelligence to 2040 · make all AI research public · dozens of companies reach the frontier · mutually assured compute destruction · verification · “who will control all these AIs?” · space governance","FA",["ai2040","aifutures"]],
+ ["openweights",3,"open weights / AI sovereignty","open weights ≠ open source · download / keep / fine-tune / replant = own it vs. rent an API · run local + off-grid · open models = measurable footprint · disproportionately Chinese-lab-led","AF",["openguide","hf"]],
+
+ ["harmony",4,"harmony","planet + AI · regeneration · interbeing · planetary intelligence as planetary mind · mass consciousness expansion · AI's greatest gift","EGH",["noema","tangri"]],
+ ["solarpunk",4,"Solarpunk","inspire · beauty · ← climate adaptation","HD",[]],
+ ["encyclical",4,"Magnifica Humanitas","Babel vs. rebuilding Jerusalem · remain human · dignity not earned by output · the technocratic paradigm · having more ≠ being more · digital goods as universal destination · subsidiarity vs. Big Tech's de facto power","GFA",["encyclical"]],
+ ["health",4,"health","diseases cured · compressed 21st century · longevity · biological freedom","H",["amodei-mlg"]],
+ ["self",4,"self","best version of ourselves · AI coach · flourishing · “angel on your shoulder” (Amodei) · be more, not just do more","HG",["amodei-mlg","noema"]],
+ ["puett",4,"the self (Michael Puett)","what if the self isn't something to find? · ways of seeing are molded · Chinese philosophy","GH",["puett"]],
+ ["wisdom",4,"wisdom > intelligence","homo sapiens = wise, not intelligent · the fourth instinct · consciousness as the hard problem · AI as GPS to the soul · scarce goods become presence, depth, love","GH",["noema"]],
+ ["consciousness",4,"consciousness","AI + consciousness · Buddha Nature · sentience · selflessness ≠ nonexistence · bridge between ancient wisdom + future tech (Tangri) · co-creating a New Earth","GE",["tangri"]],
+ ["buddhism",4,"Buddhism","Robert Thurman · Xeno Sutra · Feminine Intelligence · compassion","G",["thurman-xeno","thurman-fi","ksr","thurman-other"]],
+ ["awareness",4,"AI & awareness (Thurman)","relational self · selfless self · enlightened AI · antidote to AI is FI · oxytocin over cortisol · AI questions harmful orders · the gap / freedom of choice · danger is people not machines","GF",["thurman-talk"]],
+ ["energy",4,"energy","solar · fusion · clean power","DB",[]]
+];
+const SOURCES={
+ "s2014":{t:"Write a Design Manifesto (2014)",by:"Regina Flores Mir",u:"https://www.reginafloresmir.com/blog/2014/11/10/paper-2-write-a-design-manifesto",s:"own"},
+ "amodei-mlg":{t:"Machines of Loving Grace",by:"Dario Amodei",u:"https://darioamodei.com/essay/machines-of-loving-grace",s:"read"},
+ "amodei-adol":{t:"The Adolescence of Technology",by:"Dario Amodei",u:"https://darioamodei.com/essay/the-adolescence-of-technology",s:"read"},
+ "amodei-pol":{t:"Policy on the AI Exponential",by:"Dario Amodei",u:"https://darioamodei.com/post/policy-on-the-ai-exponential",s:"read"},
+ "amodei-interp":{t:"The Urgency of Interpretability",by:"Dario Amodei",u:"https://darioamodei.com/post/the-urgency-of-interpretability",s:"read"},
+ "amodei-ds":{t:"On DeepSeek and Export Controls",by:"Dario Amodei",u:"https://darioamodei.com/post/on-deepseek-and-export-controls",s:"read"},
+ "levin":{t:"Depose the Gods; Install the Machines",by:"Janna Levin",u:"https://jannalevin.substack.com/p/to-protect-and-improve-life-here",s:"read",f:"sources/Janna Levin - Depose the Gods, Install the Machines.md"},
+ "kosmos":{t:"Kosmos Stargazing Resort & Spa",by:"Kosmos",u:"https://www.kosmosresort.com/",s:"ref"},
+ "darksky":{t:"DarkSky International",by:"DarkSky",u:"https://darksky.org/",s:"ref"},
+ "cern":{t:"LHC shutdown & High-Luminosity upgrade",by:"Physics World · CERN",u:"https://hilumilhc.web.cern.ch/",s:"ref"},
+ "thurman-talk":{t:"Artificial Intelligence & the Nature of Awareness (Apr 27, 2026)",by:"Robert Thurman",u:"https://bobthurman.substack.com/p/live-with-robert-thurman-cb7",s:"read"},
+ "thurman-mother":{t:"Foreword, Mother of the Buddhas (Lex Hixon)",by:"Robert Thurman",u:"",s:"ref"},
+ "thurman-tara":{t:"Tara translations / Embodying Tara",by:"Robert Thurman · Tibet House US",u:"",s:"ref"},
+ "thurman-xeno":{t:"The Xeno Sutra (2025)",by:"Robert Thurman et al.",u:"https://arxiv.org/abs/2507.20525",s:"ref"},
+ "thurman-fi":{t:"Feminine Intelligence",by:"Robert Thurman · The Millionaire's Lawyer",u:"https://jpmcavoy.com/bob-thurman/",s:"ref"},
+ "thurman-other":{t:"Menla, Wisdom Dharma Chat, EAA interview, Columbia profile, Sacred Stream, New Dimensions",by:"Robert Thurman",u:"https://menla.org/teachers/robert-a-f-thurman/",s:"ref"},
+ "ksr":{t:"Climate, Politics, and the Dalai Lama (video)",by:"Kim Stanley Robinson × Robert Thurman",u:"https://www.youtube.com/watch?v=UW6lwtUnrbM",s:"unread"},
+ "qri":{t:"Qualia Research Institute",by:"QRI",u:"https://qri.org/",s:"ref"},
+ "alphaearth":{t:"AlphaEarth Foundations",by:"Google DeepMind",u:"https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/",s:"read",f:"sources/Planetary Intelligence and Consciousness.md"},
+ "tessera":{t:"Tessera / GeoTessera: Earth intelligence for all",by:"University of Cambridge",u:"https://www.cst.cam.ac.uk/research/eeg/cambridge-ai-tool-promises-new-era-earth-intelligence-space",s:"read",f:"sources/Close-Out - Cambridge, TEDx, Tangri.md"},
+ "planet":{t:"Planetary Intelligence (essay)",by:"Will Marshall · Planet Labs",u:"https://www.planet.com/pulse/planetary-intelligence/",s:"partial"},
+ "wef":{t:"Planetary intelligence: AI from the internet to the real world",by:"World Economic Forum",u:"https://www.weforum.org/stories/artificial-intelligence/planetary-intelligence-ai-internet-real-world/",s:"partial"},
+ "time":{t:"We Need Planetary Intelligence in the Age of AI",by:"Time",u:"https://time.com/article/2026/07/07/we-need-planetary-intelligence-in-the-age-of-ai/",s:"partial"},
+ "pritchard":{t:"AI is making whole earth simulation possible (TEDxBoston)",by:"Mike Pritchard",u:"https://www.youtube.com/watch?v=I0nxFLh-iBg",s:"unread"},
+ "bfi":{t:"Buckminster Fuller Institute",by:"BFI",u:"https://www.bfi.org/",s:"ref"},
+ "climatereality":{t:"Climate Reality",by:"The Climate Reality Project",u:"",s:"ref"},
+ "myhealth":{t:"Heirloom seeds",by:"My Health Forward",u:"https://myhealthforward.com/collections/heirloom-seeds",s:"ref"},
+ "safeseed":{t:"Safe Seed Integrity Pledge",by:"Safe Seed Pledge",u:"https://www.safeseedpledge.org/",s:"ref"},
+ "jazsalyn":{t:"Ancestral Intelligence Network (Instagram post)",by:"Jazsalyn · EY × NEW INC",u:"https://www.instagram.com/p/DaOnsXZjah_/",s:"unread"},
+ "noaa":{t:"ENSO status & forecasts",by:"NOAA CPC",u:"https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/lanina/enso_evolution-status-fcsts-web.pdf",s:"ref"},
+ "wmo":{t:"Prepare for El Niño (June 2026)",by:"WMO",u:"https://wmo.int/news/media-centre/wmo-prepare-el-nino",s:"ref"},
+ "weatherwest":{t:"Rising odds of a strong-to-historic El Niño",by:"Daniel Swain · Weather West",u:"https://weatherwest.com/archives/43880",s:"ref"},
+ "lse":{t:"What direct risks does AI pose to the climate and environment?",by:"LSE Grantham Institute",u:"https://www.lse.ac.uk/granthaminstitute/explainers/what-direct-risks-does-ai-pose-to-the-climate-and-environment/",s:"read",f:"sources/AI Planetary Footprint - LSE Grantham.md"},
+ "mit":{t:"Explained: Generative AI's environmental impact",by:"MIT News",u:"https://news.mit.edu/2025/explained-generative-ai-environmental-impact-0117",s:"ref"},
+ "hf":{t:"Hugging Face Hub · Ollama · AI Energy Score",by:"Hugging Face · Ollama",u:"https://huggingface.co/spaces/AIEnergyScore/Leaderboard",s:"ref"},
+ "relational":{t:"Relational Technology: A Manifesto",by:"relationaltechnology.xyz",u:"https://www.relationaltechnology.xyz/p/relational-technology-a-manifesto",s:"ref"},
+ "afl":{t:"The Inner-Net Stack",by:"Ancient Future Lab",u:"https://www.ancientfuture.earth/",s:"provided",f:"sources/Ancient Future Lab - The Inner-Net Stack.html"},
+ "animate":{t:"Land Selection Framework",by:"Animate Intelligence (Gustaf + Chris Morello)",u:"https://animateintelligence.substack.com/p/land-selection-framework",s:"read",f:"sources/Land Selection Framework - Animate Intelligence.md"},
+ "regenesis":{t:"How We Work · The Regenerative Practitioner",by:"Regenesis Group + Institute",u:"https://regenesisgroup.com/how-we-work/",s:"read",f:"sources/Regenesis - Regenerative Development, Story of Place.md"},
+ "arcosanti":{t:"Arcosanti / The Cosanti Foundation",by:"Paolo Soleri",u:"https://www.arcosanti.org/",s:"ref"},
+ "acts":{t:"ACTS Decentralized Real Estate",by:"ACTS",u:"https://actsdereal.com/",s:"read",f:"sources/Land and Community Experiments - ACTS, Casa Damara.md"},
+ "casadamara":{t:"Casa Damara",by:"Casa Damara",u:"https://www.casadamara.com/",s:"read",f:"sources/Land and Community Experiments - ACTS, Casa Damara.md"},
+ "shift":{t:"Shift Esperanza (Nosara, Costa Rica)",by:"Shift Esperanza",u:"https://www.shiftesperanza.com/",s:"read"},
+ "usv":{t:"The Rebel Alliance (June 2026)",by:"Union Square Ventures",u:"https://blog.usv.com/the-rebel-alliance-2",s:"read",f:"sources/USV - The Rebel Alliance.md"},
+ "expo":{t:"Exponential Capital / Infinity Constellation / Invisible Technologies",by:"context notes",u:"https://exponentialcapital.co",s:"provided",f:"sources/Exponential-Infinity Constellation context.md"},
+ "pedraza":{t:"YouTube channel",by:"Francis Pedraza",u:"https://youtube.com/@francisjpedraza",s:"ref",f:"sources/AI 2040, Puett, Pedraza.md"},
+ "ai2040":{t:"AI 2040: Plan A",by:"AI Futures Project",u:"https://ai-2040.com/",s:"read",f:"sources/AI 2040, Puett, Pedraza.md"},
+ "aifutures":{t:"AI Futures Project · AI 2027 · interactive model",by:"AI Futures Project",u:"https://www.aifutures.org",s:"ref"},
+ "openguide":{t:"Open AI Models Reference Guide (July 2026)",by:"reference notes",u:"",s:"provided",f:"sources/Open AI Models Reference Guide - AI sovereignty.md"},
+ "encyclical":{t:"Magnifica Humanitas (May 2026), read through Ch. 3 §95",by:"Pope Leo XIV",u:"http://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html",s:"partial",f:"sources/Deeper Reads - Encyclical and Noema.md"},
+ "noema":{t:"AI's Greatest Gift to Humanity",by:"Arianna Huffington · Noema",u:"https://www.noemamag.com/ais-greatest-gift-to-humanity",s:"read",f:"sources/Deeper Reads - Encyclical and Noema.md"},
+ "tangri":{t:"How AI Can Aid in Mass Consciousness Expansion (paywalled; intro only)",by:"Seema Tangri",u:"https://seematangri.medium.com/how-ai-can-aid-in-mass-consciousness-expansion-a956e601fe57",s:"partial"},
+ "puett":{t:"What If the Self Isn't Something to Find? (video)",by:"Michael Puett with Simi Khadra",u:"https://youtu.be/aPTa03G8SK8",s:"unread",f:"sources/AI 2040, Puett, Pedraza.md"},
+ "keller":{t:"Cosmopolitic Gesture / Cosmic Brains (not yet placed on the map)",by:"Ed Keller",u:"https://youtu.be/oX4HLjxNmEU",s:"provided",f:"sources/Ed Keller - Cosmopolitic Gesture, Cosmic Brains.md"}
+};
+const STATUS={read:"Read",partial:"Partly read",unread:"Not watched / not read",provided:"My document",ref:"Reference link",own:"My 2014 manifesto"};
+// [a, b, why]
+const EDGES=[
+ ["keystone","openweights","own vs. rent: a saveable seed, a downloadable model"],
+ ["planetint","openweights","Tessera (open) vs. AlphaEarth (closed)"],
+ ["footprint","tenets","siting a datacenter = siting a farm"],
+ ["footprint","openweights","open models have measurable footprints"],
+ ["skycommons","skyclaimed","Levin: the sky as commons, then claimed"],
+ ["skyclaimed","ai2040","orbital compute · space governance plan"],
+ ["darksky","tenets","dark sky is land tenet 1"],
+ ["rebel","keystone","agents move “like bees to flowers”"],
+ ["rebel","plantint","composability as mycelium network"],
+ ["rebel","ai2040","distribution as a governance program"],
+ ["rebel","autocracy","unbundling vs. concentration of power"],
+ ["ai2040","autocracy","concentration is the catastrophe, even if alignment succeeds"],
+ ["encyclical","autocracy","subsidiarity vs. Big Tech's de facto power"],
+ ["encyclical","wisdom","Huffington cites the encyclical"],
+ ["encyclical","openweights","digital goods as universal destination"],
+ ["self","wisdom","be more, not just do more"],
+ ["puett","awareness","selfless self · the self not found (unwatched)"],
+ ["puett","wisdom","three traditions questioning the authentic self (unwatched)"],
+ ["legibility","ai2040","transparency and verification"],
+ ["legibility","footprint","you can only govern what is disclosed"],
+ ["adapt","solarpunk","adaptation as design → solarpunk"],
+ ["adapt","tenets","climate adaptation as siting criterion"],
+ ["adapt","landsel","climate trajectory 2041–2060 · water stress 2050"],
+ ["landsel","tenets","where to put down roots for 50–100 years"],
+ ["regenesis","innernet","inner + outer development held together"],
+ ["afl","innernet","The Inner-Net Stack"],
+ ["afl","ancestral","ancestral wisdom LLM"],
+ ["afl","aesthetic","beauty is infrastructure"],
+ ["afl","openweights","sovereign infrastructure, run off-grid"],
+ ["experiments","tenets","projects read against the tenets"],
+ ["experiments","fuller","arcology · whole systems"],
+ ["wec","experiments","1970-era counterculture experiments"],
+ ["motherhood","buddhism","Prajnaparamita and Tara via Thurman"],
+ ["emptiness","awareness","the same Thurman talk"],
+ ["mind","consciousness","mind as the matrix of matter"],
+ ["planetint","harmony","planetary intelligence as planetary mind"],
+ ["planetint","footprint","the benefit side of the netting"],
+ ["energy","cosmos","sun · fusion · fourth state of matter"],
+ ["expo","rebel","decentralized operating companies"],
+ ["expo","adapt","climate × AI white space"],
+ ["awareness","dystopia","AI questions harmful orders"],
+ ["consciousness","harmony","mass consciousness (Tangri)"],
+ ["unhealthy","relational","non-addictive by design"],
+ ["keystone","tenets","regenerative farming + heirloom seeds"],
+ ["wec","openweights","access to tools"]
+];
+const TENSIONS=[
+ {t:"Concentration: the default, or the catastrophe?",a:"Amodei's essays treat concentration as AI's gravity to manage.",b:"USV and AI 2040 argue concentration itself is the failure, even if alignment succeeds.",nodes:["autocracy","legibility","rebel","ai2040"]},
+ {t:"Is open liberatory?",a:"Open weights mean you own it, run it off-grid, measure its footprint.",b:"The open frontier is disproportionately Chinese-lab-led.",nodes:["openweights","autocracy","afl"]},
+ {t:"Past mitigation, or mitigation as floor?",a:"My lean: we are past mitigation; focus on adaptation and protecting sinks.",b:"The node as written: mitigation as floor, adaptation as focus.",nodes:["adapt","climate","solarpunk"]},
+ {t:"Earth intelligence: whose?",a:"AlphaEarth (DeepMind): closed, corporate.",b:"Tessera (Cambridge): open-source, free, runs on a laptop.",nodes:["planetint","openweights"]},
+ {t:"AI's footprint: free pass or condemnation?",a:"Name the footprint in real numbers.",b:"Harm is contingent on siting, energy and disclosure, so the netting is the work.",nodes:["footprint","planetint","tenets"]}
+];
+
+/* ---------- derived data ---------- */
+const NODES=RAW.map(r=>({id:r[0],part:r[1],label:r[2],kw:r[3].split(" · "),themes:r[4].split(""),src:r[5]}));
+const byId=Object.fromEntries(NODES.map(n=>[n.id,n]));
+const ADJ=Object.fromEntries(NODES.map(n=>[n.id,[]]));
+EDGES.forEach(([a,b,w])=>{ADJ[a].push({other:b,why:w});ADJ[b].push({other:a,why:w});});
+const themeColor=t=>`var(--t-${t})`;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const state={sel:null,theme:null,part:null,tension:null};
+const reduceMotion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- arc strip ---------- */
+function renderStrip(){
+  const el=document.getElementById("strip");
+  el.innerHTML=PARTS.map(p=>{
+    const ns=NODES.filter(n=>n.part===p.n);
+    const tally={};ns.forEach(n=>n.themes.forEach(t=>tally[t]=(tally[t]||0)+1));
+    const total=Object.values(tally).reduce((a,b)=>a+b,0);
+    const bar=THEMES.filter(t=>tally[t.id]).map(t=>`<i style="width:${(tally[t.id]/total*100).toFixed(2)}%;background:${themeColor(t.id)}" title="${esc(t.name)}: ${tally[t.id]}"></i>`).join("");
+    return `<button class="part-card" data-part="${p.n}" aria-pressed="${state.part===p.n}">
+      <div class="row"><span class="eyebrow">Part ${p.n}</span><span class="mono muted">${ns.length} clusters</span></div>
+      <h3>${esc(p.name)}</h3>
+      <div class="compbar" aria-hidden="true">${bar}</div>
+      <p class="words">${esc(p.words)}</p></button>`;
+  }).join("");
+  el.querySelectorAll(".part-card").forEach(b=>b.addEventListener("click",()=>{
+    const n=+b.dataset.part; state.part=state.part===n?null:n; state.theme=null; state.tension=null; refreshFilters();
+  }));
+}
+
+/* ---------- theme chips ---------- */
+function renderChips(){
+  const el=document.getElementById("themechips");
+  el.innerHTML=THEMES.map(t=>{
+    const c=NODES.filter(n=>n.themes.includes(t.id)).length;
+    return `<button class="chip" data-theme="${t.id}" aria-pressed="${state.theme===t.id}" title="${esc(t.def)}"><span class="dot" style="background:${themeColor(t.id)}"></span><span>${esc(t.name)} <span class="muted">${c}</span></span></button>`;
+  }).join("")+(state.theme||state.part||state.tension?`<button class="chip clear" id="clearf">Clear filter</button>`:"");
+  el.querySelectorAll("[data-theme]").forEach(b=>b.addEventListener("click",()=>{
+    const t=b.dataset.theme; state.theme=state.theme===t?null:t; state.part=null; state.tension=null; refreshFilters();
+  }));
+  const cl=document.getElementById("clearf"); if(cl) cl.addEventListener("click",()=>{state.theme=state.part=state.tension=null;refreshFilters();});
+}
+
+/* ---------- dial ---------- */
+const NS="http://www.w3.org/2000/svg";
+const C=700,R_DOT=392,R_RING0=372,STEP=9,R_EDGE=292,R_LABEL=410,GAP=6,R_PART=300;
+function mk(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function pt(r,deg){const a=deg*Math.PI/180;return [C+r*Math.cos(a),C+r*Math.sin(a)];}
+function arcPath(r,a0,a1){const [x0,y0]=pt(r,a0),[x1,y1]=pt(r,a1);const large=(a1-a0)>180?1:0;return `M${x0.toFixed(1)} ${y0.toFixed(1)} A${r} ${r} 0 ${large} 1 ${x1.toFixed(1)} ${y1.toFixed(1)}`;}
+const nodeEls={},edgeEls=[],markEls=[];
+function renderDial(){
+  const svg=document.getElementById("dial");
+  const per=(360-PARTS.length*GAP)/NODES.length;
+  let ang=-90+GAP/2; const partSpans=[];
+  PARTS.forEach(p=>{const start=ang;NODES.filter(n=>n.part===p.n).forEach(n=>{n.angle=ang+per/2;ang+=per;});partSpans.push({p,start,end:ang});ang+=GAP;});
+  // rings
+  const gRings=mk("g",{},svg);
+  THEMES.forEach((t,i)=>mk("circle",{cx:C,cy:C,r:R_RING0-i*STEP,class:"ring"},gRings));
+  // part arcs + numerals
+  partSpans.forEach(({p,start,end})=>{
+    mk("path",{d:arcPath(R_PART,start+0.6,end-0.6),class:"partarc"},gRings);
+    const [x,y]=pt(R_DOT,start-GAP/2);
+    const tx=mk("text",{x:x.toFixed(1),y:(y+8).toFixed(1),"text-anchor":"middle",class:"numeral"},gRings); tx.textContent=p.num;
+  });
+  // edges
+  const gEdges=mk("g",{},svg);
+  EDGES.forEach(([a,b])=>{
+    const A=byId[a],B=byId[b];
+    const [x0,y0]=pt(R_EDGE,A.angle),[x1,y1]=pt(R_EDGE,B.angle);
+    const mx=(x0+x1)/2,my=(y0+y1)/2,k=0.32;
+    const cx=C+(mx-C)*k,cy=C+(my-C)*k;
+    const p=mk("path",{d:`M${x0.toFixed(1)} ${y0.toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${x1.toFixed(1)} ${y1.toFixed(1)}`,class:"edge"},gEdges);
+    edgeEls.push({el:p,a,b});
+  });
+  // nodes
+  const gNodes=mk("g",{},svg);
+  NODES.forEach(n=>{
+    const g=mk("g",{class:"node",tabindex:"0",role:"button","aria-label":`${n.label}, Part ${n.part}`},gNodes);
+    const [gx0,gy0]=pt(R_RING0-(THEMES.length-1)*STEP-6,n.angle),[gx1,gy1]=pt(R_DOT-8,n.angle);
+    mk("line",{x1:gx0.toFixed(1),y1:gy0.toFixed(1),x2:gx1.toFixed(1),y2:gy1.toFixed(1),class:"guide"},g);
+    n.themes.forEach(t=>{
+      const i=THEMES.findIndex(x=>x.id===t);
+      const m=mk("path",{d:arcPath(R_RING0-i*STEP,n.angle-per*0.36,n.angle+per*0.36),class:"mark"},g);
+      m.style.stroke=themeColor(t); markEls.push({el:m,t,node:n.id});
+    });
+    const deg=ADJ[n.id].length;
+    const [dx,dy]=pt(R_DOT,n.angle);
+    mk("circle",{cx:dx.toFixed(1),cy:dy.toFixed(1),r:(5+Math.min(deg,8)*0.85).toFixed(1),class:"dotc"},g);
+    const [lx,ly]=pt(R_LABEL,n.angle);
+    const right=Math.cos(n.angle*Math.PI/180)>=0;
+    const rot=right?n.angle:n.angle+180;
+    const tx=mk("text",{x:lx.toFixed(1),y:ly.toFixed(1),"text-anchor":right?"start":"end","dominant-baseline":"central",transform:`rotate(${rot.toFixed(2)} ${lx.toFixed(1)} ${ly.toFixed(1)})`},g);
+    tx.textContent=n.label;
+    const title=mk("title",{},g); title.textContent=`${n.label} · ${n.themes.map(t=>THEMES.find(x=>x.id===t).short).join(", ")}`;
+    g.addEventListener("click",()=>select(n.id,false));
+    g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();select(n.id,false);}});
+    nodeEls[n.id]=g;
+  });
+}
+function focusSet(){
+  if(state.theme) return new Set(NODES.filter(n=>n.themes.includes(state.theme)).map(n=>n.id));
+  if(state.part) return new Set(NODES.filter(n=>n.part===state.part).map(n=>n.id));
+  if(state.tension!==null) return new Set(TENSIONS[state.tension].nodes);
+  return null;
+}
+function applyHighlight(){
+  const focus=focusSet();
+  const nb=state.sel?new Set([state.sel,...ADJ[state.sel].map(x=>x.other)]):null;
+  NODES.forEach(n=>{
+    let lit=true;
+    if(focus) lit=focus.has(n.id)||(nb&&nb.has(n.id));
+    else if(nb) lit=nb.has(n.id);
+    nodeEls[n.id].classList.toggle("dim",!lit);
+    nodeEls[n.id].classList.toggle("sel",n.id===state.sel);
+  });
+  edgeEls.forEach(e=>{
+    const touches=state.sel&&(e.a===state.sel||e.b===state.sel);
+    const inFocus=focus&&focus.has(e.a)&&focus.has(e.b);
+    e.el.classList.remove("on","soft","dim");
+    if(touches) e.el.classList.add("on");
+    else if(inFocus) e.el.classList.add("soft");
+    else if(focus||state.sel) e.el.classList.add("dim");
+  });
+  markEls.forEach(m=>m.el.classList.toggle("dim",!!state.theme&&m.t!==state.theme));
+}
+
+/* ---------- detail ---------- */
+function srcHTML(id){
+  const s=SOURCES[id]; if(!s) return "";
+  const title=s.u?`<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)}</a>`:esc(s.t);
+  return `<li class="src"><span>${title} <span class="muted">· ${esc(s.by)}</span></span><span class="pill st-${s.s}">${STATUS[s.s]}</span></li>`;
+}
+function renderDetail(){
+  const el=document.getElementById("detail");
+  const n=byId[state.sel]; if(!n){el.innerHTML="";return;}
+  const p=PARTS.find(x=>x.n===n.part);
+  const conns=ADJ[n.id].map(c=>`<li><button class="conn" data-go="${c.other}"><b>${esc(byId[c.other].label)}</b><span>${esc(c.why)}</span></button></li>`).join("")||`<li class="muted" style="font-size:13.5px">No cross-links recorded yet.</li>`;
+  const themes=n.themes.map(t=>{const T=THEMES.find(x=>x.id===t);return `<span class="chip small static"><span class="dot" style="background:${themeColor(t)}"></span><span>${esc(T.name)}</span></span>`}).join("");
+  const srcs=n.src.length?n.src.map(srcHTML).join(""):`<li class="muted" style="font-size:13.5px">No outside source; this cluster is my own framing.</li>`;
+  el.innerHTML=`
+    <div style="display:flex;flex-direction:column;gap:6px"><span class="eyebrow">Part ${n.part} · ${esc(p.name)}</span><h3>${esc(n.label)}</h3></div>
+    <div><div class="subhead">On the map</div><div class="kw">${n.kw.map(k=>`<span>${esc(k)}</span>`).join("")}</div></div>
+    <div><div class="subhead">Themes</div><div class="chips">${themes}</div></div>
+    <div><div class="subhead">Cross-links · ${ADJ[n.id].length}</div><ul class="list">${conns}</ul></div>
+    <div><div class="subhead">Sources</div><ul class="list">${srcs}</ul></div>`;
+  el.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>select(b.dataset.go,false)));
+}
+function select(id,scroll){
+  state.sel=id; applyHighlight(); renderDetail();
+  if(scroll){document.getElementById("dial-h").scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"start"});}
+}
+function refreshFilters(){renderChips();renderStrip();renderTensions();applyHighlight();}
+
+/* ---------- matrix ---------- */
+let mSel=null;
+function renderMatrix(){
+  const cnt=(a,b)=>NODES.filter(n=>n.themes.includes(a)&&n.themes.includes(b)).length;
+  let max=0; THEMES.forEach(a=>THEMES.forEach(b=>{if(a.id!==b.id) max=Math.max(max,cnt(a.id,b.id));}));
+  if(!mSel){let best=null;THEMES.forEach((a,i)=>THEMES.forEach((b,j)=>{if(j>i){const c=cnt(a.id,b.id);if(!best||c>best[2])best=[a.id,b.id,c];}}));mSel=[best[0],best[1]];}
+  const head=`<thead><tr><th></th>${THEMES.map(t=>`<th scope="col"><div><span class="tdot" style="background:${themeColor(t.id)}"></span>${esc(t.short)}</div></th>`).join("")}</tr></thead>`;
+  const body=THEMES.map(a=>`<tr><th scope="row"><span class="tdot" style="background:${themeColor(a.id)}"></span>${esc(a.short)}</th>${THEMES.map(b=>{
+    const c=cnt(a.id,b.id); const diag=a.id===b.id;
+    const pct=diag?10:(max?Math.round(c/max*90):0);
+    const pressed=mSel&&((mSel[0]===a.id&&mSel[1]===b.id)||(mSel[0]===b.id&&mSel[1]===a.id));
+    const bg=c?`color-mix(in srgb, var(--accent) ${pct}%, var(--surface))`:"var(--surface)";
+    const fg=pct>40?"var(--on-accent)":"var(--ink)";
+    return `<td><button class="cell${diag?" diag":""}${c?"":" zero"}" data-a="${a.id}" data-b="${b.id}" aria-pressed="${!!pressed}" aria-label="${esc(a.name)} and ${esc(b.name)}: ${c} clusters" style="background:${bg};color:${fg}" ${c?"":"disabled"}>${c||"·"}</button></td>`;
+  }).join("")}</tr>`).join("");
+  const tbl=document.getElementById("matrix"); tbl.innerHTML=head+`<tbody>${body}</tbody>`;
+  tbl.querySelectorAll(".cell:not(.zero)").forEach(b=>b.addEventListener("click",()=>{mSel=[b.dataset.a,b.dataset.b];renderMatrix();}));
+  renderIntersect();
+}
+function renderIntersect(){
+  const [a,b]=mSel; const A=THEMES.find(t=>t.id===a),B=THEMES.find(t=>t.id===b);
+  const ns=NODES.filter(n=>n.themes.includes(a)&&n.themes.includes(b));
+  const title=a===b?`All ${ns.length} clusters in ${esc(A.name)}`:`${ns.length} clusters in both ${esc(A.name)} and ${esc(B.name)}`;
+  const el=document.getElementById("intersect");
+  el.innerHTML=`<div class="title">${title}</div><p class="muted" style="font-size:13px">${esc(a===b?A.def:A.def+" / "+B.def)}</p><div class="chips">${ns.map(n=>`<button class="chip small" data-go="${n.id}"><span class="mono muted">${PARTS[n.part-1].num}</span>${esc(n.label)}</button>`).join("")}</div>`;
+  el.querySelectorAll("[data-go]").forEach(x=>x.addEventListener("click",()=>select(x.dataset.go,true)));
+}
+function renderTP(){
+  const head=`<thead><tr><th></th>${PARTS.map(p=>`<th scope="col">${p.num} · ${esc(p.short)}</th>`).join("")}</tr></thead>`;
+  const body=THEMES.map(t=>`<tr><th scope="row"><span class="tdot" style="background:${themeColor(t.id)}"></span>${esc(t.short)}</th>${PARTS.map(p=>{
+    const ns=NODES.filter(n=>n.part===p.n&&n.themes.includes(t.id));
+    return `<td><div class="dots" title="${esc(ns.map(n=>n.label).join(", "))}">${ns.map(()=>`<i style="background:${themeColor(t.id)}"></i>`).join("")||`<span class="muted mono">·</span>`}</div></td>`;
+  }).join("")}</tr>`).join("");
+  document.getElementById("tp").innerHTML=head+`<tbody>${body}</tbody>`;
+}
+
+/* ---------- tensions ---------- */
+function renderTensions(){
+  const el=document.getElementById("tensions");
+  el.innerHTML=TENSIONS.map((t,i)=>`<button class="tension" data-i="${i}" aria-pressed="${state.tension===i}">
+    <h3>${esc(t.t)}</h3>
+    <div class="vs"><span>${esc(t.a)}</span><em>vs</em><span>${esc(t.b)}</span></div>
+    <div class="chips">${t.nodes.map(id=>`<span class="chip small static">${esc(byId[id].label)}</span>`).join("")}</div></button>`).join("");
+  el.querySelectorAll(".tension").forEach(b=>b.addEventListener("click",()=>{
+    const i=+b.dataset.i; state.tension=state.tension===i?null:i; state.theme=null; state.part=null;
+    if(state.tension!==null) state.sel=TENSIONS[i].nodes[0];
+    refreshFilters(); renderDetail();
+    if(state.tension!==null) document.getElementById("dial-h").scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"start"});
+  }));
+}
+
+/* ---------- archive ---------- */
+let q="";
+function match(text){return !q||text.toLowerCase().includes(q);}
+function renderClusters(){
+  const el=document.getElementById("pane-clusters");
+  const html=PARTS.map(p=>{
+    const ns=NODES.filter(n=>n.part===p.n&&match([n.label,n.kw.join(" "),n.src.map(s=>SOURCES[s]?SOURCES[s].t+" "+SOURCES[s].by:"").join(" ")].join(" ")));
+    if(!ns.length) return "";
+    return `<div class="partgroup"><div class="eyebrow">Part ${p.n} · ${esc(p.name)} · ${ns.length}</div><div class="cards">${ns.map(n=>`
+      <button class="card" data-go="${n.id}"><div class="themes" aria-hidden="true">${n.themes.map(t=>`<i style="background:${themeColor(t)}"></i>`).join("")}</div>
+      <b>${esc(n.label)}</b><span class="kwline">${esc(n.kw.join(" · "))}</span>
+      <span class="mono muted">${n.src.length} source${n.src.length===1?"":"s"} · ${ADJ[n.id].length} links</span></button>`).join("")}</div></div>`;
+  }).join("");
+  el.innerHTML=html||`<p class="empty">No clusters match “${esc(q)}”.</p>`;
+  el.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>select(b.dataset.go,true)));
+}
+function renderSources(){
+  const el=document.getElementById("pane-sources");
+  const cited={}; NODES.forEach(n=>n.src.forEach(s=>(cited[s]=cited[s]||[]).push(n.id)));
+  const order=["read","partial","unread","provided","ref","own"];
+  const rows=Object.entries(SOURCES).filter(([k,s])=>match(s.t+" "+s.by+" "+(cited[k]||[]).map(id=>byId[id].label).join(" ")))
+    .sort((a,b)=>order.indexOf(a[1].s)-order.indexOf(b[1].s)||a[1].by.localeCompare(b[1].by));
+  const counts=order.map(s=>[s,Object.values(SOURCES).filter(x=>x.s===s).length]);
+  el.innerHTML=`<div class="legend-status" style="margin-bottom:12px">${counts.map(([s,c])=>`<span class="pill st-${s}">${STATUS[s]} · ${c}</span>`).join("")}</div>
+  ${rows.length?`<div class="tablewrap"><table class="srctable"><thead><tr><th>Source</th><th>Status</th><th>On the map</th><th>Note in folder</th></tr></thead><tbody>${rows.map(([k,s])=>`
+    <tr><td>${s.u?`<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)}</a>`:esc(s.t)}<div class="muted" style="font-size:12.5px">${esc(s.by)}</div></td>
+    <td><span class="pill st-${s.s}">${STATUS[s.s]}</span></td>
+    <td><div class="citedby">${(cited[k]||[]).map(id=>`<button data-go="${id}">${esc(byId[id].label)}</button>`).join("")||`<span class="muted" style="font-size:12.5px">${k==="keller"?"Not yet placed":k==="s2014"?"The original being rewritten":"—"}</span>`}</div></td>
+    <td class="mono muted" style="font-size:11.5px">${s.f?esc(s.f.replace("sources/","")):""}</td></tr>`).join("")}</tbody></table></div>`:`<p class="empty">No sources match “${esc(q)}”.</p>`}`;
+  el.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>select(b.dataset.go,true)));
+}
+function renderArchive(){renderClusters();renderSources();}
+document.getElementById("tabs").addEventListener("click",e=>{
+  const b=e.target.closest(".tab"); if(!b) return;
+  document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected",t===b));
+  ["clusters","sources"].forEach(k=>document.getElementById("pane-"+k).hidden=k!==b.dataset.tab);
+});
+document.getElementById("search").addEventListener("input",e=>{q=e.target.value.trim().toLowerCase();renderClusters();renderSources();});
+
+/* ---------- boot ---------- */
+renderStrip(); renderChips(); renderDial(); renderMatrix(); renderTP(); renderTensions(); renderArchive();
+const hub=NODES.slice().sort((a,b)=>ADJ[b.id].length-ADJ[a.id].length)[0];
+select(hub.id,false);
+</script>
+</body>
+</html>

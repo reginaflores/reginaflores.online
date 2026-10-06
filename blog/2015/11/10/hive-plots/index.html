@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hive Plots — Regina Flores Mir Archive</title>
+<meta name="description" content="Experiments in Data Visualization void ofApp::calculatePositions(){ //Note: Using Flocking Algorithm //PART 1 - Calculate Center of Mass string location = result[thingIGrabbed][&quot;location&quot;].asString();">
+<link rel="canonical" href="https://reginaflores.online/blog/2015/11/10/hive-plots/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hive Plots — Regina Flores Mir Archive">
+<meta property="og:description" content="Experiments in Data Visualization void ofApp::calculatePositions(){ //Note: Using Flocking Algorithm //PART 1 - Calculate Center of Mass string location = result[thingIGrabbed][&quot;location&quot;].asString();">
+<meta property="og:url" content="https://reginaflores.online/blog/2015/11/10/hive-plots">
+<meta property="og:image" content="https://reginaflores.online/media/1447206073849-39DYLQE7WSWEUL0PXE4V.jpg">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,300..1000&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=7">
+</head>
+<body>
+<header class="site"><div class="bar">
+  <a class="brand" href="/"><span class="name">Regina Flores Mir</span><span class="sub">Archive</span></a>
+  <nav><a href="/#topics">Topics</a><a href="/#projects">Projects</a><a href="/aboutme/">About</a></nav>
+</div></header>
+<main>
+<article class="post"><p class="crumb"><a href="/">Archive</a> / 2015</p><h1>Hive Plots</h1><p class="date">November 11, 2015</p><div class="chips"><a class="chip" href="/blog/category/Thesis+1/">Thesis 1</a></div><div class="content"><p>Experiments in Data Visualization</p>
+<div class="gallery"><a href="/media/1447206073849-39DYLQE7WSWEUL0PXE4V.jpg"><img src="/media/1447206073849-39DYLQE7WSWEUL0PXE4V.jpg" alt="" loading="lazy"></a><a href="/media/1447206073868-X4Q09MWIOVDIDQ67WJ1P.jpg"><img src="/media/1447206073868-X4Q09MWIOVDIDQ67WJ1P.jpg" alt="" loading="lazy"></a><a href="/media/1447206074498-XSJZX1UPETZC9S1LX6K0.jpg"><img src="/media/1447206074498-XSJZX1UPETZC9S1LX6K0.jpg" alt="" loading="lazy"></a><a href="/media/1447206074961-IQS9AEVBY33YCZIYGNOT.jpg"><img src="/media/1447206074961-IQS9AEVBY33YCZIYGNOT.jpg" alt="" loading="lazy"></a><a href="/media/1447206074944-2OG0OXQXETW8EI4OWCZC.jpg"><img src="/media/1447206074944-2OG0OXQXETW8EI4OWCZC.jpg" alt="" loading="lazy"></a><a href="/media/1447206075382-QT6AXVDMXPABHYT6YZN7.jpg"><img src="/media/1447206075382-QT6AXVDMXPABHYT6YZN7.jpg" alt="" loading="lazy"></a><a href="/media/1447206075664-C4T44LRZ2GFBAV77Q054.jpg"><img src="/media/1447206075664-C4T44LRZ2GFBAV77Q054.jpg" alt="" loading="lazy"></a><a href="/media/1447206075866-8LIFQFANCWN07VJCLIVM.jpg"><img src="/media/1447206075866-8LIFQFANCWN07VJCLIVM.jpg" alt="" loading="lazy"></a><a href="/media/1447206076373-7OMQYAEILA78OPJKBT36.jpg"><img src="/media/1447206076373-7OMQYAEILA78OPJKBT36.jpg" alt="" loading="lazy"></a></div>
+<p>void ofApp::calculatePositions(){</p>
+<pre><code>//Note: Using Flocking Algorithm
+
+//PART 1 - Calculate Center of Mass
+string location = result[thingIGrabbed]["location"].asString();
+ofPoint center;
+int numberOfPoints = 0;
+for (int i : nodeMap[location]) {
+    center += pos[i];
+    numberOfPoints++;
+}
+center = center / numberOfPoints;
+ofPoint cohesion_velocity = (center - pos[thingIGrabbed])/1.0f;
+
+
+//Part 2 - Calculate Distance between each node and itself
+ofPoint displacement;
+for (int i : nodeMap[location]) {
+    if (i != thingIGrabbed) {
+        float dist = ofDist(pos[i].x, pos[i].y, mouseX, mouseY);
+
+        if(dist &lt; 10.0){
+            displacement = displacement - (pos[i] - ofPoint(mouseX, mouseY));
+        }
+    }
+}
+
+ofPoint separation_velocity;
+separation_velocity = displacement;
+
+
+//Part 3 - Add Velocity
+ofPoint alignment_velocity;
+if (previousGrabbedPosition.x != 0 || previousGrabbedPosition.y != 0) {
+    // v = (x2 - x1)/t ==&gt; but we assign time = 1
+    vel[thingIGrabbed] = ofPoint(mouseX, mouseY) - previousGrabbedPosition;
+
+    ofPoint avgVel;
+    for (int i : nodeMap[location]) {
+        avgVel += vel[i];
+    }
+    alignment_velocity = avgVel / (numberOfPoints + 1) / 1.0f;
+}
+previousGrabbedPosition = ofPoint(mouseX, mouseY);
+
+ofPoint swarmV = -cohesion_velocity + separation_velocity + alignment_velocity;
+
+
+for (int i : nodeMap[location]) {
+    pos[i] += swarmV;
+}</code></pre>
+<p>}</p></div></article><nav class="pn"><a class="prev" href="/blog/2015/10/29/shader-sturio/"><span>← Older</span>Shader Studio</a><a class="next" href="/blog/2015/11/24/proposal-towards-a-reimagined-built-environment/"><span>Newer →</span>Proposal Towards a Reimagined Built Environment</a></nav>
+</main>
+<footer class="site">
+  <span>Regina Flores Mir · Archive of work, 2014–2016</span>
+  <a href="#top" onclick="window.scrollTo(0,0);return false">Back to top ↑</a>
+</footer>
+</body>
+</html>

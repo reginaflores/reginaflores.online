@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thermal Imaging Experiments — Regina Flores Mir Archive</title>
+<meta name="description" content="Using the below rig I filmed a NY city street using a thermal camera. Equipment: Camera Seek Thermal Camera iPhone extension iPhone (camera) Rig (courtesy of Chris Woebken ) I first take the thermal v">
+<link rel="canonical" href="https://reginaflores.online/blog/2016/3/19/thermal-imaging/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Thermal Imaging Experiments — Regina Flores Mir Archive">
+<meta property="og:description" content="Using the below rig I filmed a NY city street using a thermal camera. Equipment: Camera Seek Thermal Camera iPhone extension iPhone (camera) Rig (courtesy of Chris Woebken ) I first take the thermal v">
+<meta property="og:url" content="https://reginaflores.online/blog/2016/3/19/thermal-imaging">
+<meta property="og:image" content="https://reginaflores.online/media/1458400158439-1IIWS9EPEGOGXB3PVE1E.jpg">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,300..1000&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=7">
+</head>
+<body>
+<header class="site"><div class="bar">
+  <a class="brand" href="/"><span class="name">Regina Flores Mir</span><span class="sub">Archive</span></a>
+  <nav><a href="/#topics">Topics</a><a href="/#projects">Projects</a><a href="/aboutme/">About</a></nav>
+</div></header>
+<main>
+<article class="post"><p class="crumb"><a href="/">Archive</a> / 2016</p><h1>Thermal Imaging Experiments</h1><p class="date">March 19, 2016</p><div class="chips"><a class="chip" href="/blog/category/Thesis+2/">Thesis 2</a></div><div class="content"><p>Using the below rig I filmed a NY city street using a thermal camera. </p><p>Equipment:</p><ol><li>Camera</li><li>Seek Thermal Camera iPhone extension</li><li>iPhone (camera)</li><li>Rig (courtesy of <a href="http://www.chriswoebken.com/">Chris Woebken</a>)</li></ol>
+<figure><img src="/media/1458400158439-1IIWS9EPEGOGXB3PVE1E.jpg" alt="" loading="lazy"></figure>
+<div class="video"><iframe src="https://player.vimeo.com/video/159619872" loading="lazy" allowfullscreen allow="fullscreen; picture-in-picture"></iframe></div>
+<p>I first take the thermal video and use an optical flow detection library called oflow (<a href="https://github.com/anvaka/oflow">https://github.com/anvaka/oflow</a>) to take the brightest points in each frame of the video to be the "hottest" points:</p>
+<pre><code>
+
+function isHot(color) {
+    return color[0] &gt; 150 &amp;&amp; color[1] &gt; 150 &amp;&amp; color[2] &gt; 150;
+}
+
+
+</code></pre>
+<div class="video"><iframe src="https://player.vimeo.com/video/159649204" loading="lazy" allowfullscreen allow="fullscreen; picture-in-picture"></iframe></div>
+<p>I then run this through three.js. Instead of rendering the "blobs" I use their x,y positions to map my particle system to thier locations each frame. </p>
+<div class="video"><iframe src="https://player.vimeo.com/video/159803789" loading="lazy" allowfullscreen allow="fullscreen; picture-in-picture"></iframe></div></div></article><nav class="pn"><a class="prev" href="/blog/2016/3/18/nanotronics-visit/"><span>← Older</span>Nanotronics Microscopy</a><a class="next" href="/blog/2016/3/21/building-the-tool/"><span>Newer →</span>Building the tool...</a></nav>
+</main>
+<footer class="site">
+  <span>Regina Flores Mir · Archive of work, 2014–2016</span>
+  <a href="#top" onclick="window.scrollTo(0,0);return false">Back to top ↑</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algorithmic Drawing — Regina Flores Mir Archive</title>
+<meta name="description" content="#ifdef GL_ES precision mediump float; #endif #define PI 3.14159265359 uniform float u_time; uniform vec2 u_resolution; float F(float x, float p, float w){ return (smoothstep(p-w*.5,p,x) + smoothstep(p">
+<link rel="canonical" href="https://reginaflores.online/blog/2015/9/14/algorithmic-drawing/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Algorithmic Drawing — Regina Flores Mir Archive">
+<meta property="og:description" content="#ifdef GL_ES precision mediump float; #endif #define PI 3.14159265359 uniform float u_time; uniform vec2 u_resolution; float F(float x, float p, float w){ return (smoothstep(p-w*.5,p,x) + smoothstep(p">
+<meta property="og:url" content="https://reginaflores.online/blog/2015/9/14/algorithmic-drawing">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,300..1000&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=7">
+</head>
+<body>
+<header class="site"><div class="bar">
+  <a class="brand" href="/"><span class="name">Regina Flores Mir</span><span class="sub">Archive</span></a>
+  <nav><a href="/#topics">Topics</a><a href="/#projects">Projects</a><a href="/aboutme/">About</a></nav>
+</div></header>
+<main>
+<article class="post"><p class="crumb"><a href="/">Archive</a> / 2015</p><h1>Algorithmic Drawing</h1><p class="date">September 14, 2015</p><div class="chips"><a class="chip" href="/blog/category/Shaders/">Shaders</a></div><div class="content"><pre><code>
+
+
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+#define PI 3.14159265359
+
+uniform float u_time;
+uniform vec2 u_resolution;
+
+float F(float x, float p, float w){
+    return (smoothstep(p-w*.5,p,x) + smoothstep(p+w*.5,p,x))-1.0;
+}
+
+// Made a function to model the mathematical functions outlined
+//in Kynd&#x27;s flikr page here:
+//https://www.flickr.com/photos/kynd/9546075099/
+float Curve (float constant, float x, float power){
+    
+    return constant - pow(abs(sin(PI * x / 2.0)),power);
+}
+
+void main() {
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    vec3 color = vec3(0.);
+    
+    vec2 p = vec2(cos(u_time*0.5),0.)*.5+.5;
+    
+    float x = p.x;
+    
+    //Here we define the inputs into Curve Function:
+    p.y = Curve(1.0, -1.0+2.0*x, 0.5);
+    
+    float pct = F(st.x,p.x,.1);
+    pct *= F(st.y,p.y,.1);
+    
+    color = vec3(step(.5, pct), 0.0, 0.0);
+    gl_FragColor = vec4(color,1.0);
+}
+
+
+</code></pre></div></article><nav class="pn"><a class="prev" href="/blog/2015/9/14/thesis-mind-map/"><span>← Older</span>Thesis Writing I</a><a class="next" href="/blog/2015/9/21/get-out-of-the-building/"><span>Newer →</span>Get Out of the Building</a></nav>
+</main>
+<footer class="site">
+  <span>Regina Flores Mir · Archive of work, 2014–2016</span>
+  <a href="#top" onclick="window.scrollTo(0,0);return false">Back to top ↑</a>
+</footer>
+</body>
+</html>

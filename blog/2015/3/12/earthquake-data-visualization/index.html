@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Earthquake Data Visualization — Regina Flores Mir Archive</title>
+<meta name="description" content="Growing up in California one of the biggest life-changing moments for me was the Loma Prieta 1989 Earthquake. So when thinking about this assignment I wanted to somehow capture the human impact of an ">
+<link rel="canonical" href="https://reginaflores.online/blog/2015/3/12/earthquake-data-visualization/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Earthquake Data Visualization — Regina Flores Mir Archive">
+<meta property="og:description" content="Growing up in California one of the biggest life-changing moments for me was the Loma Prieta 1989 Earthquake. So when thinking about this assignment I wanted to somehow capture the human impact of an ">
+<meta property="og:url" content="https://reginaflores.online/blog/2015/3/12/earthquake-data-visualization">
+<meta property="og:image" content="https://reginaflores.online/media/1426164349894-E8F6B95GCLONB93OAWGR.jpg">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,300..1000&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=7">
+</head>
+<body>
+<header class="site"><div class="bar">
+  <a class="brand" href="/"><span class="name">Regina Flores Mir</span><span class="sub">Archive</span></a>
+  <nav><a href="/#topics">Topics</a><a href="/#projects">Projects</a><a href="/aboutme/">About</a></nav>
+</div></header>
+<main>
+<article class="post"><p class="crumb"><a href="/">Archive</a> / 2015</p><h1>Earthquake Data Visualization</h1><p class="date">March 12, 2015</p><div class="chips"><a class="chip" href="/blog/category/Data+Visualization/">Data Visualization</a></div><div class="content"><p>Growing up in California one of the biggest life-changing moments for me was the Loma Prieta 1989 Earthquake. So when thinking about this assignment I wanted to somehow capture the human impact of an earthquake. I did not want to just display data, but connect it to the (sometimes) horrendous nature of these events. </p><p>I thought by incorporating sound of the visualization that would immediately connect the user to the human tragedy. I pulled a soundtrack from a YouTube clip of the footage from that day in 1989. For me that was the starting point for this assignment. </p><p><strong>Data Parsing:</strong></p><p>I decided to look only at the California data because I wanted to do a project on my home state. </p><p>I pulled the All_Month data from the USGS (<a href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php">http://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php</a>) website and decided to look only at monthly data. </p><p>I pulled the data into Excel to look at it and get a sense for what was going on. I ran some basic analytics on the data and realized that one county accounted for 22% of all earthquakes in the state of CA. </p><p> </p>
+<figure><img src="/media/1426164349894-E8F6B95GCLONB93OAWGR.jpg" alt="" loading="lazy"></figure>
+<p>I then wrote a script in Processing to parse the monthly data by the county "The Geysers" and only looked at "earthquake" data. Note that the full data file includes "explosions" and "quarry blasts". </p>
+<figure><img src="/media/1426163688618-8S94BVQ6D4OWOQGX70W5.jpg" alt="" loading="lazy"></figure>
+<p>Once the data was parsed and I was only looking at "Earthquakes" from "The Geysers", I was able to get started with my visualization. </p><p>I was very interested in using the Latitude and Longitude positions from the data tables. I used a library called <em>Unfolding Maps </em>that allowed me to easily make use of the positions through a function called "Location". </p>
+<figure><img src="/media/1426164137075-6DD4NUESAQF9WXQQP7AX.jpg" alt="" loading="lazy"></figure>
+<figure><img src="/media/1426164369097-P9E4MS2FT31MFMCK7HNK.jpg" alt="" loading="lazy"></figure>
+<p>I also spent some time looking into p5.js but I could not find a map library to use. I think for a future iteration of this type of visualization I would like to experiment with the Google Maps API or another maps library such as Leaflet (<a href="http://leafletjs.com/">http://leafletjs.com/</a>). </p><p><a href="http://a.parsons.edu/~florr422/DataViz/homework3/">http://a.parsons.edu/~florr422/DataViz/homework3/</a></p><p>I spent a lot of time having issues with my p5.js code until I realized that some functionality does not work unless you setup a local server. Please see my detailed README file here: http://a.parsons.edu/~florr422/DataViz/homework3/README.md</p>
+<figure><img src="/media/1426166956090-5G5PDT8SHKTRWRY8ZK8N.jpg" alt="" loading="lazy"></figure></div></article><nav class="pn"><a class="prev" href="/blog/2015/3/9/kinetic-bird/"><span>← Older</span>Kinetic Bird</a><a class="next" href="/blog/2015/3/12/making-mycelium-bricks/"><span>Newer →</span>Making Mycelium Bricks</a></nav>
+</main>
+<footer class="site">
+  <span>Regina Flores Mir · Archive of work, 2014–2016</span>
+  <a href="#top" onclick="window.scrollTo(0,0);return false">Back to top ↑</a>
+</footer>
+</body>
+</html>

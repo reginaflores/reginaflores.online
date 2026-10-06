@@ -48,6 +48,7 @@ TAXONOMY = {
         "Data visualization": [r"\bdata ?vi[sz]\w*", r"\bvisuali[sz]\w*", r"\binfographic\w*"],
         "Maps & mapping": [r"\bmaps?\b", r"\bmapping\b", r"\bgis\b", r"\bcartograph\w*"],
         "Networks": [r"\bnetworks?\b", r"\bgraph theory\b", r"\bnodes?\b"],
+        "Statistics & finance": [r"\bstatistic\w*", r"\bregression\b", r"\btime series\b", r"\bfinanc\w*", r"\bswaps?\b", r"\btrading\b", r"\bhedge fund\w*", r"\bportfolio\b", r"\bwall street\b"],
     },
     "City & environment": {
         "Cities & urbanism": [r"\bcit(y|ies)\b", r"\burban\w*", r"\bnew york\b", r"\bnyc\b"],
@@ -93,7 +94,8 @@ def derive(entries):
         got = []
         for g, tags in compiled.items():
             for t, pats in tags.items():
-                if any(p.search(title) for p in pats) or sum(len(p.findall(body)) for p in pats) >= MIN_HITS:
+                need = max(MIN_HITS, len(body) // 4000)  # long documents need more mentions
+                if any(p.search(title) for p in pats) or sum(len(p.findall(body)) for p in pats) >= need:
                     got.append(t)
         for t in e.get("tags") or []:
             if LEGACY.get(t) and LEGACY[t] not in got:

@@ -156,7 +156,8 @@ def text_of(html_s):
 
 def main():
     posts = json.loads((DATA / "posts.json").read_text())
-    pages = json.loads((DATA / "pages.json").read_text())
+    pages = [dict(pg, kind="page") for pg in json.loads((DATA / "pages.json").read_text())]
+    pages += [dict(pg, kind="project") for pg in json.loads((DATA / "projects.json").read_text())]
     clean = []
     for p in posts:
         html_s, imgs = convert_body(p["body"])
@@ -180,7 +181,7 @@ def main():
             t = (it.get("title") or "").strip()
             parts.append((f"<h3>{H.escape(t)}</h3>" if t else "") + h); imgs += i
         html_s = "\n".join(parts)
-        clean.append({"kind": "page", "url": pg["url"], "title": pg["title"].strip(), "date": "",
+        clean.append({"kind": pg["kind"], "url": pg["url"], "title": pg["title"].strip(), "date": "",
                       "categories": [], "tags": [], "html": html_s,
                       "thumb": imgs[0] if imgs else None, "text": text_of(html_s)[:4000]})
     (DATA / "clean.json").write_text(json.dumps(clean, indent=1))

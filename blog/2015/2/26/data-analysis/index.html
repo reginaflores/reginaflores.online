@@ -15,12 +15,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,300..1000&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=9">
+<link rel="stylesheet" href="/assets/style.css?v=10">
 </head>
 <body>
 <header class="site"><div class="bar">
   <a class="brand" href="/"><span class="name">Regina Flores Mir</span><span class="sub">Archive</span></a>
-  <nav><a href="/#topics">Topics</a><a href="/#projects">Projects</a><a href="/aboutme/">About</a></nav>
+  <nav><a href="/#topics">Topics</a><a href="/#projects">Projects</a><a href="/papers/">Papers</a><a href="/aboutme/">About</a></nav>
 </div></header>
 <main>
 <article class="post"><p class="crumb"><a href="/">Archive</a> / 2015</p><h1>Data Analysis</h1><p class="date">February 26, 2015</p><div class="chips"><a class="chip cat" href="/blog/category/Data+Visualization/">Data Visualization</a><a class="chip" href="/tags/maps-and-mapping/">Maps &amp; mapping</a></div><div class="content"><p>Data Viz Assignment 2: Exploring <a href="http://www.cms.gov/OpenPayments/About/Open-Payments-Data-in-Context.html">CMS</a> data. The dataset contained over 3,800 records. To clean the data I aggregated the 'Interest Value' and 'Dollar Amount Invested' columns by 'Recipient State'. One record was discarded because no State was provided (seemed to be a non US recipient). Once the data was aggregated there were 49 records (note: no HI, no AL and includes DC). I then broke the states into 3 buckets based on total Interest earned. I arbitrarily chose the bucket size to be: 1) greater than $10M, 2) between $10M - $1M, and 3) less than $1M. </p><p>I choose to map this data on US map rather than in a bar chart because I thought it was easier to see the distribution on interest earned in this visual context.</p><p>Next step: I would like to add a mouse-over that would show the dollar amount by state. </p>
@@ -29,6 +29,7 @@
 <footer class="site">
   <span>Regina Flores Mir · Archive of work, 2014–2016</span>
   <a href="https://reginafloresmir.ai">Current work: reginafloresmir.ai →</a>
+  <span class="credit">Design inspired by <a href="https://www.theshed.org">The Shed</a></span>
   <a href="#top" onclick="window.scrollTo(0,0);return false">Back to top ↑</a>
 </footer>
 </body>

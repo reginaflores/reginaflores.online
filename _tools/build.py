@@ -56,6 +56,8 @@ def fix_media(html_s):
 
 def thumb(p):
     """600px thumbnail for listing cards."""
+    if p and p.startswith("/media/covers/"):
+        return p
     src = media_path(p) if p else None
     if not src:
         return None
@@ -90,7 +92,7 @@ def tag_url(t):
     return "/tags/" + slugify(t)
 
 
-CSS_V = "9"
+CSS_V = "10"
 
 
 def page(title, body, desc=INTRO, url="/", og_img=None, kind="website"):
@@ -118,7 +120,7 @@ def page(title, body, desc=INTRO, url="/", og_img=None, kind="website"):
 <body>
 <header class="site"><div class="bar">
   <a class="brand" href="/"><span class="name">{NAME}</span><span class="sub">Archive</span></a>
-  <nav><a href="/#topics">Topics</a><a href="/#projects">Projects</a><a href="/aboutme/">About</a></nav>
+  <nav><a href="/#topics">Topics</a><a href="/#projects">Projects</a><a href="/papers/">Papers</a><a href="/aboutme/">About</a></nav>
 </div></header>
 <main>
 {body}
@@ -126,6 +128,7 @@ def page(title, body, desc=INTRO, url="/", og_img=None, kind="website"):
 <footer class="site">
   <span>{NAME} · Archive of work, 2014–2016</span>
   <a href="{CURRENT}">Current work: reginafloresmir.ai →</a>
+  <span class="credit">Design inspired by <a href="https://www.theshed.org">The Shed</a></span>
   <a href="#top" onclick="window.scrollTo(0,0);return false">Back to top ↑</a>
 </footer>
 </body>
@@ -136,9 +139,11 @@ def page(title, body, desc=INTRO, url="/", og_img=None, kind="website"):
 def card(e):
     th = thumb(e["thumb"])
     img = f'<img src="{th}" alt="" loading="lazy">' if th else '<div class="noimg"></div>'
-    when = datetime.strptime(e["date"], "%Y-%m-%d").strftime("%b %-d, %Y") if e["date"] else ""
+    when = datetime.strptime(e["date"], "%Y-%m-%d").strftime("%b %-d, %Y") if e.get("date") else ""
+    if e.get("kind") == "doc":
+        when = " · ".join(x for x in (e["doc_type"], e["year"]) if x)
     pill = f'<span class="pill">{when}</span>' if when else ""
-    meta = ", ".join(e["categories"])
+    meta = ", ".join(e.get("categories") or []) or e.get("context", "")
     return (f'<a class="card" href="{e["url"]}/" data-search="{H.escape((e["title"] + " " + " ".join(e["categories"] + e["tags"]) + " " + e["text"][:1500]).lower())}">'
             f'<div class="thumb">{img}{pill}</div><h3>{H.escape(e["title"])}</h3>' + (f'<p class="meta">{H.escape(meta)}</p>' if meta else "") + "</a>")
 
@@ -146,12 +151,16 @@ def card(e):
 def listing(items, by_year=True):
     if not by_year:
         return '<div class="grid">' + "".join(card(e) for e in items) + "</div>"
-    out, groups = [], defaultdict(list)
+    groups = defaultdict(list)
     for e in items:
-        groups[e["date"][:4]].append(e)
-    for y in sorted(groups, reverse=True):
-        out.append(f'<section class="year" data-year="{y}"><h2 class="yr">{y} <span>{len(groups[y])}</span></h2>'
-                   f'<div class="grid">{"".join(card(e) for e in groups[y])}</div></section>')
+        key = e["date"][:4] if e.get("kind") == "post" else ("Papers" if e.get("kind") == "doc" else "Projects")
+        groups[key].append(e)
+    order = sorted((k for k in groups if k.isdigit()), reverse=True) + [k for k in ("Projects", "Papers") if k in groups]
+    out = []
+    for k in order:
+        label = "Papers &amp; presentations" if k == "Papers" else k
+        out.append(f'<section class="year" data-group="{k}"><h2 class="yr">{label} <span>{len(groups[k])}</span></h2>'
+                   f'<div class="grid">{"".join(card(e) for e in groups[k])}</div></section>')
     return "".join(out)
 
 
@@ -168,19 +177,26 @@ def main():
     for d in ("blog", "tags"):
         shutil.rmtree(ROOT / d, ignore_errors=True)
     posts = sorted([e for e in entries if e["kind"] == "post"], key=lambda e: e["date"], reverse=True)
-    pages = [e for e in entries if e["kind"] == "page" and e["url"] not in SKIP_PAGES and (e["text"] or e["thumb"])]
+    pages = [e for e in entries if e["kind"] in ("page", "project") and e["url"] not in SKIP_PAGES and (e["text"] or e["thumb"])]
+    projects = [e for e in pages if e["kind"] == "project"]
+    others = [e for e in pages if e["kind"] == "page" and e["url"] != "/aboutme"]
     for e in entries:
         e["html"] = fix_media(e["html"])
     # fine-grained tags derived from full post text (+ original Squarespace tags)
-    for p in posts:
-        p["full"] = re.sub(r"\s+", " ", BeautifulSoup(p["html"], "html.parser").get_text(" "))
-    derived, tag_groups, _ = derive([dict(p, text=p["full"]) for p in posts])
-    for p in posts:
+    docs = sorted(json.loads((DATA / "papers.json").read_text()), key=lambda d: (d["year"] or "0000"), reverse=True)
+    for d in docs:
+        d.update(date="", categories=[], thumb=d["cover"], html="")
+    tagged = posts + projects + others + docs
+    for p in tagged:
+        p["full"] = p["text"] if p.get("kind") == "doc" else re.sub(r"\s+", " ", BeautifulSoup(p["html"], "html.parser").get_text(" "))
+    derived, tag_groups, _ = derive([dict(p, text=p["full"]) for p in tagged])
+    for p in tagged:
         p["tags"] = derived[p["url"]]
     cats, tags = defaultdict(list), defaultdict(list)
     for p in posts:
         for c in p["categories"]:
             cats[c].append(p)
+    for p in tagged:
         for t in p["tags"]:
             tags[t].append(p)
     cat_names = sorted(cats, key=lambda c: (-len(cats[c]), c))
@@ -206,9 +222,26 @@ def main():
             write(slug_path(pg["url"]), page("About", ABOUT.format(photo=photo, current=CURRENT),
                   "Science. Data. Code. I live at the intersection of design and technology.", pg["url"]))
             continue
+        chipline = f'<div class="chips">{chips(pg.get("tags") or [], tag_url)}</div>' if pg.get("tags") else ""
         body = (f'<article class="post"><p class="crumb"><a href="/">Archive</a> / Projects</p>'
-                f'<h1>{H.escape(pg["title"])}</h1><div class="content">{pg["html"]}</div></article>')
+                f'<h1>{H.escape(pg["title"])}</h1>{chipline}<div class="content">{pg["html"]}</div></article>')
         write(slug_path(pg["url"]), page(pg["title"], body, pg["text"][:200] or INTRO, pg["url"]))
+
+    # papers & presentations
+    for d in docs:
+        bits = [d["doc_type"], d["year"], d["context"]]
+        meta = " · ".join(H.escape(b) for b in bits if b)
+        withp = f'<p class="date">With {H.escape(d["collaborators"])}</p>' if d["collaborators"] else ""
+        chipline = f'<div class="chips">{chips(d["tags"], tag_url)}</div>' if d["tags"] else ""
+        body = (f'<article class="post doc"><p class="crumb"><a href="/">Archive</a> / <a href="/papers/">Papers</a></p>'
+                f'<h1>{H.escape(d["title"])}</h1><p class="date">{meta}</p>{withp}{chipline}'
+                f'<p><a class="current small" href="{d["pdf"]}"><span class="label">Open PDF</span><span class="url">{d["pages"]} pages · {d["mb"]} MB</span><span class="arrow">↗</span></a></p>'
+                f'<object class="pdf" data="{d["pdf"]}#view=FitH" type="application/pdf"><a href="{d["pdf"]}"><img src="{d["cover"]}" alt=""></a></object></article>')
+        write(slug_path(d["url"]), page(d["title"], body, f'{d["doc_type"]} by {NAME}: {d["title"]}. {d["context"]}.', d["url"], d["cover"], "article"))
+    write(ROOT / "papers/index.html", page("Papers & presentations",
+          f'<section class="head"><p class="crumb"><a href="/">Archive</a> / Papers</p><h1>Papers &amp; presentations</h1>'
+          f'<p class="lede">{len(docs)} papers, decks and lab reports, from physics and statistics to the Parsons MFA.</p></section>'
+          f'<div class="grid">{"".join(card(d) for d in docs)}</div>', url="/papers"))
 
     # category & tag pages
     for c in cat_names:
@@ -238,7 +271,8 @@ def main():
 
     # home (also served at /blog/)
     years = sorted({p["date"][:4] for p in posts})
-    proj = "".join(card(dict(pg, date="", categories=[])) for pg in pages if pg["url"] != "/aboutme")
+    proj = "".join(card(dict(pg, date="", categories=[])) for pg in projects)
+    more = "".join(card(dict(pg, date="", categories=[])) for pg in others)
     home = f"""
 <section class="hero">
   <h1>Archive</h1>
@@ -246,18 +280,19 @@ def main():
 </section>
 <section class="tools" id="posts">
   <label class="search"><span class="sr">Search the archive</span>
-    <input id="q" type="search" placeholder="Search {len(posts)} posts — try “bioplastic”, “openFrameworks”, “Terreform”" autocomplete="off">
+    <input id="q" type="search" placeholder="Search everything — try “bioplastic”, “openFrameworks”, “Terreform”" autocomplete="off">
   </label>
   <p id="count" class="meta" aria-live="polite"></p>
 </section>
-<div id="results">{listing(posts)}</div>
+<div id="results">{listing(posts)}
+<section class="year" id="projects" data-group="Projects"><h2 class="yr">Projects <span>{len(projects)}</span></h2><div class="grid">{proj}</div></section>
+<section class="year" id="papers" data-group="Papers"><h2 class="yr">Papers &amp; presentations <span>{len(docs)}</span></h2><div class="grid">{"".join(card(d) for d in docs)}</div></section>
+<section class="year" data-group="Earlier"><h2 class="yr">Earlier work <span>{len(others)}</span></h2><div class="grid">{more}</div></section>
+</div>
 <section class="topics" id="topics">
   <h2>Topics</h2><div class="chips big">{chips(cat_names, cat_url, {c: len(cats[c]) for c in cat_names})}</div>
   <h2>Drill down</h2>
   <div class="taggroups">{"".join(f'<div class="tg"><h3>{H.escape(g)}</h3><div class="chips">{chips(sorted(ts, key=lambda t: -len(tags[t])), tag_url, {t: len(tags[t]) for t in ts})}</div></div>' for g, ts in tag_groups.items() if ts)}</div>
-</section>
-<section class="projects" id="projects">
-  <h2>Projects &amp; pages</h2><div class="grid">{proj}</div>
 </section>
 <script>
 (() => {{
@@ -268,7 +303,7 @@ def main():
     let n = 0;
     cards.forEach(c => {{ const hit = terms.every(t => c.dataset.search.includes(t)); c.hidden = !hit; if (hit) n++; }});
     document.querySelectorAll('#results .year').forEach(s => s.hidden = !s.querySelector('.card:not([hidden])'));
-    count.textContent = terms.length ? `${{n}} matching post${{n === 1 ? '' : 's'}}` : '';
+    count.textContent = terms.length ? `${{n}} match${{n === 1 ? '' : 'es'}}` : '';
     const u = new URL(location); terms.length ? u.searchParams.set('q', q.value) : u.searchParams.delete('q');
     history.replaceState(null, '', u);
   }};
@@ -281,7 +316,7 @@ def main():
 
     # 404, sitemap, robots
     write(ROOT / "404.html", page("Not found", '<section class="head"><h1>Not found</h1><p class="lede">That page isn’t in the archive. <a href="/">Browse all posts</a> or search from the home page.</p></section>'))
-    urls = ["/"] + [p["url"] + "/" for p in posts] + [pg["url"] + "/" for pg in pages] + [cat_url(c) + "/" for c in cat_names] + [tag_url(t) + "/" for t in tag_names]
+    urls = ["/"] + [p["url"] + "/" for p in posts] + [pg["url"] + "/" for pg in pages] + [cat_url(c) + "/" for c in cat_names] + [tag_url(t) + "/" for t in tag_names] + ["/papers/"] + [d["url"] + "/" for d in docs]
     write(ROOT / "sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
           "".join(f"  <url><loc>{SITE}{u}</loc></url>\n" for u in urls) + "</urlset>\n")
     write(ROOT / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")

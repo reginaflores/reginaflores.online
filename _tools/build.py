@@ -23,7 +23,7 @@ CURRENT = "https://reginafloresmir.ai"
 ABOUT = """
 <section class="about">
   <p class="crumb"><a href="/">Archive</a> / About</p>
-  <h1 class="quote"><span>I love science.</span> <span>I love data.</span> <span>I love coding.</span></h1>
+  <h1 class="quote"><span>Science</span> <span>Data</span> <span>Code</span></h1>
   <p class="quote-sub">I live at the intersection of design and technology.</p>
   <div class="about-body">
     <figure class="portrait"><img src="{photo}" alt="Regina Flores Mir"></figure>
@@ -204,7 +204,7 @@ def main():
         if pg["url"] == "/aboutme":
             photo = "/assets/headshot.jpg"  # same headshot as reginafloresmir.ai
             write(slug_path(pg["url"]), page("About", ABOUT.format(photo=photo, current=CURRENT),
-                  "I love science. I love data. I love coding. I live at the intersection of design and technology.", pg["url"]))
+                  "Science. Data. Code. I live at the intersection of design and technology.", pg["url"]))
             continue
         body = (f'<article class="post"><p class="crumb"><a href="/">Archive</a> / Projects</p>'
                 f'<h1>{H.escape(pg["title"])}</h1><div class="content">{pg["html"]}</div></article>')

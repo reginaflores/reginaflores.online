@@ -180,6 +180,16 @@ table{border-collapse:collapse; font-variant-numeric:tabular-nums}
 .intersect{display:flex; flex-direction:column; gap:10px; border-top:2px solid var(--ink); padding-top:16px}
 .intersect .title{font-family:var(--font-display); font-weight:800; font-size:26px; text-transform:uppercase; line-height:1}
 
+/* questions */
+.questions{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr)); gap:12px; counter-reset:q}
+.qcard{width:100%; text-align:left; background:var(--surface); border:2px solid var(--line); border-radius:20px; padding:16px 18px; cursor:pointer; display:grid; grid-template-columns:auto minmax(0,1fr); gap:6px 14px; align-items:start}
+.qcard:hover{background:var(--soft)}
+.qcard[aria-pressed="true"]{background:var(--accent); color:var(--on-accent)}
+.qcard .qn{font-family:var(--font-display); font-weight:800; font-size:34px; line-height:.9}
+.qcard .qt{font-family:var(--font-display); font-weight:700; font-size:23px; line-height:1.08; text-transform:none}
+.qcard .qtags{grid-column:2; font-size:14px; color:var(--muted)}
+.qcard[aria-pressed="true"] .qtags{color:var(--on-accent)}
+
 /* tensions */
 .tensions{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr)); gap:14px}
 .tension{background:var(--surface); border:2px solid var(--line); border-radius:24px; padding:18px; display:flex; flex-direction:column; gap:12px; text-align:left; cursor:pointer; min-width:0}
@@ -239,6 +249,15 @@ footer{font-size:14.5px; color:var(--muted); border-top:3px solid var(--ink); pa
     </header>
   </div>
 
+
+  <section aria-labelledby="q-h">
+    <div class="section-head">
+      <span class="eyebrow">Core questions</span>
+      <h2 id="q-h">What the manifesto is asking</h2>
+      <p class="lede">The working questions at the center of the paper. Select one to light up the clusters it draws on.</p>
+    </div>
+    <ol class="questions" id="questions"></ol>
+  </section>
 
   <section aria-labelledby="arc-h">
     <div class="section-head">
@@ -336,7 +355,7 @@ const PARTS=[
 // [id, part, label, keywords, themes, sources]
 const RAW=[
  ["cosmos",1,"cosmos","stars · plasma · spectra · deep time · cosmic scale · sun · fourth state of matter · planet","B",[]],
- ["cosmicsoup",1,"cosmic soup","every particle in the universe born from the Big Bang · one shared origin · primordial plasma · cosmic microwave background, the Big Bang’s afterglow · light elements from the first minutes, heavier ones forged in stars · we are all connected","BG",["planck-esa","wmap"]],
+ ["cosmicsoup",1,"cosmic soup","every particle in the universe born from the Big Bang · one shared origin · primordial plasma · cosmic microwave background, the Big Bang’s afterglow · light elements from the first minutes, heavier ones forged in stars · we are all connected · Internet of Energy, born 14 billion years ago (2016)","BG",["planck-esa","wmap"]],
  ["skycommons",1,"sky as commons","oldest scientific instrument · protect and improve life on Earth (NASA) · Janna Levin","BA",["levin"]],
  ["darksky",1,"Dark Sky as a Service","Kosmos Stargazing Resort · Bortle Class 2 · dark sky certified · off-grid · hempcrete · darkness as amenity","BC",["kosmos","darksky"]],
  ["cern",1,"CERN","LHC shutdown · High-Luminosity LHC upgrade","B",["cern"]],
@@ -356,9 +375,10 @@ const RAW=[
  ["keystone",2,"keystone species + heirloom seeds","bees · seeds · coral reef · open-pollinated · saveable + replantable · seed-saving sovereignty · Safe Seed Pledge","DAC",["myhealth","safeseed"]],
  ["ancestral",2,"ancestral intelligence","Ancestral Intelligence Network · Jazsalyn (EY × NEW INC)","G",["jazsalyn"]],
 
+ ["technosphere",3,"technosphere (Peter Haff)","planet-scale system of technology · humans as components · inescapable · surrounds the human · 2016 technoscape → 2026 technosphere","FAE",["haff","s2016"]],
  ["adapt",3,"climate adaptation","adaptation as design, not restraint · Super El Niño 2026–27 · variance not just averages · protect biodiverse sinks (Amazon) · mitigation as floor, adaptation as focus · adaptation as siting criterion · climate × AI","DC",["noaa","wmo","weatherwest"]],
  ["footprint",3,"AI's planetary footprint","netting benefit against cost · ~945 TWh by 2030 · water 4.2–6.6 bn m³ by 2027 · inference = 80–90% of compute · closed models hide their footprint · siting a datacenter = siting a farm · the future of AI is a political decision","EDFA",["lse","mit","hf"]],
- ["dystopia",3,"do no harm","non-maleficence · red lines · surveillance · propaganda · autonomous weapons","F",["amodei-adol"]],
+ ["dystopia",3,"do no harm","non-maleficence · red lines · surveillance · propaganda · autonomous weapons · Cambridge Analytica (2018) · surveillance capitalism (Zuboff) · danger in people or in machines?","F",["amodei-adol","guardian-ca","zuboff"]],
  ["autocracy",3,"autocracy","totalitarianism · concentration of power","FA",["amodei-adol","amodei-pol","amodei-ds"]],
  ["unhealthy",3,"unhealthy AI","psychosis · addiction · puppeting · Lanier · Songdo","FH",["amodei-adol"]],
  ["skyclaimed",3,"sky as claimed commons","Janna Levin · orbital data centers · machine gods · night sky washed out · consciousness ≠ humanity","BFA",["levin"]],
@@ -387,10 +407,28 @@ const RAW=[
  ["consciousness",4,"consciousness","AI + consciousness · Buddha Nature · sentience · selflessness ≠ nonexistence · bridge between ancient wisdom + future tech (Tangri) · co-creating a New Earth","GE",["tangri"]],
  ["buddhism",4,"Buddhism","Robert Thurman · Xeno Sutra · Feminine Intelligence · compassion","G",["thurman-xeno","thurman-fi","ksr","thurman-other"]],
  ["awareness",4,"AI & awareness (Thurman)","relational self · selfless self · enlightened AI · antidote to AI is FI · oxytocin over cortisol · AI questions harmful orders · the gap / freedom of choice · danger is people not machines","GF",["thurman-talk"]],
- ["energy",4,"energy","solar · fusion · clean power","DB",[]]
+ ["energy",4,"energy","solar · fusion · clean power","DB",[]],
+ ["holobiont",4,"holobiont","host + microbes · hologenome · the human microbial cloud · companion species (Haraway) · Holobiont Urbanism · cities as biological superstructures · humanity’s role is understanding we are holobionts","DGH",["s2016","holobiont-thesis"]],
+ ["noplanb",4,"no Plan B","this is our home · we have to figure it out here · harmony on our own planet before going off-planet · 2016 thought experiment (In Pursuit of the Human)","CDB",["s2016"]],
+ ["responsibility",4,"human responsibility","acting as actors in shaping our future, society, culture and role on planet Earth · climate change and evil tech as real threats · steward or master?","HF",[]]
+];
+const QUESTIONS=[
+ {q:"We share one cosmic origin. What does that connection ask of us, and is it literal, ethical or poetic?",nodes:["cosmicsoup","cosmos","mind","emptiness","harmony"]},
+ {q:"What is a human? If we are holobionts, inseparable from microbes and the Earth’s living systems, who is the “we” that designs?",nodes:["holobiont","plantint","planetint","self","puett"]},
+ {q:"The technosphere now surrounds the human. How do we shape a system we live inside?",nodes:["technosphere","legibility","relational","innernet","responsibility"]},
+ {q:"Who owns, governs and cares for the systems we build?",nodes:["autocracy","openweights","rebel","ai2040","encyclical","keystone"]},
+ {q:"Where are the red lines, and is the danger in the machines or in the people who wield them?",nodes:["dystopia","unhealthy","awareness","ai2040","autocracy"]},
+ {q:"There is no Plan B. What does it take to live here, in harmony, before anyone talks about leaving?",nodes:["noplanb","adapt","tenets","skyclaimed","footprint"]},
+ {q:"What is humanity’s role now: steward or master? How do we take responsibility without repeating the technocratic paradigm?",nodes:["responsibility","encyclical","holobiont","wisdom","solarpunk"]},
+ {q:"What has changed in ten years, and what has held?",nodes:["technosphere","cosmicsoup","holobiont","noplanb","cosmicbrains"]}
 ];
 const SOURCES={
  "s2014":{t:"Write a Design Manifesto (2014)",by:"Regina Flores Mir",u:"https://www.reginafloresmir.com/blog/2014/11/10/paper-2-write-a-design-manifesto",s:"own"},
+ "s2016":{t:"In Pursuit of the Human (May 2016, Parsons MFA)",by:"Regina Flores Mir",u:"/papers/in-pursuit-of-the-human/",s:"own"},
+ "holobiont-thesis":{t:"Holobiont Urbanism (MFA thesis, 2016)",by:"Regina Flores Mir",u:"https://issuu.com/reginafloresmir/docs/holobionturbanism",s:"own"},
+ "haff":{t:"Humans and technology in the Anthropocene: Six rules (The Anthropocene Review, 2014)",by:"Peter Haff",u:"https://fds.duke.edu/db/aas/math/CNCS/haff/publications",s:"unread"},
+ "guardian-ca":{t:"The Cambridge Analytica Files (2018)",by:"The Guardian",u:"https://www.theguardian.com/news/series/cambridge-analytica-files",s:"unread"},
+ "zuboff":{t:"The Age of Surveillance Capitalism (2019)",by:"Shoshana Zuboff",u:"",s:"unread"},
  "amodei-mlg":{t:"Machines of Loving Grace",by:"Dario Amodei",u:"https://darioamodei.com/essay/machines-of-loving-grace",s:"read"},
  "amodei-adol":{t:"The Adolescence of Technology",by:"Dario Amodei",u:"https://darioamodei.com/essay/the-adolescence-of-technology",s:"read"},
  "amodei-pol":{t:"Policy on the AI Exponential",by:"Dario Amodei",u:"https://darioamodei.com/post/policy-on-the-ai-exponential",s:"read"},
@@ -467,6 +505,21 @@ const EDGES=[
  ["gesture","legibility","communicating with AI beyond language"],
  ["gesture","ai2040","alignment · sanctuaries if it fails"],
  ["gesture","plantint","gestural ecologies · ecosystem models of mind"],
+ ["holobiont","plantint","microbes, mycelium and the living Earth"],
+ ["holobiont","planetint","Earth intelligence includes us"],
+ ["holobiont","self","the self as a multispecies being"],
+ ["holobiont","harmony","interbeing"],
+ ["holobiont","responsibility","the “we” that designs is never only human"],
+ ["technosphere","autocracy","who controls the system that contains us"],
+ ["technosphere","footprint","planet-scale infrastructure"],
+ ["technosphere","responsibility","shaping a system we live inside"],
+ ["technosphere","legibility","understanding what surrounds us"],
+ ["noplanb","skyclaimed","staying home vs. the off-planet push"],
+ ["noplanb","adapt","learning to live here"],
+ ["noplanb","tenets","how we settle this planet"],
+ ["responsibility","encyclical","the technocratic paradigm"],
+ ["responsibility","wisdom","steward or master?"],
+ ["cosmicsoup","holobiont","2016: connected biologically and energetically"],
  ["keystone","openweights","own vs. rent: a saveable seed, a downloadable model"],
  ["planetint","openweights","Tessera (open) vs. AlphaEarth (closed)"],
  ["footprint","tenets","siting a datacenter = siting a farm"],
@@ -528,7 +581,7 @@ const ADJ=Object.fromEntries(NODES.map(n=>[n.id,[]]));
 EDGES.forEach(([a,b,w])=>{ADJ[a].push({other:b,why:w});ADJ[b].push({other:a,why:w});});
 const themeColor=t=>`var(--t-${t})`;
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const state={sel:null,theme:null,part:null,tension:null};
+const state={sel:null,theme:null,part:null,tension:null,q:null};
 const reduceMotion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* ---------- arc strip ---------- */
@@ -546,7 +599,7 @@ function renderStrip(){
       <p class="words">${esc(p.words)}</p></button>`;
   }).join("");
   el.querySelectorAll(".part-card").forEach(b=>b.addEventListener("click",()=>{
-    const n=+b.dataset.part; state.part=state.part===n?null:n; state.theme=null; state.tension=null; refreshFilters();
+    const n=+b.dataset.part; state.part=state.part===n?null:n; state.theme=null; state.tension=null; state.q=null; refreshFilters();
   }));
 }
 
@@ -556,11 +609,11 @@ function renderChips(){
   el.innerHTML=THEMES.map(t=>{
     const c=NODES.filter(n=>n.themes.includes(t.id)).length;
     return `<button class="chip" data-theme="${t.id}" aria-pressed="${state.theme===t.id}" title="${esc(t.def)}"><span class="dot" style="background:${themeColor(t.id)}"></span><span>${esc(t.name)} <span class="muted">${c}</span></span></button>`;
-  }).join("")+(state.theme||state.part||state.tension?`<button class="chip clear" id="clearf">Clear filter</button>`:"");
+  }).join("")+(state.theme||state.part||state.tension!==null||state.q!==null?`<button class="chip clear" id="clearf">Clear filter</button>`:"");
   el.querySelectorAll("[data-theme]").forEach(b=>b.addEventListener("click",()=>{
-    const t=b.dataset.theme; state.theme=state.theme===t?null:t; state.part=null; state.tension=null; refreshFilters();
+    const t=b.dataset.theme; state.theme=state.theme===t?null:t; state.part=null; state.tension=null; state.q=null; refreshFilters();
   }));
-  const cl=document.getElementById("clearf"); if(cl) cl.addEventListener("click",()=>{state.theme=state.part=state.tension=null;refreshFilters();});
+  const cl=document.getElementById("clearf"); if(cl) cl.addEventListener("click",()=>{state.theme=state.part=state.tension=state.q=null;refreshFilters();});
 }
 
 /* ---------- dial ---------- */
@@ -623,6 +676,7 @@ function focusSet(){
   if(state.theme) return new Set(NODES.filter(n=>n.themes.includes(state.theme)).map(n=>n.id));
   if(state.part) return new Set(NODES.filter(n=>n.part===state.part).map(n=>n.id));
   if(state.tension!==null) return new Set(TENSIONS[state.tension].nodes);
+  if(state.q!==null) return new Set(QUESTIONS[state.q].nodes);
   return null;
 }
 function applyHighlight(){
@@ -671,7 +725,7 @@ function select(id,scroll){
   state.sel=id; applyHighlight(); renderDetail();
   if(scroll){document.getElementById("dial-h").scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"start"});}
 }
-function refreshFilters(){renderChips();renderStrip();renderTensions();applyHighlight();}
+function refreshFilters(){renderChips();renderStrip();renderTensions();renderQuestions();applyHighlight();}
 
 /* ---------- matrix ---------- */
 let mSel=null;
@@ -709,6 +763,17 @@ function renderTP(){
   document.getElementById("tp").innerHTML=head+`<tbody>${body}</tbody>`;
 }
 
+/* ---------- questions ---------- */
+function renderQuestions(){
+  const el=document.getElementById("questions");
+  el.innerHTML=QUESTIONS.map((x,i)=>`<li><button class="qcard" data-q="${i}" aria-pressed="${state.q===i}"><span class="qn">${i+1}</span><span class="qt">${esc(x.q)}</span><span class="qtags">${x.nodes.map(id=>esc(byId[id].label)).join(" · ")}</span></button></li>`).join("");
+  el.querySelectorAll(".qcard").forEach(b=>b.addEventListener("click",()=>{
+    const i=+b.dataset.q; state.q=state.q===i?null:i; state.theme=null; state.part=null; state.tension=null;
+    refreshFilters();
+    if(state.q!==null) document.getElementById("dial-h").scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"start"});
+  }));
+}
+
 /* ---------- tensions ---------- */
 function renderTensions(){
   const el=document.getElementById("tensions");
@@ -717,7 +782,7 @@ function renderTensions(){
     <div class="vs"><span>${esc(t.a)}</span><em>vs</em><span>${esc(t.b)}</span></div>
     <div class="chips">${t.nodes.map(id=>`<span class="chip small static">${esc(byId[id].label)}</span>`).join("")}</div></button>`).join("");
   el.querySelectorAll(".tension").forEach(b=>b.addEventListener("click",()=>{
-    const i=+b.dataset.i; state.tension=state.tension===i?null:i; state.theme=null; state.part=null;
+    const i=+b.dataset.i; state.tension=state.tension===i?null:i; state.theme=null; state.part=null; state.q=null;
     if(state.tension!==null) state.sel=TENSIONS[i].nodes[0];
     refreshFilters(); renderDetail();
     if(state.tension!==null) document.getElementById("dial-h").scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"start"});
@@ -764,7 +829,7 @@ document.getElementById("tabs").addEventListener("click",e=>{
 document.getElementById("search").addEventListener("input",e=>{q=e.target.value.trim().toLowerCase();renderClusters();renderSources();});
 
 /* ---------- boot ---------- */
-renderStrip(); renderChips(); renderDial(); renderMatrix(); renderTP(); renderTensions(); renderArchive();
+renderStrip(); renderChips(); renderDial(); renderMatrix(); renderTP(); renderTensions(); renderQuestions(); renderArchive();
 applyHighlight(); renderDetail();
 </script>
 </body>

@@ -129,6 +129,7 @@ header{display:grid; grid-template-columns:minmax(0,1fr); gap:26px}
 .conn:hover{border-left-color:var(--accent)}
 .conn b{font-family:var(--font-display); font-weight:700; font-size:20px; text-transform:uppercase; line-height:1.05}
 .conn span{font-size:15px; color:var(--muted)}
+.srcnote{font-size:14.5px; border-left:4px solid var(--accent); padding:2px 0 2px 10px; margin-top:4px; max-width:60ch}
 .src{display:flex; flex-direction:column; gap:4px; font-size:15.5px}
 .pill{display:inline-flex; align-items:center; gap:7px; font-family:var(--font-display); font-weight:700; font-size:14px; letter-spacing:.05em; text-transform:uppercase; white-space:nowrap}
 .pill::before{content:""; width:10px; height:10px; border-radius:50%; background:currentColor}
@@ -343,7 +344,6 @@ const RAW=[
  ["aesthetic",1,"aesthetic","awe · the sublime · wonder · beauty of infrastructure","BH",[]],
  ["mind",1,"mind","Planck · mind as the matrix of matter · consciousness","BG",[]],
  ["emptiness",1,"emptiness","śūnya / zero · openness ≠ nothingness · no fixed location · spinning galaxy · mirror correction · materialism as death cult · relative is absolute","BG",["thurman-talk"]],
- ["legibility",1,"legibility","interpretability · grown not built · understanding what we build · truth","F",["amodei-interp"]],
 
  ["motherhood",2,"motherhood","Prajnaparamita · Tara · Womb · Mother of the Buddhas · Divine Mother","G",["thurman-mother","thurman-tara"]],
  ["plantmed",2,"plant medicine","psychedelic research · QRI","GD",["qri"]],
@@ -371,6 +371,7 @@ const RAW=[
  ["experiments",3,"land + community experiments","Arcosanti (arcology = architecture + ecology) · ACTS (off-grid family compounds) · Casa Damara (family unit as foundation)","CHA",["arcosanti","acts","casadamara","shift"]],
  ["rebel",3,"Rebel Alliance (USV)","agentic stack · unbundling vs Fat Models · agents as distributed infrastructure · bees to flowers · open interfaces → composability → specialization · lateral power","A",["usv"]],
  ["expo",3,"Exponential / Infinity","holdco of holdcos · modern keiretsu · decentralized operating companies · services markets are local · prime brokerage for AI-native businesses · climate × AI white space","A",["expo","pedraza"]],
+ ["legibility",3,"legibility","interpretability · grown not built · understanding what we build · truth · Amodei","F",["amodei-interp"]],
  ["ai2040",3,"AI 2040 / Plan A","delay superintelligence to 2040 · make all AI research public · dozens of companies reach the frontier · mutually assured compute destruction · verification · “who will control all these AIs?” · space governance","FA",["ai2040","aifutures"]],
  ["openweights",3,"open weights / AI sovereignty","open weights ≠ open source · download / keep / fine-tune / replant = own it vs. rent an API · run local + off-grid · open models = measurable footprint · disproportionately Chinese-lab-led","AF",["openguide","hf"]],
 
@@ -391,7 +392,7 @@ const SOURCES={
  "amodei-mlg":{t:"Machines of Loving Grace",by:"Dario Amodei",u:"https://darioamodei.com/essay/machines-of-loving-grace",s:"read"},
  "amodei-adol":{t:"The Adolescence of Technology",by:"Dario Amodei",u:"https://darioamodei.com/essay/the-adolescence-of-technology",s:"read"},
  "amodei-pol":{t:"Policy on the AI Exponential",by:"Dario Amodei",u:"https://darioamodei.com/post/policy-on-the-ai-exponential",s:"read"},
- "amodei-interp":{t:"The Urgency of Interpretability",by:"Dario Amodei",u:"https://darioamodei.com/post/the-urgency-of-interpretability",s:"read"},
+ "amodei-interp":{t:"The Urgency of Interpretability",by:"Dario Amodei",u:"https://darioamodei.com/post/the-urgency-of-interpretability",s:"read",n:"AI models are “grown, not built”: we train them, but we can’t fully read what’s going on inside them. Interpretability is the research field that tries to make them legible."},
  "amodei-ds":{t:"On DeepSeek and Export Controls",by:"Dario Amodei",u:"https://darioamodei.com/post/on-deepseek-and-export-controls",s:"read"},
  "planck-esa":{t:"Planck: the cosmic microwave background",by:"European Space Agency",u:"https://www.esa.int/Science_Exploration/Space_Science/Planck",s:"ref"},
  "wmap":{t:"Wilkinson Microwave Anisotropy Probe (WMAP)",by:"NASA",u:"https://map.gsfc.nasa.gov/",s:"ref"},
@@ -634,7 +635,7 @@ function applyHighlight(){
 function srcHTML(id){
   const s=SOURCES[id]; if(!s) return "";
   const title=s.u?`<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)}</a>`:esc(s.t);
-  return `<li class="src"><span>${title} <span class="muted">· ${esc(s.by)}</span></span><span class="pill st-${s.s}">${STATUS[s.s]}</span></li>`;
+  return `<li class="src"><span>${title} <span class="muted">· ${esc(s.by)}</span></span>${s.n?`<span class="srcnote">${esc(s.n)}</span>`:""}<span class="pill st-${s.s}">${STATUS[s.s]}</span></li>`;
 }
 function renderDetail(){
   const el=document.getElementById("detail");
@@ -733,7 +734,7 @@ function renderSources(){
   const counts=order.map(s=>[s,Object.values(SOURCES).filter(x=>x.s===s).length]);
   el.innerHTML=`<div class="legend-status" style="margin-bottom:12px">${counts.map(([s,c])=>`<span class="pill st-${s}">${STATUS[s]} · ${c}</span>`).join("")}</div>
   ${rows.length?`<div class="tablewrap"><table class="srctable"><thead><tr><th>Source</th><th>Status</th><th>On the map</th><th>Note in folder</th></tr></thead><tbody>${rows.map(([k,s])=>`
-    <tr><td>${s.u?`<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)}</a>`:esc(s.t)}<div class="muted" style="font-size:12.5px">${esc(s.by)}</div></td>
+    <tr><td>${s.u?`<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)}</a>`:esc(s.t)}<div class="muted" style="font-size:12.5px">${esc(s.by)}</div>${s.n?`<div class="srcnote">${esc(s.n)}</div>`:""}</td>
     <td><span class="pill st-${s.s}">${STATUS[s.s]}</span></td>
     <td><div class="citedby">${(cited[k]||[]).map(id=>`<button data-go="${id}">${esc(byId[id].label)}</button>`).join("")||`<span class="muted" style="font-size:12.5px">${k==="keller"?"Not yet placed":k==="s2014"?"The original being rewritten":"—"}</span>`}</div></td>
     <td class="mono muted" style="font-size:11.5px">${s.f?esc(s.f.replace("sources/","")):""}</td></tr>`).join("")}</tbody></table></div>`:`<p class="empty">No sources match “${esc(q)}”.</p>`}`;

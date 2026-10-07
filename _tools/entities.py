@@ -20,6 +20,9 @@ PEOPLE = {
     "Ed Keller": ["Ed Keller"],
     "Oliver Medvedik": ["Oliver Medvedik"],
     "Clive Dilnot": ["Clive Dilnot"],
+    "Patricio Gonzalez Vivo": ["Patricio Gonzalez Vivo", "Patricio González Vivo"],
+    "Zach Lieberman": ["Zach Lieberman", "Zach Leiberman"],
+    "Daniel Shiffman": ["Daniel Shiffman", "Dan Shiffman"],
     # design, architecture, biodesign
     "Buckminster Fuller": ["Buckminster Fuller", "Bucky Fuller"],
     "Charles and Ray Eames": ["Charles and Ray Eames", "Ray Eames", "Charles Eames", "Eames"],

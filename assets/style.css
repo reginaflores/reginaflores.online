@@ -223,3 +223,14 @@ footer.site .credit a { text-decoration: underline; }
 /* link cards without images */
 .card .textcard { height: 100%; display: flex; align-items: flex-end; padding: 18px; background: var(--ink); color: var(--bg); }
 .card .textcard span { font-size: 25px; line-height: 1; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; font-variation-settings: "wdth" 35, "opsz" 144; font-weight: 860; }
+
+/* teaching */
+.chips.links { margin: 0 0 40px; }
+.course .content table { display: table; font-size: 17px; }
+.course .content td:first-child, .course .content th:first-child { white-space: nowrap; }
+.timeline { border-top: 1.5px solid var(--line); }
+.trow { display: grid; grid-template-columns: 160px 1fr 300px; gap: 20px; align-items: baseline; padding: 18px 4px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.trow:hover { background: var(--soft); }
+.trow .ttl { font-size: 34px; line-height: 1; font-variation-settings: "wdth" 40, "opsz" 144; font-weight: 800; }
+.trow .term, .trow .prog { font-size: 19px; color: var(--muted); }
+@media (max-width: 640px) { .trow { grid-template-columns: 1fr; gap: 4px; } .trow .ttl { font-size: 28px; } }

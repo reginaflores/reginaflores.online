@@ -15,12 +15,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,300..1000&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=13">
+<link rel="stylesheet" href="/assets/style.css?v=14">
 </head>
 <body>
 <header class="site"><div class="bar">
   <a class="brand" href="/"><span class="name">Regina Flores Mir</span><span class="sub">Archive</span></a>
-  <nav><a href="/#topics">Topics</a><a href="/#projects">Projects</a><a href="/papers/">Papers</a><a href="/elsewhere/">Elsewhere</a><a href="/aboutme/">About</a></nav>
+  <nav><a href="/#topics">Topics</a><a href="/#projects">Projects</a><a href="/papers/">Papers</a><a href="/teaching/">Teaching</a><a href="/elsewhere/">Elsewhere</a><a href="/aboutme/">About</a></nav>
 </div></header>
 <main>
 <article class="post"><p class="crumb"><a href="/">Archive</a> / 2015</p><h1>Unfolding Maps in Processing</h1><p class="date">April 2, 2015</p><div class="chips"><a class="chip cat" href="/blog/category/Data+Visualization/">Data Visualization</a><a class="chip" href="/tags/maps-and-mapping/">Maps &amp; mapping</a><a class="chip" href="/tags/sound-and-music/">Sound &amp; music</a></div><div class="content"><p>This is a continuation from my last blog <a href="http://www.reginafloresmir.com/blog/2015/3/12/earthquake-data-visualization">post</a> on earthquakes. </p><p>I added more elements to the map:</p><ol><li>Full map (not just CA)</li><li>Marker differentials based on magnitude</li><li>A dropdown menu based on type of quake for UI</li><li>Interactive sound - as user zooms in the sound becomes louder</li></ol><p>I also attempted to use mouse-over labels on the data points but I struggled using "LabeledMarker.java" in the ControlP5 library from Processing. </p><p>I also played with different methods for pulling data:</p><ol><li>Using csv file </li><li>Using Atom Syndication (<a href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/atom.php">link</a>) and the RSSReader in Unfolding Maps </li></ol>

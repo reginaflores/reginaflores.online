@@ -101,7 +101,7 @@ def inst_url(n):
     return "/places/" + slugify(n)
 
 
-CSS_V = "13"
+CSS_V = "14"
 
 
 def page(title, body, desc=INTRO, url="/", og_img=None, kind="website"):
@@ -129,7 +129,7 @@ def page(title, body, desc=INTRO, url="/", og_img=None, kind="website"):
 <body>
 <header class="site"><div class="bar">
   <a class="brand" href="/"><span class="name">{NAME}</span><span class="sub">Archive</span></a>
-  <nav><a href="/#topics">Topics</a><a href="/#projects">Projects</a><a href="/papers/">Papers</a><a href="/elsewhere/">Elsewhere</a><a href="/aboutme/">About</a></nav>
+  <nav><a href="/#topics">Topics</a><a href="/#projects">Projects</a><a href="/papers/">Papers</a><a href="/teaching/">Teaching</a><a href="/elsewhere/">Elsewhere</a><a href="/aboutme/">About</a></nav>
 </div></header>
 <main>
 {body}
@@ -145,7 +145,7 @@ def page(title, body, desc=INTRO, url="/", og_img=None, kind="website"):
 """
 
 
-LINK_ORDER = ["Publications", "Exhibitions & awards", "Press", "Videos", "Code", "Teaching", "Project sites", "Influences & references"]
+LINK_ORDER = ["Publications", "Exhibitions & awards", "Press", "Videos", "Code", "Project sites", "Influences & references"]
 
 
 def card(e):
@@ -154,6 +154,10 @@ def card(e):
     when = datetime.strptime(e["date"], "%Y-%m-%d").strftime("%b %-d, %Y") if e.get("date") else ""
     if e.get("kind") == "doc":
         when = " · ".join(x for x in (e["doc_type"], e["year"]) if x)
+    if e.get("kind") == "course":
+        when = e["term"]
+        img = f'<div class="textcard"><span>{H.escape(e["term"])}</span></div>'
+        e = dict(e, context=e["program"])
     if e.get("kind") == "link":
         when = " · ".join(x for x in (e["section"].rstrip("s") if e["section"] in ("Videos",) else "", e["year"]) if x)
         if not th:
@@ -170,9 +174,10 @@ def listing(items, by_year=True):
         return '<div class="grid">' + "".join(card(e) for e in items) + "</div>"
     groups = defaultdict(list)
     for e in items:
-        key = e["date"][:4] if e.get("kind") == "post" else ("Papers" if e.get("kind") == "doc" else e["section"] if e.get("kind") == "link" else "Projects")
+        kind = e.get("kind")
+        key = e["date"][:4] if kind == "post" else "Papers" if kind == "doc" else e["section"] if kind == "link" else "Teaching" if kind == "course" else "Projects"
         groups[key].append(e)
-    order = sorted((k for k in groups if k.isdigit()), reverse=True) + [k for k in ["Projects", "Papers"] + LINK_ORDER if k in groups]
+    order = sorted((k for k in groups if k.isdigit()), reverse=True) + [k for k in ["Projects", "Papers", "Teaching"] + LINK_ORDER if k in groups]
     out = []
     for k in order:
         label = "Papers &amp; presentations" if k == "Papers" else H.escape(k)
@@ -191,7 +196,7 @@ def write(path, s):
 
 
 def main():
-    for d in ("blog", "tags", "people", "places", "elsewhere"):
+    for d in ("blog", "tags", "people", "places", "elsewhere", "teaching"):
         shutil.rmtree(ROOT / d, ignore_errors=True)
     posts = sorted([e for e in entries if e["kind"] == "post"], key=lambda e: e["date"], reverse=True)
     pages = [e for e in entries if e["kind"] in ("page", "project") and e["url"] not in SKIP_PAGES and (e["text"] or e["thumb"])]
@@ -208,9 +213,12 @@ def main():
     links.sort(key=lambda l: LINK_ORDER.index(l["section"]))
     for l in links:
         l.update(categories=[], html="", thumb=l.get("thumb"))
-    tagged = posts + projects + others + docs + links
+    courses = sorted(json.loads((DATA / "courses.json").read_text()), key=lambda c: c["year"], reverse=True)
+    for c in courses:
+        c.update(date="", categories=[], thumb=None)
+    tagged = posts + projects + others + docs + links + courses
     for p in tagged:
-        p["full"] = p["text"] if p.get("kind") in ("doc", "link") else re.sub(r"\s+", " ", BeautifulSoup(p["html"], "html.parser").get_text(" "))
+        p["full"] = p["text"] if p.get("kind") in ("doc", "link", "course") else re.sub(r"\s+", " ", BeautifulSoup(p["html"], "html.parser").get_text(" "))
     derived, tag_groups, _ = derive([dict(p, text=p["full"]) for p in tagged])
     for p in tagged:
         p["tags"] = derived[p["url"]]
@@ -265,7 +273,7 @@ def main():
         meta = " · ".join(H.escape(b) for b in bits if b)
         withp = f'<p class="date">With {H.escape(d["collaborators"])}</p>' if d["collaborators"] else ""
         chipline = f'<div class="chips">{chips(d["tags"], tag_url)}</div>' if d["tags"] else ""
-        body = (f'<article class="post doc"><p class="crumb"><a href="/">Archive</a> / <a href="/papers/">Papers</a><a href="/elsewhere/">Elsewhere</a></p>'
+        body = (f'<article class="post doc"><p class="crumb"><a href="/">Archive</a> / <a href="/papers/">Papers</a><a href="/teaching/">Teaching</a><a href="/elsewhere/">Elsewhere</a></p>'
                 f'<h1>{H.escape(d["title"])}</h1><p class="date">{meta}</p>{withp}{chipline}' + (f'<div class="chips who">{chips(d["people"], person_url, cls="chip person")}{chips(d["insts"], inst_url, cls="chip place")}</div>' if d["people"] or d["insts"] else "") +
                 f'<p><a class="current small" href="{d["pdf"]}"><span class="label">Open PDF</span><span class="url">{d["pages"]} pages · {d["mb"]} MB</span><span class="arrow">↗</span></a></p>'
                 f'<object class="pdf" data="{d["pdf"]}#view=FitH" type="application/pdf"><a href="{d["pdf"]}"><img src="{d["cover"]}" alt=""></a></object></article>')
@@ -291,6 +299,23 @@ def main():
     write(ROOT / "elsewhere/index.html", page("Elsewhere",
           f'<section class="head"><p class="crumb"><a href="/">Archive</a> / Elsewhere</p><h1>Elsewhere</h1>'
           f'<p class="lede">The work out in the world: publications, exhibitions, press, videos, code and teaching.</p></section>{listing(links)}', url="/elsewhere"))
+
+    # teaching
+    for c in courses:
+        chipline = f'<div class="chips">{chips(c["tags"], tag_url)}</div>' if c["tags"] else ""
+        wholine = (f'<div class="chips who">{chips(c["people"], person_url, cls="chip person")}{chips(c["insts"], inst_url, cls="chip place")}</div>' if c["people"] or c["insts"] else "")
+        meta = " · ".join(H.escape(x) for x in (c["term"], c["program"], c["codes"]) if x)
+        btns = "".join(f'<a class="chip" href="{H.escape(u)}" rel="noopener">{H.escape(t)} ↗</a>' for t, u in c["links"])
+        body = (f'<article class="post course"><p class="crumb"><a href="/">Archive</a> / <a href="/teaching/">Teaching</a></p>'
+                f'<h1>{H.escape(c["title"])}</h1><p class="date">{meta}</p>{chipline}{wholine}'
+                f'<div class="chips links">{btns}</div><div class="content">{c["html"]}</div></article>')
+        write(slug_path(c["url"]), page(f'{c["title"]} ({c["term"]})', body, c["description"] or f'{c["title"]}, {c["term"]}, {c["program"]}.', c["url"]))
+    rows = "".join(f'<a class="trow" href="{c["url"]}/"><span class="term">{H.escape(c["term"])}</span>'
+                   f'<span class="ttl">{H.escape(c["title"])}</span><span class="prog">{H.escape(c["program"])}</span></a>' for c in courses)
+    write(ROOT / "teaching/index.html", page("Teaching",
+          f'<section class="head"><p class="crumb"><a href="/">Archive</a> / Teaching</p><h1>Teaching</h1>'
+          f'<p class="lede">Courses and workshops taught at Parsons School of Design, from the 2015 MFA bootcamp to today. '
+          f'Each course page has its outline, projects and links to the code.</p></section><div class="timeline">{rows}</div>', url="/teaching"))
 
     # people & institutions
     for table, url_fn, label, coll in ((people, person_url, "People", "people"), (insts, inst_url, "Institutions &amp; places", "insts")):
@@ -363,6 +388,7 @@ def main():
 <div id="results">{listing(posts)}
 <section class="year" id="projects" data-group="Projects"><h2 class="yr">Projects <span>{len(projects)}</span></h2><div class="grid">{proj}</div></section>
 <section class="year" id="papers" data-group="Papers"><h2 class="yr">Papers &amp; presentations <span>{len(docs)}</span></h2><div class="grid">{"".join(card(d) for d in docs)}</div></section>
+<section class="year" id="teaching" data-group="Teaching"><h2 class="yr">Teaching <span>{len(courses)}</span></h2><div class="grid">{"".join(card(c) for c in courses)}</div></section>
 <section class="year" data-group="Earlier"><h2 class="yr">Earlier work <span>{len(others)}</span></h2><div class="grid">{more}</div></section>
 <div id="elsewhere">{listing(links)}</div>
 </div>
@@ -402,7 +428,7 @@ def main():
 
     # 404, sitemap, robots
     write(ROOT / "404.html", page("Not found", '<section class="head"><h1>Not found</h1><p class="lede">That page isn’t in the archive. <a href="/">Browse all posts</a> or search from the home page.</p></section>'))
-    urls = ["/"] + [p["url"] + "/" for p in posts] + [pg["url"] + "/" for pg in pages] + [cat_url(c) + "/" for c in cat_names] + [tag_url(t) + "/" for t in tag_names] + ["/papers/"] + [d["url"] + "/" for d in docs] + ["/elsewhere/"] + [l["url"] + "/" for l in links] + [person_url(n) + "/" for n in ppl_names] + [inst_url(n) + "/" for n in inst_names]
+    urls = ["/"] + [p["url"] + "/" for p in posts] + [pg["url"] + "/" for pg in pages] + [cat_url(c) + "/" for c in cat_names] + [tag_url(t) + "/" for t in tag_names] + ["/papers/"] + [d["url"] + "/" for d in docs] + ["/elsewhere/"] + [l["url"] + "/" for l in links] + ["/teaching/"] + [c["url"] + "/" for c in courses] + [person_url(n) + "/" for n in ppl_names] + [inst_url(n) + "/" for n in inst_names]
     write(ROOT / "sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
           "".join(f"  <url><loc>{SITE}{u}</loc></url>\n" for u in urls) + "</urlset>\n")
     write(ROOT / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")

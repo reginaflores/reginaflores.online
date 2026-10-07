@@ -36,6 +36,17 @@ PROJECT_HINTS = {
     "microMACRO": "cosmos scale openFrameworks",
 }
 
+DATAX = [
+    {"title": "Data Selfie (DATA X)", "date": "2016-12-12", "url": "https://github.com/d4t4x/data-selfie",
+     "description": "Source for Data Selfie, the browser extension that tracks your own Facebook use and shows what machine learning infers about you. Built by DATA X.", "project": "Data Selfie"},
+    {"title": "Data Selfie image classification (DATA X)", "date": "2017-12-23", "url": "https://github.com/d4t4x/data-selfie-image-classification",
+     "description": "Image classification component for the Data Selfie extension. DATA X.", "project": "Data Selfie"},
+    {"title": "Fuzzify.me (DATA X)", "date": "2018-02-02", "url": "https://github.com/d4t4x/facebook-cleaner",
+     "description": "A browser extension that cleans out a Facebook user's ad preferences and shows the stream of ads they receive. DATA X.", "project": "Data Selfie"},
+    {"title": "Tracked (DATA X)", "date": "2018-11-06", "url": "https://github.com/d4t4x/tracked-game",
+     "description": "Assets for Tracked, a large-scale role-playing game about the data sharing economy. DATA X.", "project": "Data Selfie"},
+]
+
 REFERENCES = [
     {"title": "What is BioDesign? — William Myers", "source": "BioDesign: Nature + Science + Creativity (MoMA, 2012)",
      "date": "2012", "url": "https://www.moma.org/docs/publication_pdf/3167/BioDesign_PREVIEW.pdf",
@@ -77,6 +88,8 @@ def main():
     items = []
     for key, label in SECTIONS.items():
         for x in raw.get(key, []):
+            if key == "teaching" or x.get("project") == "Parsons teaching":
+                continue  # courses have their own pages (_tools/courses.py)
             if x.get("title") in EXCLUDE_TITLES or (x.get("source") or "") in EXCLUDE_SOURCES:
                 continue
             if "NOT FOUND" in (x.get("note") or ""):
@@ -91,6 +104,10 @@ def main():
                           "date": "", "year": str(x.get("date") or "")[:4], "sortdate": str(x.get("date") or ""),
                           "href": href, "dead": dead, "description": x.get("description", ""),
                           "project": x.get("project") or "", "verified": bool(x.get("verified"))})
+    for r in DATAX:
+        items.append({"kind": "link", "section": "Code", "title": r["title"], "source": "GitHub (DATA X)",
+                      "date": "", "year": r["date"][:4], "sortdate": r["date"], "href": r["url"], "dead": False,
+                      "description": r["description"], "project": r["project"], "verified": True})
     for r in REFERENCES:
         items.append({"kind": "link", "section": "Influences & references", "title": r["title"], "source": r["source"],
                       "date": "", "year": r["date"], "sortdate": r["date"], "href": r["url"], "dead": False,

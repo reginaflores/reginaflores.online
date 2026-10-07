@@ -330,7 +330,7 @@ const THEMES=[
 const PARTS=[
  {n:1,num:"I",name:"Cosmic Microwave Background",short:"Cosmos",words:"astrophysics · values · aesthetics"},
  {n:2,num:"II",name:"Planet Earth: Ecological Ontology and Intelligence",short:"Planet",words:"ecology · planet · motherhood · plant medicine · Whole Earth Catalog · plant intelligence · mycelium network · Buckminster Fuller · plasma"},
- {n:3,num:"III",name:"The TechnoSphere",short:"TechnoSphere",words:"technosphere · solar punk · do no harm · dystopia · non-maleficence · red lines"},
+ {n:3,num:"III",name:"The TechnoSphere",short:"TechnoSphere",words:"technosphere · do no harm · dystopia · non-maleficence · red lines"},
  {n:4,num:"IV",name:"Humanity’s Role in Designing a New Earth",short:"Human",words:"inspire · beauty · harmony"}
 ];
 // [id, part, label, keywords, themes, sources]
@@ -342,12 +342,13 @@ const RAW=[
  ["cern",1,"CERN","LHC shutdown · High-Luminosity LHC upgrade","B",["cern"]],
  ["career",1,"career","NASA · NRAO · radio telescopes","B",[]],
  ["aesthetic",1,"aesthetic","awe · the sublime · wonder · beauty of infrastructure","BH",[]],
+ ["cosmicbrains",1,"cosmic brains (Ed Keller)","universal cognition · synthetic minds · the alien · deep time of human sapience · is alignment with non-human minds possible?","BGF",["keller"]],
  ["mind",1,"mind","Max Planck · mind as the matrix of matter · consciousness","BG",[]],
  ["emptiness",1,"emptiness","śūnya / zero · openness ≠ nothingness · no fixed location · spinning galaxy · mirror correction · materialism as death cult · relative is absolute","BG",["thurman-talk"]],
 
  ["motherhood",2,"motherhood","Prajnaparamita · Tara · Womb · Mother of the Buddhas · Divine Mother","G",["thurman-mother","thurman-tara"]],
  ["plantmed",2,"plant medicine","psychedelic research · QRI","GD",["qri"]],
- ["plantint",2,"plant intelligence","mind in nature · living intelligence of the natural world · interdependence · non-dualism · mycelium · rhizome · wood wide web","DG",[]],
+ ["plantint",2,"plant intelligence","mind in nature · living intelligence of the natural world · interdependence · non-dualism · mycelium · rhizome · wood wide web · ecosystem models of mind (Ed Keller)","DG",[]],
  ["planetint",2,"planetary intelligence","Large Earth Models · AlphaEarth (DeepMind) · Tessera / GeoTessera (Cambridge, open-source) · Planet Labs · satellites as sensory nervous system · proprioception for the planet · grounding AI in the physical world","EDA",["alphaearth","tessera","planet","wef","time","pritchard"]],
  ["fuller",2,"Buckminster Fuller","synergetics · Spaceship Earth · whole systems · geodesic · tensegrity","DHC",["bfi"]],
  ["wec",2,"Whole Earth Catalog","Stewart Brand · access to tools","DAH",[]],
@@ -372,6 +373,7 @@ const RAW=[
  ["rebel",3,"Rebel Alliance (USV)","agentic stack · unbundling vs Fat Models · agents as distributed infrastructure · bees to flowers · open interfaces → composability → specialization · lateral power","A",["usv"]],
  ["expo",3,"Exponential / Infinity","holdco of holdcos · modern keiretsu · decentralized operating companies · services markets are local · prime brokerage for AI-native businesses · climate × AI white space","A",["expo","pedraza"]],
  ["legibility",3,"legibility","interpretability · grown not built · understanding what we build · truth · Amodei","F",["amodei-interp"]],
+ ["gesture",3,"cosmopolitic gesture (Ed Keller)","communicating with AI beyond language · multi-modal reality capture · gesture in human cognitive evolution as a blueprint for AI · embodied, synaesthetic cognition · microworlds / pocket universes (toy worlds for AI · sanctuaries if alignment fails)","FHG",["keller"]],
  ["ai2040",3,"AI 2040 / Plan A","delay superintelligence to 2040 · make all AI research public · dozens of companies reach the frontier · mutually assured compute destruction · verification · “who will control all these AIs?” · space governance","FA",["ai2040","aifutures"]],
  ["openweights",3,"open weights / AI sovereignty","open weights ≠ open source · download / keep / fine-tune / replant = own it vs. rent an API · run local + off-grid · open models = measurable footprint · disproportionately Chinese-lab-led","AF",["openguide","hf"]],
 
@@ -443,7 +445,7 @@ const SOURCES={
  "noema":{t:"AI's Greatest Gift to Humanity",by:"Arianna Huffington · Noema",u:"https://www.noemamag.com/ais-greatest-gift-to-humanity",s:"read",f:"sources/Deeper Reads - Encyclical and Noema.md"},
  "tangri":{t:"How AI Can Aid in Mass Consciousness Expansion (paywalled; intro only)",by:"Seema Tangri",u:"https://seematangri.medium.com/how-ai-can-aid-in-mass-consciousness-expansion-a956e601fe57",s:"partial"},
  "puett":{t:"What If the Self Isn't Something to Find? (video)",by:"Michael Puett with Simi Khadra",u:"https://youtu.be/aPTa03G8SK8",s:"unread",f:"sources/AI 2040, Puett, Pedraza.md"},
- "keller":{t:"Cosmopolitic Gesture / Cosmic Brains (not yet placed on the map)",by:"Ed Keller",u:"https://youtu.be/oX4HLjxNmEU",s:"provided",f:"sources/Ed Keller - Cosmopolitic Gesture, Cosmic Brains.md"}
+ "keller":{t:"Cosmopolitic Gesture / Cosmic Brains",by:"Ed Keller · forwarded text; videos not watched",u:"https://www.medialab-matadero.es/en/activities/cosmic-brains",s:"provided",f:"sources/Ed Keller - Cosmopolitic Gesture, Cosmic Brains.md"}
 };
 const STATUS={read:"Read",partial:"Partly read",unread:"Not watched / not read",provided:"My document",ref:"Reference link",own:"My 2014 manifesto"};
 // [a, b, why]
@@ -459,6 +461,12 @@ const EDGES=[
  ["climate","adapt","the climate signal, then the response"],
  ["doula","afl","bringing new projects into being"],
  ["health","wisdom","longevity and flourishing · be more, not do more"],
+ ["cosmicbrains","cosmicsoup","mind at cosmic scale"],
+ ["cosmicbrains","consciousness","AI sentience · universal cognition"],
+ ["cosmicbrains","gesture","the same Keller project"],
+ ["gesture","legibility","communicating with AI beyond language"],
+ ["gesture","ai2040","alignment · sanctuaries if it fails"],
+ ["gesture","plantint","gestural ecologies · ecosystem models of mind"],
  ["keystone","openweights","own vs. rent: a saveable seed, a downloadable model"],
  ["planetint","openweights","Tessera (open) vs. AlphaEarth (closed)"],
  ["footprint","tenets","siting a datacenter = siting a farm"],
@@ -743,7 +751,7 @@ function renderSources(){
   ${rows.length?`<div class="tablewrap"><table class="srctable"><thead><tr><th>Source</th><th>Status</th><th>On the map</th><th>Note in folder</th></tr></thead><tbody>${rows.map(([k,s])=>`
     <tr><td>${s.u?`<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)}</a>`:esc(s.t)}<div class="muted" style="font-size:12.5px">${esc(s.by)}</div>${s.n?`<div class="srcnote">${esc(s.n)}</div>`:""}</td>
     <td><span class="pill st-${s.s}">${STATUS[s.s]}</span></td>
-    <td><div class="citedby">${(cited[k]||[]).map(id=>`<button data-go="${id}">${esc(byId[id].label)}</button>`).join("")||`<span class="muted" style="font-size:12.5px">${k==="keller"?"Not yet placed":k==="s2014"?"The original being rewritten":"—"}</span>`}</div></td>
+    <td><div class="citedby">${(cited[k]||[]).map(id=>`<button data-go="${id}">${esc(byId[id].label)}</button>`).join("")||`<span class="muted" style="font-size:12.5px">${k==="s2014"?"The original being rewritten":"—"}</span>`}</div></td>
     <td class="mono muted" style="font-size:11.5px">${s.f?esc(s.f.replace("sources/","")):""}</td></tr>`).join("")}</tbody></table></div>`:`<p class="empty">No sources match “${esc(q)}”.</p>`}`;
   el.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>select(b.dataset.go,true)));
 }

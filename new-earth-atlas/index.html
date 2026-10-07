@@ -326,7 +326,7 @@ const THEMES=[
  {id:"H",name:"Flourishing, beauty & design",short:"Flourishing",def:"The human scale: health, self, relation, beauty, craft."}
 ];
 const PARTS=[
- {n:1,num:"I",name:"Astrophysics Values and Aesthetics",short:"Cosmos",words:"astrophysics · values · aesthetics"},
+ {n:1,num:"I",name:"Cosmic Microwave Background",short:"Cosmos",words:"astrophysics · values · aesthetics"},
  {n:2,num:"II",name:"Planet Earth: Ecological Ontology and Intelligence",short:"Planet",words:"ecology · planet · motherhood · plant medicine · Whole Earth Catalog · plant intelligence · mycelium network · Buckminster Fuller · plasma"},
  {n:3,num:"III",name:"The TechnoSphere",short:"TechnoSphere",words:"technosphere · solar punk · do no harm · dystopia · non-maleficence · red lines"},
  {n:4,num:"IV",name:"Humanity’s Role in Designing a New Earth",short:"Human",words:"inspire · beauty · harmony"}
@@ -334,6 +334,7 @@ const PARTS=[
 // [id, part, label, keywords, themes, sources]
 const RAW=[
  ["cosmos",1,"cosmos","stars · plasma · spectra · deep time · cosmic scale · sun · fourth state of matter · planet","B",[]],
+ ["cosmicsoup",1,"cosmic soup","every particle in the universe born from the Big Bang · one shared origin · primordial plasma · cosmic microwave background, the Big Bang’s afterglow · light elements from the first minutes, heavier ones forged in stars · we are all connected","BG",["planck-esa","wmap"]],
  ["skycommons",1,"sky as commons","oldest scientific instrument · protect and improve life on Earth (NASA) · Janna Levin","BA",["levin"]],
  ["darksky",1,"Dark Sky as a Service","Kosmos Stargazing Resort · Bortle Class 2 · dark sky certified · off-grid · hempcrete · darkness as amenity","BC",["kosmos","darksky"]],
  ["cern",1,"CERN","LHC shutdown · High-Luminosity LHC upgrade","B",["cern"]],
@@ -391,6 +392,8 @@ const SOURCES={
  "amodei-pol":{t:"Policy on the AI Exponential",by:"Dario Amodei",u:"https://darioamodei.com/post/policy-on-the-ai-exponential",s:"read"},
  "amodei-interp":{t:"The Urgency of Interpretability",by:"Dario Amodei",u:"https://darioamodei.com/post/the-urgency-of-interpretability",s:"read"},
  "amodei-ds":{t:"On DeepSeek and Export Controls",by:"Dario Amodei",u:"https://darioamodei.com/post/on-deepseek-and-export-controls",s:"read"},
+ "planck-esa":{t:"Planck: the cosmic microwave background",by:"European Space Agency",u:"https://www.esa.int/Science_Exploration/Space_Science/Planck",s:"ref"},
+ "wmap":{t:"Wilkinson Microwave Anisotropy Probe (WMAP)",by:"NASA",u:"https://map.gsfc.nasa.gov/",s:"ref"},
  "levin":{t:"Depose the Gods; Install the Machines",by:"Janna Levin",u:"https://jannalevin.substack.com/p/to-protect-and-improve-life-here",s:"read",f:"sources/Janna Levin - Depose the Gods, Install the Machines.md"},
  "kosmos":{t:"Kosmos Stargazing Resort & Spa",by:"Kosmos",u:"https://www.kosmosresort.com/",s:"ref"},
  "darksky":{t:"DarkSky International",by:"DarkSky",u:"https://darksky.org/",s:"ref"},
@@ -443,6 +446,10 @@ const SOURCES={
 const STATUS={read:"Read",partial:"Partly read",unread:"Not watched / not read",provided:"My document",ref:"Reference link",own:"My 2014 manifesto"};
 // [a, b, why]
 const EDGES=[
+ ["cosmicsoup","cosmos","one shared origin for all matter"],
+ ["cosmicsoup","plantint","interconnection · interdependence"],
+ ["cosmicsoup","harmony","interbeing"],
+ ["cosmicsoup","emptiness","no separate self · no fixed location"],
  ["keystone","openweights","own vs. rent: a saveable seed, a downloadable model"],
  ["planetint","openweights","Tessera (open) vs. AlphaEarth (closed)"],
  ["footprint","tenets","siting a datacenter = siting a farm"],

@@ -598,7 +598,7 @@ function renderDial(){
     const tx=mk("text",{x:lx.toFixed(1),y:ly.toFixed(1),"text-anchor":right?"start":"end","dominant-baseline":"central",transform:`rotate(${rot.toFixed(2)} ${lx.toFixed(1)} ${ly.toFixed(1)})`},g);
     tx.textContent=n.label;
     const title=mk("title",{},g); title.textContent=`${n.label} · ${n.themes.map(t=>THEMES.find(x=>x.id===t).short).join(", ")}`;
-    g.addEventListener("click",()=>select(n.id,false));
+    g.addEventListener("click",()=>select(state.sel===n.id?null:n.id,false));
     g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();select(n.id,false);}});
     nodeEls[n.id]=g;
   });
@@ -638,7 +638,7 @@ function srcHTML(id){
 }
 function renderDetail(){
   const el=document.getElementById("detail");
-  const n=byId[state.sel]; if(!n){el.innerHTML="";return;}
+  const n=byId[state.sel]; if(!n){el.innerHTML=`<p class="muted">Select a cluster on the map to see its keywords, themes, cross-links and sources.</p>`;return;}
   const p=PARTS.find(x=>x.n===n.part);
   const conns=ADJ[n.id].map(c=>`<li><button class="conn" data-go="${c.other}"><b>${esc(byId[c.other].label)}</b><span>${esc(c.why)}</span></button></li>`).join("")||`<li class="muted" style="font-size:13.5px">No cross-links recorded yet.</li>`;
   const themes=n.themes.map(t=>{const T=THEMES.find(x=>x.id===t);return `<span class="chip small static"><span class="dot" style="background:${themeColor(t)}"></span><span>${esc(T.name)}</span></span>`}).join("");
@@ -749,8 +749,7 @@ document.getElementById("search").addEventListener("input",e=>{q=e.target.value.
 
 /* ---------- boot ---------- */
 renderStrip(); renderChips(); renderDial(); renderMatrix(); renderTP(); renderTensions(); renderArchive();
-const hub=NODES.slice().sort((a,b)=>ADJ[b.id].length-ADJ[a.id].length)[0];
-select(hub.id,false);
+applyHighlight(); renderDetail();
 </script>
 </body>
 </html>

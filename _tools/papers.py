@@ -40,6 +40,8 @@ DOCS = {
     "PostPlanetaryResearchNotes.pdf": ("post-planetary-research-notes", "Post-Planetary Design: Research Notes", "Notes", "2016", "Parsons MFA · Post-Planetary Design", ""),
     "PetchaKutcha_Final_vcompressed.pdf": ("in-pursuit-of-the-human-pecha-kucha", "In Pursuit of the Human (Pecha Kucha)", "Presentation", "2016", "Parsons MFA · Post-Planetary Design", ""),
     "Regina_Flores_Post_Planetary_Design_Final_Paper.pdf": ("in-pursuit-of-the-human", "In Pursuit of the Human", "Paper", "2016", "Parsons MFA · Post-Planetary Design", ""),
+    # papers/holobiont-urbanism-thesis.pdf is a 7.5 MB compressed copy of the 125 MB original (images downsampled, text intact)
+    "Regina_Flores_Thesis_FINAL.pdf": ("holobiont-urbanism-thesis", "Holobiont Urbanism: MFA Thesis", "Thesis", "2016", "Parsons MFA · Design & Technology thesis", ""),
 }
 
 
@@ -52,6 +54,8 @@ def main():
         dest = OUT / f"{slug}.pdf"
         if not dest.exists():
             shutil.copy(src, dest)
+        if not src.exists():
+            src = dest  # already in papers/ (e.g. a pre-compressed copy)
         cover = ROOT / f"media/covers/{slug}.jpg"
         if not cover.exists():
             tmp = ROOT / f"_cache/cover-{slug}"

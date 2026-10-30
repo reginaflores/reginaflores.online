@@ -234,3 +234,17 @@ footer.site .credit a { text-decoration: underline; }
 .trow .ttl { font-size: 34px; line-height: 1; font-variation-settings: "wdth" 40, "opsz" 144; font-weight: 800; }
 .trow .term, .trow .prog { font-size: 19px; color: var(--muted); }
 @media (max-width: 640px) { .trow { grid-template-columns: 1fr; gap: 4px; } .trow .ttl { font-size: 28px; } }
+
+/* about: timeline */
+.about-h { font-size: clamp(48px, 7vw, 96px); line-height: .85; margin: 96px 0 28px; text-transform: uppercase;
+  font-variation-settings: "wdth" 30, "opsz" 144; font-weight: 900; }
+.life { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--line); }
+.life li { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+.life .when { font-size: 21px; padding-top: 6px; }
+.life h3 { margin: 0 0 8px; font-size: 38px; line-height: .95; font-variation-settings: "wdth" 40, "opsz" 144; font-weight: 820; }
+.life p { margin: 0; max-width: 62ch; }
+.degrees { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--line); }
+.degrees li { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.degrees strong { font-size: 26px; font-variation-settings: "wdth" 45, "opsz" 72; font-weight: 780; }
+.degrees span { color: var(--muted); }
+@media (max-width: 640px) { .life li { grid-template-columns: 1fr; gap: 6px; } .life h3 { font-size: 30px; } }

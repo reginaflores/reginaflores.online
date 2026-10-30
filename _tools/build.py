@@ -29,12 +29,32 @@ ABOUT = """
   <div class="about-body">
     <figure class="portrait"><img src="{photo}" alt="Regina Flores Mir"></figure>
     <div class="content">
-      <p>This archive collects my work in one place. At its core is the notebook I kept during my MFA in Design and Technology at Parsons (2014–2016): studio projects, research, prototypes and experiments in creative code, bio design, data and physical computing. Around it are my earlier research papers, my projects, and the work out in the world since: publications, exhibitions, press, videos, code and teaching.</p>
-      <p>I began my career as a research analyst in astrophysics. At NASA Ames Research Center I worked on SOFIA, an airborne infrared observatory aboard a Boeing 747. I also studied the Cosmic Microwave Background at the National Radio Astronomy Observatory, and star formation in extragalactic molecular clouds at the National Astronomy and Ionosphere Center.</p>
-      <p>I then spent more than five years on Wall Street bridging quants and sales, first at Goldman Sachs in Equity Prime Brokerage and later at JP Morgan on the Foreign Exchange, Rates and Commodities desk. In 2012 I joined the Cue Group, a consultancy and insight lab, as Director of Analytics.</p>
-      <p>I hold a B.A. in Physics from Barnard College of Columbia University, an M.A. in Statistics from Columbia University, and an MFA in Design and Technology from Parsons.</p>
+      <p>I am a designer, technologist and educator whose work has moved from the scale of galaxies to the scale of microbes, and from trading floors to classrooms. The thread through all of it is data: how we measure the world, how we model it, and how we make it visible and useful to people.</p>
+      <p>I started in astrophysics. At NASA Ames Research Center I worked on SOFIA, an infrared observatory flown aboard a Boeing 747; at the National Radio Astronomy Observatory I studied the Cosmic Microwave Background; and at the National Astronomy and Ionosphere Center (Arecibo) I studied star formation in extragalactic molecular clouds. I then spent more than five years on Wall Street turning quantitative methods into trading strategy and portfolio analysis, at Goldman Sachs and JP Morgan, before leading analytics at the Cue Group, a consultancy and insight lab.</p>
+      <p>At Parsons I turned that background toward design: algorithmic art from The Met's collection, bio design and living materials, and speculative work about cities, the cosmos and what it means to be human. That period produced <a href="/the-hip-hop-project/">The Hip Hop Project</a> at The Met Media Lab, the <a href="/sss/">Smart Spirulina System</a> with Terreform ONE, <a href="/data-selfie/">Data Selfie</a> with Hang Do Thi Duc, and <a href="/holobiont-urbanism/">Holobiont Urbanism</a> with the MIT Media Lab, which went to the 2016 Venice Architecture Biennale and became a peer-reviewed paper in 2023.</p>
+      <p>I have taught code to designers at Parsons since 2015, and now I teach AI to everyone else. Today I work as an AI consultant and educator, building data architecture and agentic AI systems with founders, organizations and cultural institutions, and I am writing a <a href="/new-earth-atlas/">Design Manifesto for a New Earth</a>.</p>
     </div>
   </div>
+
+  <h2 class="about-h">A timeline</h2>
+  <ol class="life">
+    <li><span class="when">Early career</span><div><h3>Astrophysics</h3><p>Research at <a href="/nasa/">NASA Ames</a> (SOFIA), the <a href="/places/nrao/">National Radio Astronomy Observatory</a> and <a href="/galactic-clouds/">Arecibo</a>. Senior thesis: <a href="/senior-thesis/">Mapping the Radio Sky</a>. B.A. in Physics, Barnard College of Columbia University.</p></div></li>
+    <li><span class="when">Wall Street</span><div><h3>Quantitative finance</h3><p>More than five years bridging quants and sales: Goldman Sachs, Equity Prime Brokerage; JP Morgan, Foreign Exchange, Rates and Commodities. <a href="/financial-modeling/">Financial modeling</a>, <a href="/portfolio-analysis/">hedge fund analysis</a> and an M.A. in Statistics from Columbia, with a thesis on <a href="/papers/us-swaps-time-series/">the US swaps markets</a>.</p></div></li>
+    <li><span class="when">2012</span><div><h3>Cue Group</h3><p>Director of Analytics at a consultancy, think tank and insight lab, including <a href="/cue-group/">Mapping Youth Culture</a>.</p></div></li>
+    <li><span class="when">2014–2016</span><div><h3>Parsons MFA, Design and Technology</h3><p>The <a href="/blog/">notebook</a> at the core of this archive: creative code, bio design, data and physical computing. Media Lab work at <a href="/places/the-met/">The Met</a> (<a href="/meta-methods/">metaMethods</a>, <a href="/the-hip-hop-project/">The Hip Hop Project</a>), the <a href="/sss/">Smart Spirulina System</a> at Terreform ONE, and a <a href="/papers/holobiont-urbanism-thesis/">thesis</a> on Holobiont Urbanism.</p></div></li>
+    <li><span class="when">2016–2018</span><div><h3>Data Selfie and Holobiont Urbanism</h3><p><a href="/data-selfie/">Data Selfie</a> (DATA X, with Hang Do Thi Duc): NYC Media Lab Combine, NEW INC, the Solitude &amp; ZKM Web Residencies and wide press. <a href="/holobiont-urbanism/">Holobiont Urbanism</a> with the MIT Media Lab: Venice Architecture Biennale 2016 and the Information is Beautiful Awards longlist.</p></div></li>
+    <li><span class="when">2015–today</span><div><h3>Teaching at Parsons</h3><p>From the MFA bootcamp to <a href="/teaching/algorithms-and-simulations-2016/">Algorithms and Simulations</a>, <a href="/teaching/">Critical Computation</a> and today's Data as Material. <a href="/teaching/">All courses</a>.</p></div></li>
+    <li><span class="when">2023</span><div><h3>Publication</h3><p>Co-author of <a href="/elsewhere/holobiont-urbanism-sampling-urban-beehives-reveals-cities-me/">“Holobiont Urbanism: sampling urban beehives reveals cities' metagenomes”</a>, <em>Environmental Microbiome</em>.</p></div></li>
+    <li><span class="when">2026</span><div><h3>AI consulting and education</h3><p>Agentic systems, data architecture and AI education for teams and leadership, in English and Spanish. A <a href="/new-earth-atlas/">Design Manifesto for a New Earth</a> in progress. Current work lives at <a href="{current}">reginafloresmir.ai</a>.</p></div></li>
+  </ol>
+
+  <h2 class="about-h">Education</h2>
+  <ul class="degrees">
+    <li><strong>MFA, Design and Technology</strong><span>Parsons School of Design</span></li>
+    <li><strong>M.A., Statistics</strong><span>Columbia University</span></li>
+    <li><strong>B.A., Physics</strong><span>Barnard College, Columbia University</span></li>
+  </ul>
+
   <a class="current" href="{current}"><span class="label">Current work</span><span class="url">reginafloresmir.ai</span><span class="arrow">→</span></a>
 </section>"""
 
@@ -101,7 +121,7 @@ def inst_url(n):
     return "/places/" + slugify(n)
 
 
-CSS_V = "14"
+CSS_V = "15"
 
 
 def page(title, body, desc=INTRO, url="/", og_img=None, kind="website"):

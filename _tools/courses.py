@@ -46,7 +46,8 @@ COURSES = [
       ("Student work", "https://reginaflores.github.io/Advanced_Critical_Computation_2024/class_list.html")]),
     ("Data_As_Material_2026", "data-as-material-2026", "Data as Material", "Fall 2026", "2026",
      "Parsons School of Design", "Current course",
-     [("Course repo", "https://github.com/reginaflores/Data_As_Material_2026")]),
+     [("Parsons course page", "https://courses.newschool.edu/courses/PSAM5170/"),
+      ("Course repo", "https://github.com/reginaflores/Data_As_Material_2026")]),
 ]
 
 PRIVATE_LINE = re.compile(r"(@newschool\.edu|@gmail|Location:|Room \d|TA:|\bRm \d)", re.I)
